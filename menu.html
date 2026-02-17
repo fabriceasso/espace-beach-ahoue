@@ -974,20 +974,30 @@
     <script src="assets/js/script.js"></script>
     <script>
         function switchTab(tabName) {
-            // Prevent default behavior if needed, although it's an anchor
-
             // Hide all contents
-            document.getElementById('repas-content').style.display = 'none';
-            document.getElementById('boissons-content').style.display = 'none';
+            const repasContent = document.getElementById('repas-content');
+            const boissonsContent = document.getElementById('boissons-content');
+
+            repasContent.style.display = 'none';
+            boissonsContent.style.display = 'none';
 
             // Update tabs state
             document.querySelectorAll('.menu-tab').forEach(tab => tab.classList.remove('active'));
 
             // Show selected content
-            document.getElementById(tabName + '-content').style.display = 'block';
+            const activeContent = document.getElementById(tabName + '-content');
+            activeContent.style.display = 'block';
+
+            // Force visibility if it has the fade-in class
+            if (activeContent.classList.contains('fade-in')) {
+                // We use a small timeout to allow display: block to be processed by the browser
+                // before adding the visible class for the transition to work correctly
+                setTimeout(() => {
+                    activeContent.classList.add('visible');
+                }, 10);
+            }
 
             // Highlight active tab
-            // Using window.event for compatibility if not passed, but target is better
             const clickedTab = Array.from(document.querySelectorAll('.menu-tab')).find(tab => tab.getAttribute('onclick').includes(tabName));
             if (clickedTab) clickedTab.classList.add('active');
         }

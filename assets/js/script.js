@@ -157,6 +157,8 @@ function initNavigation() {
 // SCROLL ANIMATIONS
 // ============================================
 function initScrollAnimations() {
+  const fadeElements = document.querySelectorAll('.fade-in');
+
   const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -166,14 +168,20 @@ function initScrollAnimations() {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
+        // Optionnel: arrêter d'observer une fois visible
+        // observer.unobserve(entry.target);
       }
     });
   }, observerOptions);
 
-  // Observer tous les éléments avec la classe fade-in
-  const fadeElements = document.querySelectorAll('.fade-in');
   fadeElements.forEach(element => {
     observer.observe(element);
+
+    // Sécurité: Si l'élément est déjà dans le viewport haut (cas du menu par ex)
+    const rect = element.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      element.classList.add('visible');
+    }
   });
 }
 
