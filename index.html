@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Espace Beach Ahoué - Complexe hôtelier, restaurant & bar en bordure d'eau à Ahoué. Séjour, détente et convivialité en bordure de plan d'eau près d'Abidjan, Côte d'Ivoire.">
+    <meta name="keywords"
+        content="hôtel Ahoué, en bordure d'eau Abidjan, bar, restaurant bord d'eau, complexe hôtelier Côte d'Ivoire, week-end Abidjan, hébergement Ahoué">
+    <meta name="author" content="Espace Beach Ahoué">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://espacebeachahoue.com/">
+    <meta property="og:title" content="Espace Beach Ahoué - Séjour, Détente & Convivialité">
+    <meta property="og:description"
+        content="Complexe hôtelier, restaurant & bar en bordure d'eau à Ahoué. Le cadre idéal pour vos séjours, mariages et séminaires.">
+    <meta property="og:image" content="assets/images/gallerie/paysage_22.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://espacebeachahoue.com/">
+    <meta property="twitter:title" content="Espace Beach Ahoué - Séjour, Détente & Convivialité">
+    <meta property="twitter:description"
+        content="Complexe hôtelier, restaurant & bar en bordure d'eau à Ahoué. Le cadre idéal pour vos séjours, mariages et séminaires.">
+    <meta property="twitter:image" content="assets/images/gallerie/paysage_22.png">
+
+    <title>Espace Beach Ahoué - Séjour, détente et convivialité en bordure de plan d'eau</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+</head>
+
+<body>
+
+    <!-- ============================================
+         NAVIGATION
+         ============================================ -->
+    <nav class="navbar" id="navbar">
+        <div class="container-wide">
+            <a href="#hero" class="logo">
+                <img src="assets/images/logo.png" alt="Espace Beach Ahoué Logo" class="logo-img">
+                <span>Espace Beach Ahoué</span>
+            </a>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menu">
+                <i class="ph ph-list"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#presentation" class="nav-link">À propos</a></li>
+                <li class="nav-item-dropdown">
+                    <a href="#hebergement" class="nav-link">Hébergement <i class="ph ph-caret-down caret-icon"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="hebergement.html" class="dropdown-link">Nos Chambres</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item-dropdown">
+                    <a href="#restaurant" class="nav-link">
+                        Restaurant & Bar <i class="ph ph-caret-down caret-icon"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="menu.html" class="dropdown-link">Notre Carte</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item-dropdown">
+                    <a href="#evenements" class="nav-link">
+                        Événements <i class="ph ph-caret-down caret-icon"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="evenements.html" class="dropdown-link">Nos Offres</a></li>
+                    </ul>
+                </li>
+                <li><a href="#galerie" class="nav-link">Galerie</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ============================================
+         HERO SECTION
+         ============================================ -->
+    <section id="hero" class="hero">
+        <!-- Vidéo d'ambiance en arrière-plan -->
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="assets/vids/ahoue_beach_presentation.mp4" type="video/mp4">
+            <!-- Fallback image -->
+            <img src="assets/images/hero/carrousel/11.png" alt="Espace Beach Ahoué" class="hero-background">
+        </video>
+        <!-- Images fixes permanentes -->
+        <img src="assets/images/hero/carrousel/acceuill.png" alt="" class="hero-static-layer">
+        <img src="assets/images/logo.png" alt="Logo Espace Beach Ahoué" class="hero-logo-layer">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>AKWABA à </h1>
+            <h1>l'Espace Beach Ahoué</h1>
+            <p class="subtitle">Complexe hôtelier, restaurant & bar en bordure d'eau à Ahoué, à quelques
+                kilomètres
+                d'Abidjan.</p>
+            <p class="hero-text">
+                Offrez-vous une pause hors de la ville.<br>
+                À l'Espace Beach Ahoué, profitez d'un cadre naturel en plein air, de chambres confortables, d'une
+                cuisine Africaine
+                moderne et d'une ambiance conviviale.
+            </p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary btn-whatsapp">
+                    <i class="ph ph-whatsapp-logo btn-icon"></i>
+                    Réserver via WhatsApp
+                </a>
+                <a href="#actualites" class="btn btn-secondary">
+                    <i class="ph ph-newspaper btn-icon"></i>
+                    Voir les actualités
+                </a>
+            </div>
+        </div>
+
+        <!-- Bannière défilante -->
+        <div class="hero-ticker">
+            <div class="hero-ticker-track">
+                <span>SPECIAL SAINT VALENTIN WEEK-END DU 14 FEVRIER 2026 AU COMPLEXE HOTELIER AHOUE BEACH | FORMULE 25
+                    000 FCFA (1 NUITE + PETIT – DEJEUNER) | FORMULE 25 000 FCFA (DINER 2 PERS. + 1 VIN) | FORMULE 70 000
+                    FCFA (1 NUITE+ DEJEUNER + DINER + VIN + PETIT-DEJEUNER) – CONTACTER NOUS POUR PLUS D’INFORMATIONS.
+                    🌴🌊🥂</span>
+                <span>SPECIAL SAINT VALENTIN WEEK-END DU 14 FEVRIER 2026 AU COMPLEXE HOTELIER AHOUE BEACH | FORMULE 25
+                    000 FCFA (1 NUITE + PETIT – DEJEUNER) | FORMULE 25 000 FCFA (DINER 2 PERS. + 1 VIN) | FORMULE 70 000
+                    FCFA (1 NUITE+ DEJEUNER + DINER + VIN + PETIT-DEJEUNER) – CONTACTER NOUS POUR PLUS D’INFORMATIONS .
+                    🌴🌊🥂</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         PRÉSENTATION DU COMPLEXE
+         ============================================ -->
+    <section id="presentation" class="section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Un lieu unique pour se détendre et se retrouver</h2>
+                <p>
+                    Situé à Ahoué, à seulement quelques kilomètres d'Abidjan, Espace Beach Ahoué est un complexe
+                    hôtelier et de loisirs pensé pour la détente, le plaisir et le partage.
+                </p>
+            </div>
+            <div class="content-split fade-in">
+                <div class="content-image">
+                    <img src="assets/images/hero/paysage_4.png" alt="Vue du complexe Espace Beach Ahoué">
+                </div>
+                <div class="content-text">
+                    <p>
+                        Que vous veniez pour un séjour, un repas, un verre ou une sortie entre proches, vous profitez
+                        d'un cadre en plein air, calme et chaleureux, en bordure d'eau.
+                    </p>
+                    <p>
+                        Un lieu idéal pour s'évader le temps d'un week-end ou d'une journée.
+                    </p>
+                    <ul>
+                        <li>Cadre naturel en bordure d'eau</li>
+                        <li>Ambiance conviviale et chaleureuse</li>
+                        <li>Proximité d'Abidjan</li>
+                        <li>Idéal pour familles, couples et groupes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         HÉBERGEMENT
+         ============================================ -->
+    <section id="hebergement" class="section section-alt">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Séjournez dans un cadre paisible</h2>
+                <p>
+                    Espace Beach Ahoué dispose de chambres équipées, confortables et adaptées aux courts séjours comme
+                    aux week-ends de détente.
+                </p>
+            </div>
+            <div class="content-split fade-in">
+                <div class="content-text">
+                    <p>
+                        Chaque chambre est pensée pour offrir repos, intimité et bien-être, dans un environnement
+                        naturel et apaisant, à deux d'Abidjan.
+                    </p>
+                    <h3 class="mt-md mb-md">Points forts</h3>
+                    <ul>
+                        <li>Chambres équipées et fonctionnelles</li>
+                        <li>Cadre calme et sécurisé</li>
+                        <li>Idéal pour couples, familles et visiteurs de passage</li>
+                        <li>Proximité d'Abidjan</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary btn-whatsapp mt-md">
+                        <i class="ph ph-whatsapp-logo btn-icon"></i>
+                        Réserver une chambre via WhatsApp
+                    </a>
+                </div>
+                <div class="content-image">
+                    <img src="assets/images/hebergement/chambre_3.png" alt="Chambre équipée Espace Beach Ahoué">
+                </div>
+            </div>
+
+            <!-- Galerie de chambres -->
+            <div class="features-grid mt-lg fade-in">
+                <div class="feature-card">
+                    <img src="assets/images/hebergement/chambre_0.png" alt="Chambre 1"
+                        style="width: 100%; border-radius: 12px; margin-bottom: 1rem;">
+                    <h3>Confort moderne</h3>
+                    <p>Chambres climatisées avec tout le nécessaire</p>
+                </div>
+                <div class="feature-card">
+                    <img src="assets/images/hebergement/chambre_2.png" alt="Chambre 2"
+                        style="width: 100%; border-radius: 12px; margin-bottom: 1rem;">
+                    <h3>Ambiance chaleureuse</h3>
+                    <p>Décoration soignée et accueillante</p>
+                </div>
+                <div class="feature-card">
+                    <img src="assets/images/hebergement/chambre_4.png" alt="Chambre 3"
+                        style="width: 100%; border-radius: 12px; margin-bottom: 1rem;">
+                    <h3>Repos assuré</h3>
+                    <p>Literie de qualité pour un sommeil réparateur</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         RESTAURANT & BAR
+         ============================================ -->
+    <section id="restaurant" class="section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Cuisine africaine moderne & ambiance conviviale</h2>
+                <p>
+                    Notre restaurant vous propose une cuisine savoureuse mêlant spécialités locales et plats modernes,
+                    préparés avec des produits frais.
+                </p>
+            </div>
+            <div class="content-split fade-in">
+                <div class="content-image">
+                    <img src="assets/images/restaurant/repas_0.png" alt="Restaurant Espace Beach Ahoué">
+                </div>
+                <div class="content-text">
+                    <p>
+                        Le bar et la cave à vin, ouvert sur l'extérieur, est l'endroit idéal pour se rafraîchir,
+                        partager un verre et
+                        profiter de l'ambiance, en journée comme en soirée.
+                    </p>
+                    <h3 class="mt-md mb-md">À découvrir</h3>
+                    <ul>
+                        <li>Plats locaux et grillades</li>
+                        <li>Poissons et fruits de mer</li>
+                        <li>Boissons fraîches et cocktails</li>
+                        <li>Ambiance détendue en bordure d'eau</li>
+                    </ul>
+                    <p class="mt-md"
+                        style="background: var(--color-bg-card); padding: 1rem; border-radius: 12px; border-left: 4px solid var(--color-gold);">
+                        <strong><i class="ph ph-info" style="vertical-align: middle; margin-right: 5px;"></i> Menu,
+                            commandes et réservations disponibles via WhatsApp.</strong>
+                    </p>
+                    <a href="menu.html" class="btn btn-primary mt-md">
+                        <i class="ph ph-book-open btn-icon"></i>
+                        Voir la carte complète
+                    </a>
+                </div>
+            </div>
+
+            <!-- Galerie de plats -->
+            <div class="gallery-grid mt-lg fade-in">
+                <div class="gallery-item">
+                    <img src="assets/images/restaurant/repas_13.png" alt="Kedjenou Agouti">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/restaurant/repas_1.png" alt="Marmite du pecheur">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/restaurant/repas_3.png" alt="Grillades">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         LOISIRS, SORTIES & ÉVÉNEMENTS
+         ============================================ -->
+    <section id="evenements" class="section section-alt">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Des moments à partager</h2>
+                <p>
+                    Espace Beach Ahoué est un lieu de vie et de rencontre.<br>
+                    Nous accueillons régulièrement des événements et proposons un cadre idéal pour vos moments
+                    importants.
+                </p>
+            </div>
+
+            <div class="events-grid fade-in">
+                <div class="event-card">
+                    <i class="ph ph-cake event-icon"></i>
+                    <h3>Anniversaires</h3>
+                    <p>Célébrez vos moments spéciaux dans un cadre unique</p>
+                </div>
+                <div class="event-card">
+                    <i class="ph ph-brandy event-icon"></i>
+                    <h3>Afterworks</h3>
+                    <p>Détendez-vous après le travail en bordure d'eau</p>
+                </div>
+                <div class="event-card">
+                    <i class="ph ph-music-notes event-icon"></i>
+                    <h3>Soirées DJ & musique live</h3>
+                    <p>Profitez d'une ambiance festive et musicale</p>
+                </div>
+                <div class="event-card">
+                    <i class="ph ph-users-three event-icon"></i>
+                    <h3>Sorties en famille</h3>
+                    <p>Un lieu convivial pour petits et grands</p>
+                </div>
+                <div class="event-card">
+                    <i class="ph ph-heart event-icon"></i>
+                    <h3>Moments en couple</h3>
+                    <p>Romantisme et tranquillité en bordure d'eau</p>
+                </div>
+                <div class="event-card">
+                    <i class="ph ph-confetti event-icon"></i>
+                    <h3>Mariages</h3>
+                    <p>Célébrez votre union dans un cadre féerique et mémorable</p>
+                </div>
+                <div class="event-card">
+                    <i class="ph ph-baby event-icon"></i>
+                    <h3>Baptêmes</h3>
+                    <p>Un écrin de douceur pour accueillir et fêter vos nouveaux-nés</p>
+                </div>
+                <div class="event-card">
+                    <i class="ph ph-users-four event-icon"></i>
+                    <h3>Sorties entre amis</h3>
+                    <p>Partagez de bons moments dans une ambiance décontractée</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-lg fade-in">
+                <a href="#contact" class="btn btn-primary btn-whatsapp">
+                    <i class="ph ph-whatsapp-logo btn-icon"></i>
+                    Organiser un événement via WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         ACTUALITÉS & AMBIANCE
+         ============================================ -->
+    <section id="actualites" class="section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Actualités & vie du complexe</h2>
+                <p>
+                    Découvrez nos dernières actualités, événements et moments forts à travers les publications de notre
+                    page Facebook.
+                </p>
+            </div>
+
+            <!-- Aperçu des événements récents -->
+            <div class="gallery-grid fade-in">
+                <div class="gallery-item">
+                    <img src="assets/images/actualites/actualite_1.jpg" alt="Actualité Espace Beach Ahoué">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/actualites/actualite_2.jpg" alt="Événement récent">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/actualites/actualite_3.jpg" alt="Soirée à Espace Beach">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/actualites/actualite_4.jpg" alt="Ambiance festive">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/actualites/actualite_5.jpg" alt="Vie du complexe">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/actualites/actualite_6.jpg" alt="Moments conviviaux">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/actualites/actualite_7.jpg" alt="Événement spécial">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/actualites/actualite_8.jpg" alt="Actualités du complexe">
+                </div>
+            </div>
+
+            <div class="text-center mt-lg fade-in">
+                <a href="https://www.facebook.com/espace.beachahoue" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-primary" style="background: #1877F2;">
+                    <i class="ph ph-facebook-logo btn-icon"></i>
+                    Voir plus sur Facebook
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         GALERIE
+         ============================================ -->
+    <section id="galerie" class="section section-alt">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Découvrez Espace Beach Ahoué en images</h2>
+                <p>
+                    Un aperçu de notre cadre, de nos chambres, de notre restaurant, de l'espace naturel et de
+                    l'ambiance qui
+                    fait l'esprit d'Espace Beach Ahoué.
+                </p>
+            </div>
+
+            <div class="gallery-grid fade-in">
+                <div class="gallery-item">
+                    <img src="assets/images/gallerie/paysage_11.png" alt="Vue magnifique sur la lagune">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/gallerie/repas_15.png" alt="Plat de poisson braisé et garnitures">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/gallerie/cave.png" alt="Notre sélection de vins et spiritueux">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/gallerie/paysage_25.png" alt="Espace détente en bord de mer">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/gallerie/pintade.png" alt="Pintade braisée croustillante">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/gallerie/chambre_8.png" alt="Hébergement confortable et élégant">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/gallerie/paysage_14.png" alt="Cadre naturel apaisant">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/gallerie/repas_8.png" alt="Accompagnements locaux savoureux">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/gallerie/anniversaire.png" alt="Célébrations et événements spéciaux">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/gallerie/paysage_23.png" alt="Bungalows sous les palmiers">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/gallerie/poulet_saute.png" alt="Poulet sauté aux épices">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/gallerie/restaurant_1.png" alt="Ambiance du restaurant principal">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         CONTACT & ACCÈS
+         ============================================ -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Nous contacter & nous trouver</h2>
+                <p>
+                    Pour toutes informations, réservation de chambre, table ou événement, notre équipe est disponible
+                    via
+                    WhatsApp.
+                </p>
+            </div>
+
+            <div class="contact-grid fade-up mt-lg">
+                <div class="contact-info">
+                    <h3 class="mb-md">Informations pratiques</h3>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="ph ph-map-pin"></i>
+                        </div>
+                        <div>
+                            <strong>Localisation</strong>
+                            Ahoué, route d'Alépé – Côte d'Ivoire
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="ph ph-phone"></i>
+                        </div>
+                        <div>
+                            <strong>Téléphone</strong>
+                            <a href="tel:+2252733764359">27 33 76 43 59</a> / <a href="tel:+2250102630733">01 02 63 07
+                                33</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="ph ph-whatsapp-logo"></i>
+                        </div>
+                        <div>
+                            <strong>WhatsApp</strong>
+                            <a href="https://wa.me/22507941094" target="_blank">Discuter avec nous</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="ph ph-facebook-logo"></i>
+                        </div>
+                        <div>
+                            <strong>Facebook</strong>
+                            <a href="https://www.facebook.com/espace.beachahoue" target="_blank">Espace Beach Ahoué</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-container">
+                    <form id="contactForm" action="https://formspree.io/f/xpqjrkdw" method="POST" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Votre Nom</label>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Ex: Jean Dupont"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Votre Email</label>
+                            <input type="email" id="email" name="_replyto" class="form-control"
+                                placeholder="Ex: jean@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Objet</label>
+                            <input type="text" id="subject" name="subject" class="form-control"
+                                placeholder="Ex: Réservation Mariage" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" class="form-control"
+                                placeholder="Votre message ici..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">
+                            <i class="ph ph-paper-plane-tilt btn-icon"></i> Envoyer le message
+                        </button>
+                        <div id="formStatus" class="form-status"></div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="map-container mt-lg fade-in">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d900.9100300982662!2d-3.952083166456508!3d5.499254829872696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc1910685f6dae5%3A0x88bf880e3aa09058!2sAhou%C3%A9%20Beach!5e1!3m2!1sfr!2sci!4v1770199340307!5m2!1sfr!2sci"
+                    width="100%" height="400" style="border:0; border-radius: var(--radius-md);" allowfullscreen=""
+                    loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <h3>Espace Beach Ahoué</h3>
+                <p class="footer-tagline">Séjour, détente et convivialité dans un espace naturel en bordure d'eau</p>
+
+                <div class="social-links">
+                    <a href="https://www.facebook.com/espace.beachahoue" target="_blank" rel="noopener noreferrer"
+                        class="social-link" aria-label="Facebook">
+                        <i class="ph ph-facebook-logo"></i>
+                    </a>
+                    <a href="#" class="social-link" id="whatsappFooter" aria-label="WhatsApp">
+                        <i class="ph ph-whatsapp-logo"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 Espace Beach Ahoué – Tous droits réservés</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================
+         FLOATING WHATSAPP BUTTON
+         ============================================ -->
+    <a href="#" class="whatsapp-float" id="whatsappFloat" aria-label="Contacter sur WhatsApp">
+        <i class="ph ph-whatsapp-logo"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

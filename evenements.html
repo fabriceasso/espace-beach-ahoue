@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Organisez vos événements d'exception à l'Espace Beach Ahoué. Mariages, baptêmes, séminaires et soirées privées en bordure de lagune.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://espacebeachahoue.com/evenements.html">
+    <meta property="og:title" content="Événements - Espace Beach Ahoué">
+    <meta property="og:description"
+        content="Mariages, baptêmes, séminaires et soirées privées en bordure de lagune à Ahoué.">
+    <meta property="og:image" content="assets/images/gallerie/paysage_22.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://espacebeachahoue.com/evenements.html">
+    <meta property="twitter:title" content="Événements - Espace Beach Ahoué">
+    <meta property="twitter:description"
+        content="Mariages, baptêmes, séminaires et soirées privées en bordure de lagune à Ahoué.">
+    <meta property="twitter:image" content="assets/images/gallerie/paysage_22.png">
+
+    <title>Événements - Espace Beach Ahoué</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar" id="navbar">
+        <div class="container-wide">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="Espace Beach Ahoué Logo" class="logo-img">
+                <span>Espace Beach Ahoué</span>
+            </a>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menu">
+                <i class="ph ph-list"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html#presentation" class="nav-link">À propos</a></li>
+                <li class="nav-item-dropdown">
+                    <a href="hebergement.html" class="nav-link">
+                        Hébergement <i class="ph ph-caret-down caret-icon"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="hebergement.html" class="dropdown-link">Nos Chambres</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item-dropdown">
+                    <a href="index.html#restaurant" class="nav-link">
+                        Restaurant & Bar <i class="ph ph-caret-down caret-icon"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="menu.html" class="dropdown-link">Notre Carte</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item-dropdown">
+                    <a href="index.html#evenements" class="nav-link active">
+                        Événements <i class="ph ph-caret-down caret-icon"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="evenements.html" class="dropdown-link">Nos Offres</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html#galerie" class="nav-link">Galerie</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="menu-hero"
+        style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/images/hero/carrousel/4.png');">
+        <div class="container">
+            <h1 class="fade-in" style="font-size: clamp(3rem, 6vw, 5rem); margin-bottom: 1rem;">Événements</h1>
+            <p class="subtitle fade-in" style="color: var(--color-gold);">Le cadre idéal pour vos moments inoubliables
+            </p>
+        </div>
+    </section>
+
+    <!-- EVENTS CONTENT -->
+    <section class="section">
+        <div class="container">
+
+            <div class="menu-tabs fade-in">
+                <a href="#mariages" class="menu-tab active" onclick="switchTab('mariages')">Mariages</a>
+                <a href="#prives" class="menu-tab" onclick="switchTab('prives')">Fêtes Privées</a>
+                <a href="#entreprises" class="menu-tab" onclick="switchTab('entreprises')">Entreprises</a>
+            </div>
+
+            <!-- SECTION MARIAGES -->
+            <div id="mariages-content" class="fade-in">
+                <div class="menu-grid">
+                    <div class="menu-card" style="grid-column: 1 / -1; cursor: default;">
+                        <div class="menu-modal-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0;">
+                            <div class="menu-modal-img" style="height: 100%; min-height: 400px;">
+                                <img src="assets/images/gallerie/mariage.png" alt="Mariage au bord de l'eau">
+                            </div>
+                            <div class="menu-modal-info" style="padding: 3rem;">
+                                <h2 class="menu-modal-title">Mariages de Rêve</h2>
+                                <p class="menu-modal-description">Dites "Oui" dans un cadre idyllique entre lac et
+                                    ciel azur. Nous organisons votre cérémonie laïque ou religieuse sur notre plage
+                                    privée, suivie d'une réception sous les étoiles.</p>
+                                <ul class="info-list" style="margin-bottom: 2rem; color: rgba(255,255,255,0.8);">
+                                    <li><i class="ph ph-check-circle" style="color: var(--color-gold);"></i> Capacité
+                                        jusqu'à 200 convives</li>
+                                    <li><i class="ph ph-check-circle" style="color: var(--color-gold);"></i> Service
+                                        traiteur personnalisé</li>
+                                    <li><i class="ph ph-check-circle" style="color: var(--color-gold);"></i> Suite
+                                        nuptiale offerte pour les mariés</li>
+                                </ul>
+                                <a href="https://wa.me/22507941094?text=Bonjour, je souhaite des informations pour un mariage"
+                                    target="_blank" class="btn btn-primary">
+                                    <i class="ph ph-calendar-plus btn-icon"></i> Devis personnalisé
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION PRIVÉS -->
+            <div id="prives-content" class="fade-in" style="display: none;">
+                <div class="menu-grid">
+                    <div class="menu-card" style="grid-column: 1 / -1; cursor: default;">
+                        <div class="menu-modal-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0;">
+                            <div class="menu-modal-img" style="height: 100%; min-height: 400px;">
+                                <img src="assets/images/gallerie/restaurant_1.png" alt="Fêtes de famille">
+                            </div>
+                            <div class="menu-modal-info" style="padding: 3rem;">
+                                <h2 class="menu-modal-title">Baptêmes & Anniversaires</h2>
+                                <p class="menu-modal-description">Célébrez les moments forts du calendrier familial dans
+                                    une ambiance chaleureuse et sécurisée pour les enfants. Notre espace piscine et nos
+                                    terrasses sont parfaits pour vos réceptions.</p>
+                                <ul class="info-list" style="margin-bottom: 2rem; color: rgba(255,255,255,0.8);">
+                                    <li><i class="ph ph-check-circle" style="color: var(--color-gold);"></i> Décorations
+                                        thématiques possibles</li>
+                                    <li><i class="ph ph-check-circle" style="color: var(--color-gold);"></i> Animations
+                                        pour enfants</li>
+                                    <li><i class="ph ph-check-circle" style="color: var(--color-gold);"></i> Formules
+                                        buffet tout compris</li>
+                                </ul>
+                                <a href="https://wa.me/22507941094?text=Bonjour, je souhaite organiser une fête d'anniversaire/baptême"
+                                    target="_blank" class="btn btn-primary">
+                                    <i class="ph ph-calendar-plus btn-icon"></i> Réserver une date
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION ENTREPRISES -->
+            <div id="entreprises-content" class="fade-in" style="display: none;">
+                <div class="menu-grid">
+                    <div class="menu-card" style="grid-column: 1 / -1; cursor: default;">
+                        <div class="menu-modal-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0;">
+                            <div class="menu-modal-img" style="height: 100%; min-height: 400px;">
+                                <img src="assets/images/gallerie/paysage_24.png" alt="Séminaire entreprise">
+                            </div>
+                            <div class="menu-modal-info" style="padding: 3rem;">
+                                <h2 class="menu-modal-title">Séminaires & Team Building</h2>
+                                <p class="menu-modal-description">Sortez du cadre habituel pour stimuler vos équipes. Le
+                                    calme de la lagune offre un environnement propice à la réflexion et à la cohésion de
+                                    groupe.</p>
+                                <ul class="info-list" style="margin-bottom: 2rem; color: rgba(255,255,255,0.8);">
+                                    <li><i class="ph ph-check-circle" style="color: var(--color-gold);"></i> Wi-Fi haute
+                                        vitesse & Écran de projection</li>
+                                    <li><i class="ph ph-check-circle" style="color: var(--color-gold);"></i> Pauses café
+                                        gourmandes</li>
+                                    <li><i class="ph ph-check-circle" style="color: var(--color-gold);"></i> Activités
+                                        nautiques de cohésion</li>
+                                </ul>
+                                <a href="https://wa.me/22507941094?text=Bonjour, je souhaite organiser un séminaire d'entreprise"
+                                    target="_blank" class="btn btn-primary">
+                                    <i class="ph ph-calendar-plus btn-icon"></i> Demander un devis
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-notice mt-lg fade-in">
+                <h3><i class="ph ph-info"></i> Privatisation</h3>
+                <p style="color: rgba(255,255,255,0.8);">Il est possible de privatiser l'intégralité du site
+                    (restaurant, piscine et tout l'hébergement) pour vos événements de grande envergure. Contactez notre
+                    équipe commerciale pour plus de détails.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2026 Espace Beach Ahoué. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="assets/js/script.js"></script>
+    <script>
+        function switchTab(tab) {
+            const contents = {
+                'mariages': document.getElementById('mariages-content'),
+                'prives': document.getElementById('prives-content'),
+                'entreprises': document.getElementById('entreprises-content')
+            };
+            const tabs = document.querySelectorAll('.menu-tab');
+
+            tabs.forEach(t => t.classList.remove('active'));
+            Object.values(contents).forEach(c => c.style.display = 'none');
+
+            contents[tab].style.display = 'block';
+            document.querySelector(`[href="#${tab}"]`).classList.add('active');
+        }
+
+        window.addEventListener('load', () => {
+            const hash = window.location.hash.replace('#', '');
+            if (['mariages', 'prives', 'entreprises'].includes(hash)) {
+                switchTab(hash);
+            }
+        });
+    </script>
+</body>
+
+</html>

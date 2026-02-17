@@ -1,0 +1,8 @@
+backup_0/
+backup_1/
+extract_content.py
+content_extracted.txt
+content_output.txt
+.DS_Store
+Thumbs.db
+assets/vids/7366409-uhd_3840_2160_25fps.mp4

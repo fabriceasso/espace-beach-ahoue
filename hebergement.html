@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Découvrez nos hébergements à l'Espace Beach Ahoué. Chambres climatisées, bungalows tout confort et formules détente en bordure d'eau.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://espacebeachahoue.com/hebergement.html">
+    <meta property="og:title" content="Hébergement - Espace Beach Ahoué">
+    <meta property="og:description"
+        content="Chambres climatisées, bungalows tout confort et formules détente en bordure d'eau à Ahoué.">
+    <meta property="og:image" content="assets/images/gallerie/paysage_22.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://espacebeachahoue.com/hebergement.html">
+    <meta property="twitter:title" content="Hébergement - Espace Beach Ahoué">
+    <meta property="twitter:description"
+        content="Chambres climatisées, bungalows tout confort et formules détente en bordure d'eau à Ahoué.">
+    <meta property="twitter:image" content="assets/images/gallerie/paysage_22.png">
+
+    <title>Hébergement - Espace Beach Ahoué</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar" id="navbar">
+        <div class="container-wide">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="Espace Beach Ahoué Logo" class="logo-img">
+                <span>Espace Beach Ahoué</span>
+            </a>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menu">
+                <i class="ph ph-list"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html#presentation" class="nav-link">À propos</a></li>
+                <li class="nav-item-dropdown">
+                    <a href="index.html#hebergement" class="nav-link active">
+                        Hébergement <i class="ph ph-caret-down caret-icon"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="hebergement.html" class="dropdown-link">Nos Chambres</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item-dropdown">
+                    <a href="index.html#restaurant" class="nav-link">
+                        Restaurant & Bar <i class="ph ph-caret-down caret-icon"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="menu.html" class="dropdown-link">Notre Carte</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item-dropdown">
+                    <a href="index.html#evenements" class="nav-link">
+                        Événements <i class="ph ph-caret-down caret-icon"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="evenements.html" class="dropdown-link">Nos Offres</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html#galerie" class="nav-link">Galerie</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="menu-hero"
+        style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/images/hebergement/chambre_6.png');">
+        <div class="container">
+            <h1 class="fade-in" style="font-size: clamp(3rem, 6vw, 5rem); margin-bottom: 1rem;">Votre Séjour</h1>
+            <p class="subtitle fade-in" style="color: var(--color-gold);">Un havre de paix entre confort et nature</p>
+        </div>
+    </section>
+
+    <!-- ACCOMMODATION CONTENT -->
+    <section class="section">
+        <div class="container">
+
+            <div class="menu-tabs fade-in">
+                <a href="#chambres" class="menu-tab active" onclick="switchTab('chambres')">Nos Chambres</a>
+                <a href="#formules" class="menu-tab" onclick="switchTab('formules')">Nos Formules</a>
+            </div>
+
+            <!-- SECTION CHAMBRES -->
+            <div id="chambres-content" class="fade-in">
+                <h2 class="menu-section-title">Hébergements disponibles</h2>
+                <div class="menu-grid">
+                    <!-- Standard -->
+                    <div class="menu-card">
+                        <div class="menu-card-img-container">
+                            <img src="assets/images/hebergement/chambre_0.png" alt="Chambre Standard"
+                                class="menu-card-img">
+                            <div class="virtual-tour-badge">
+                                <a href="https://maps.app.goo.gl/CAoSFkNJSE0wb2dLRUlDQWdJQzd1UFMxYkE" target="_blank"
+                                    data-tour-url="https://www.google.com/maps/embed?pb=!4v1771272071524!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJQzd1UFMxYkE.!2m2!1d5.498889528276064!2d-3.95217469001989!3f247.8670901394431!4f-1.8908950135013782!5f0.4000000000000002">
+                                    <i class="ph ph-video-camera"></i> Visite 360°
+                                </a>
+                            </div>
+                        </div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title">Chambre Standard</h3>
+                                <span class="menu-card-price">25 000 FCFA</span>
+                            </div>
+                            <p class="menu-card-desc">Confort moderne avec climatisation, literie de qualité et douche
+                                privée. Petit-déjeuner inclus.</p>
+                            <div class="room-features mt-sm">
+                                <span><i class="ph ph-snowflake"></i> Clim</span>
+                                <span><i class="ph ph-wifi-high"></i> WiFi</span>
+                                <span><i class="ph ph-coffee"></i> Petit-déj</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bungalow -->
+                    <div class="menu-card">
+                        <div class="menu-card-img-container">
+                            <img src="assets/images/hebergement/chambre_2.png" alt="Bungalow Prestige"
+                                class="menu-card-img">
+                            <div class="virtual-tour-badge">
+                                <a href="https://maps.app.goo.gl/CAoSF0NJSE0wb2dLRUlDQWdJQzd1UFREdVFF" target="_blank"
+                                    data-tour-url="https://www.google.com/maps/embed?pb=!4v1771275275103!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJQzd1UFREdVFF!2m2!1d5.498892895454854!2d-3.952099999487551!3f16.31537817641083!4f-3.6233211137409427!5f0.7820865974627469">
+                                    <i class="ph ph-video-camera"></i> Visite 360°
+                                </a>
+                            </div>
+                        </div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title">Bungalow Prestige</h3>
+                                <span class="menu-card-price">35 000 FCFA</span>
+                            </div>
+                            <p class="menu-card-desc">Spacieux et indépendant, idéal pour une immersion totale dans la
+                                nature avec vue sur la lagune.</p>
+                            <div class="room-features mt-sm">
+                                <span><i class="ph ph-snowflake"></i> Clim</span>
+                                <span><i class="ph ph-waves"></i> Vue Lagune</span>
+                                <span><i class="ph ph-coffee"></i> Petit-déj</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Suite -->
+                    <div class="menu-card">
+                        <div class="menu-card-img-container">
+                            <img src="assets/images/hebergement/chambre_6.png" alt="Suite Familiale"
+                                class="menu-card-img">
+                            <div class="virtual-tour-badge">
+                                <a href="https://maps.app.goo.gl/CAoSF0NJSE0wb2dLRUlDQWdJQzd1SXlLaGdF" target="_blank"
+                                    data-tour-url="https://www.google.com/maps/embed?pb=!4v1771275942485!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJQzd1SXlLaGdF!2m2!1d5.498939390132213!2d-3.952194529710711!3f291.8365108202825!4f-9.775947342272346!5f0.4000000000000002">
+                                    <i class="ph ph-video-camera"></i> Visite 360°
+                                </a>
+                            </div>
+                        </div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title">Suite Familiale</h3>
+                                <span class="menu-card-price">50 000 FCFA</span>
+                            </div>
+                            <p class="menu-card-desc">Parfaite pour les familles ou les groupes, offrant plusieurs
+                                couchages et un espace salon chaleureux.</p>
+                            <div class="room-features mt-sm">
+                                <span><i class="ph ph-users"></i> 4 Personnes</span>
+                                <span><i class="ph ph-snowflake"></i> Clim</span>
+                                <span><i class="ph ph-coffee"></i> Petit-déj</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-lg container-sm">
+                    <p class="section-description">
+                        Nos chambres sont conçues pour vous offrir une déconnexion totale. Chaque détail a été pensé
+                        pour votre bien-être.
+                    </p>
+                    <a href="https://wa.me/22507941094?text=Bonjour, je souhaite réserver une chambre" target="_blank"
+                        class="btn btn-primary mt-md">
+                        <i class="ph ph-calendar-check btn-icon"></i> Réserver maintenant
+                    </a>
+                </div>
+            </div>
+
+            <!-- SECTION FORMULES -->
+            <div id="formules-content" class="fade-in" style="display: none;">
+                <h2 class="menu-section-title">Nos Packs & Offres Spéciales</h2>
+                <div class="extra-menu-container">
+                    <div class="extra-menu-grid">
+                        <div class="extra-menu-item">
+                            <div class="extra-menu-item-info">
+                                <span class="extra-menu-item-name">Formule Détente (Nuitée + Petit-Déj)</span>
+                                <p class="extra-menu-item-desc"
+                                    style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">1 nuit en chambre standard,
+                                    accès piscine et petit-déjeuner continental.</p>
+                            </div>
+                            <span class="extra-menu-item-dots"></span>
+                            <span class="extra-menu-item-price">25 000 FCFA</span>
+                        </div>
+                        <div class="extra-menu-item">
+                            <div class="extra-menu-item-info">
+                                <span class="extra-menu-item-name">Formule Évasion (Nuitée + Déjeuner + Dîner)</span>
+                                <p class="extra-menu-item-desc"
+                                    style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">Pension complète incluant
+                                    vin lors du dîner et petit-déjeuner le lendemain.</p>
+                            </div>
+                            <span class="extra-menu-item-dots"></span>
+                            <span class="extra-menu-item-price">70 000 FCFA</span>
+                        </div>
+                        <div class="extra-menu-item">
+                            <div class="extra-menu-item-info">
+                                <span class="extra-menu-item-name">Pack Romantique (Dîner 2 pers. + Vin)</span>
+                                <p class="extra-menu-item-desc"
+                                    style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">Dîner aux chandelles au
+                                    bord de l'eau pour deux personnes.</p>
+                            </div>
+                            <span class="extra-menu-item-dots"></span>
+                            <span class="extra-menu-item-price">25 000 FCFA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Autres infos -->
+                <div class="info-notice mt-lg fade-in">
+                    <h3><i class="ph ph-warning-circle"></i> Informations de Réservation</h3>
+                    <ul>
+                        <li>Check-in : 14h00 | Check-out : 12h00</li>
+                        <li>Réservation conseillée au moins 48h à l'avance pour les week-ends.</li>
+                        <li>Les tarifs peuvent varier lors d'événements spéciaux.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2026 Espace Beach Ahoué. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox/Modal (Géré par script.js) -->
+
+    <!-- SCRIPTS -->
+    <script src="assets/js/script.js"></script>
+    <script>
+        // Fonction spécifique pour cette page (similaire à menu.html)
+        function switchTab(tab) {
+            const chambresContent = document.getElementById('chambres-content');
+            const formulesContent = document.getElementById('formules-content');
+            const tabs = document.querySelectorAll('.menu-tab');
+
+            tabs.forEach(t => t.classList.remove('active'));
+
+            if (tab === 'chambres') {
+                chambresContent.style.display = 'block';
+                formulesContent.style.display = 'none';
+                document.querySelector('[href="#chambres"]').classList.add('active');
+            } else {
+                chambresContent.style.display = 'none';
+                formulesContent.style.display = 'block';
+                document.querySelector('[href="#formules"]').classList.add('active');
+            }
+        }
+
+        // Gérer le hash au chargement
+        window.addEventListener('load', () => {
+            const hash = window.location.hash.replace('#', '');
+            if (hash === 'formules') {
+                switchTab('formules');
+            }
+        });
+    </script>
+</body>
+
+</html>

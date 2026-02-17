@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Découvrez le menu authentique de l'Espace Beach Ahoué. Volailles, grillades, spécialités ivoiriennes et sélection de vins.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://espacebeachahoue.com/menu.html">
+    <meta property="og:title" content="Notre Carte - Espace Beach Ahoué">
+    <meta property="og:description"
+        content="Volailles, grillades, spécialités ivoiriennes et sélection de vins. Le cadre idéal pour savourer le meilleur d'Ahoué.">
+    <meta property="og:image" content="assets/images/gallerie/paysage_22.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://espacebeachahoue.com/menu.html">
+    <meta property="twitter:title" content="Notre Carte - Espace Beach Ahoué">
+    <meta property="twitter:description"
+        content="Volailles, grillades, spécialités ivoiriennes et sélection de vins. Le cadre idéal pour savourer le meilleur d'Ahoué.">
+    <meta property="twitter:image" content="assets/images/gallerie/paysage_22.png">
+
+    <title>Notre Carte - Espace Beach Ahoué</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar" id="navbar">
+        <div class="container-wide">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="Espace Beach Ahoué Logo" class="logo-img">
+                <span>Espace Beach Ahoué</span>
+            </a>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menu">
+                <i class="ph ph-list"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html#presentation" class="nav-link">À propos</a></li>
+                <li class="nav-item-dropdown">
+                    <a href="index.html#hebergement" class="nav-link">Hébergement <i
+                            class="ph ph-caret-down caret-icon"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="hebergement.html" class="dropdown-link">Nos Chambres</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item-dropdown">
+                    <a href="index.html#restaurant" class="nav-link active">
+                        Restaurant & Bar <i class="ph ph-caret-down caret-icon"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="menu.html" class="dropdown-link">Notre Carte</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item-dropdown">
+                    <a href="index.html#evenements" class="nav-link">
+                        Événements <i class="ph ph-caret-down caret-icon"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="evenements.html" class="dropdown-link">Nos Offres</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html#galerie" class="nav-link">Galerie</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="menu-hero"
+        style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/images/menu/poisson_braise.png');">
+        <div class="container">
+            <h1 class="fade-in" style="font-size: clamp(3rem, 6vw, 5rem); margin-bottom: 1rem;">Notre Menu</h1>
+            <p class="subtitle fade-in" style="color: var(--color-gold);">Une immersion culinaire en bordure d'eau</p>
+        </div>
+    </section>
+
+    <!-- MENU CONTENT -->
+    <section class="section">
+        <div class="container">
+
+            <div class="menu-tabs fade-in">
+                <a href="#repas" class="menu-tab active" onclick="switchTab('repas')">La Cuisine</a>
+                <a href="#boissons" class="menu-tab" onclick="switchTab('boissons')">Les Boissons</a>
+            </div>
+
+            <!-- SECTION REPAS -->
+            <div id="repas-content" class="fade-in">
+
+                <!--SPECIALITES-->
+                <h2 class="menu-section-title">Nos Spécialités </h2>
+                <div class="menu-grid">
+                    <div class="menu-card">
+                        <div class="menu-card-img-container">
+                            <img src="assets/images/menu/marmite_pecheur_1.png" alt="Marmite du pecheur"
+                                class="menu-card-img">
+                        </div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title">Marmite du pecheur</h3>
+                                <span class="menu-card-price">15 000 FCFA</span>
+                            </div>
+                            <p class="menu-card-desc">Une spécialité locale traditionelle. Crevettess, poisson carpe,
+                                , servi avec du riz ou de l'attiéké savoureux.</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-img-container">
+                            <img src="assets/images/menu/la_villageoise.png" alt="La Villageoise" class="menu-card-img"
+                                style="filter: hue-rotate(-20deg);">
+                        </div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title">La villageoise</h3>
+                                <span class="menu-card-price">15 000 FCFA</span>
+                            </div>
+                            <p class="menu-card-desc">Une recette traditionnelle aux ingredient locauxs,
+                                escargots, écrevisses,
+                                champignons. Un incontournable généreux et équilibré.</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-img-container">
+                            <img src="assets/images/menu/brochette_agouti.png" alt="Brochettes d'Agouti"
+                                class="menu-card-img">
+                        </div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title">Brochettes d'Agoutis</h3>
+                                <span class="menu-card-price">7 000 FCFA</span>
+                            </div>
+                            <p class="menu-card-desc">Tendre et juteux, nos brochettes sont marinés avec une sauce
+                                locale avant de rejoindre le grill pour une cuisson parfaite.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="extra-menu-container">
+                    <h4 class="extra-menu-title">Suite Spécialités</h4>
+                    <div class="extra-menu-grid">
+
+                        <!-- <div class="extra-menu-item">
+                            <span class="extra-menu-item-name">Kedjenou de Poisson</span>
+                            <span class="extra-menu-item-dots"></span>
+                            <span class="extra-menu-item-price">8 000 FCFA</span>
+                        </div>
+                        <div class="extra-menu-item">
+                            <span class="extra-menu-item-name">Sauce Gnangnan Spéciale</span>
+                            <span class="extra-menu-item-dots"></span>
+                            <span class="extra-menu-item-price">6 000 FCFA</span>
+                        </div>
+                        <div class="extra-menu-item">
+                            <span class="extra-menu-item-name">Placali Sauce Graine</span>
+                            <span class="extra-menu-item-dots"></span>
+                            <span class="extra-menu-item-price">10 000 FCFA</span>
+                        </div> -->
+                    </div>
+                </div>
+
+                <!-- POISSONS & CRUSTACES -->
+                <h2 class="menu-section-title">Nos Poissons & Crustacés</h2>
+
+                <!-- POISSONS -->
+                <h3 class="menu-category-separator text-center"
+                    style="font-size: 1.5rem; margin-top: 1rem; border: none; color: var(--color-gold);">Poissons</h3>
+                <div class="menu-grid">
+                    <div class="menu-card">
+                        <div class="menu-card-img-container">
+                            <img src="assets/images/menu/soupe_machoiron.png" alt="Soupe machoiron"
+                                class="menu-card-img">
+                        </div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title">Soupe de Machoiron</h3>
+                                <span class="menu-card-price">7 000 FCFA</span>
+                            </div>
+                            <p class="menu-card-desc">La soupe de machoiron est un délicieux plat, a base d'ingrédients
+                                frais. Il s'accompagne iéalement d'attiéké à l'huile rouge.</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-img-container">
+                            <img src="assets/images/menu/poisson_braise.png" alt="Carpe Braisée" class="menu-card-img"
+                                style="filter: brightness(1.1);">
+                        </div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title">Carpe Braisée</h3>
+                                <span class="menu-card-price">5 000 FCFA</span>
+                            </div>
+                            <p class="menu-card-desc">Le trésor de la lagune. Poisson carpe charnu braissé, servi avec
+                                son accompagnement au choix, pour une
+                                explosion de saveurs en bouche.</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-img-container">
+                            <img src="assets/images/menu/poisson_fumé.png" alt="Poisson fumé" class="menu-card-img">
+                        </div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title">Poisson fumé</h3>
+                                <span class="menu-card-price">5 000 FCFA</span>
+                            </div>
+                            <p class="menu-card-desc">Véritable classsique du littoral ivoirien, il s'accompagne
+                                d'attiéké avec de la garniture à base de piments, de tomates et d'oignons finement
+                                découpés.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="extra-menu-container">
+                    <h4 class="extra-menu-title">Suite Poissons</h4>
+                    <div class="extra-menu-grid">
+                        <div class="extra-menu-item">
+                            <span class="extra-menu-item-name">Poisson Sosso sauté ou au four</span>
+                            <span class="extra-menu-item-dots"></span>
+                            <span class="extra-menu-item-price">5 000 - 8 000 FCFA</span>
+                        </div>
+                        <div class="extra-menu-item">
+                            <span class="extra-menu-item-name">Poisson Sole braisé ou sautée</span>
+                            <span class="extra-menu-item-dots"></span>
+                            <span class="extra-menu-item-price">5 000 FCFA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CRUSTACES -->
+                <h3 class="menu-category-separator text-center"
+                    style="font-size: 1.5rem; margin-top: 1rem; border: none; color: var(--color-gold);">Les Crustacés
+                </h3>
+                <div class="menu-grid">
+                    <div class="menu-card">
+                        <div class="menu-card-img-container">
+                            <img src="assets/images/menu/gambas_sauté.png" alt="Gambas sautés" class="menu-card-img">
+                        </div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title">Gambas sautées</h3>
+                                <span class="menu-card-price">10 000 FCFA</span>
+                            </div>
+                            <p class="menu-card-desc">Nos gambas fraîches, sont prélevées localement. Marinées avec
+                                soin, elles gardent leurs saveurs après leur passage dans la poêle ou au four. Un vrai
+                                délice.</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-img-container">
+                            <img src="assets/images/menu/ecrevisses.png" alt="Ecrevisses" class="menu-card-img">
+                        </div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title">Ecrevisses au four</h3>
+                                <span class="menu-card-price">5 000 FCFA</span>
+                            </div>
+                            <p class="menu-card-desc">Ecrevisses fraîches, cuites au four avec des épices et des
+                                légumes.</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-img-container">
+                            <img src="assets/images/menu/escargot_sauté.png" alt="Escargot sauté" class="menu-card-img"
+                                style="filter: sepia(0.3);">
+                        </div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title">Escargot sauté</h3>
+                                <span class="menu-card-price">5 000 FCFA</span>
+                            </div>
+                            <p class="menu-card-desc">Un « Must to see », toute une histoire. Un impératif à Ahoué
+                                Beach. Une saveur sans commentaires.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="extra-menu-container">
+                    <h4 class="extra-menu-title">Suite des Crustacés</h4>
+                    <div class="extra-menu-grid">
+
+                        <div class="extra-menu-item">
+                            <span class="extra-menu-item-name">Brochettes d'escargots</span>
+                            <span class="extra-menu-item-dots"></span>
+                            <span class="extra-menu-item-price">Demander prix</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VIANDES & VOLAILLES -->
+                <h2 class="menu-section-title">Nos Viandes & Volailles</h2>
+
+                <!-- VIANDES -->
+                <h3 class="menu-category-separator text-center"
+                    style="font-size: 1.5rem; margin-top: 1rem; border: none; color: var(--color-gold);">Les Viandes
+                </h3>
+                <div class="menu-grid">
+                    <div class="menu-card">
+                        <div class="menu-card-img-container">
+                            <img src="assets/images/menu/choukouya_mouton.png" alt="Choukouya mouton"
+                                class="menu-card-img">
+                        </div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title">Choukouya de mouton</h3>
+                                <span class="menu-card-price">10 000 FCFA</span>
+                            </div>
+                            <p class="menu-card-desc">Mijotée patiemment, le choucouya de mouton nous offre sa
+                                tendresse et son goût succulent.</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-img-container">
+                            <img src="assets/images/menu/kedjenou_herisson.png" alt="Kedjenou herisson"
+                                class="menu-card-img" style="filter: brightness(1.1);">
+                        </div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title">1/4 de Kedjenou d'hérisson</h3>
+                                <span class="menu-card-price">7 000 FCFA</span>
+                            </div>
+                            <p class="menu-card-desc">Gibier local noble, dont la saveur sauvage est exaltée par la
+                                des ingredients bio et frais.</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-img-container">
+                            <img src="assets/images/menu/rat_palmiste.png" alt="Rat palmiste" class="menu-card-img">
+                        </div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title">Rat palmiste braisé</h3>
+                                <span class="menu-card-price">6 000 FCFA</span>
+                            </div>
+                            <p class="menu-card-desc">Excelent choix pour ce roi du palmier, sa chair douce et
+                                savoureuse
+                                est un vrai délice.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="extra-menu-container">
+                    <h4 class="extra-menu-title">Suites Viandes </h4>
+                    <div class="extra-menu-grid">
+                        <div class="extra-menu-item">
+                            <span class="extra-menu-item-name">Côtelette d’agneau</span>
+                            <span class="extra-menu-item-dots"></span>
+                            <span class="extra-menu-item-price">10 000 FCFA</span>
+                        </div>
+                        <div class="extra-menu-item">
+                            <span class="extra-menu-item-name">Côte de bœuf</span>
+                            <span class="extra-menu-item-dots"></span>
+                            <span class="extra-menu-item-price">10 000 FCFA</span>
+                        </div>
+                        <div class="extra-menu-item">
+                            <span class="extra-menu-item-name">Côte de porc grillé</span>
+                            <span class="extra-menu-item-dots"></span>
+                            <span class="extra-menu-item-price">9 000 FCFA</span>
+                        </div>
+                        <div class="extra-menu-item">
+                            <span class="extra-menu-item-name">Choukouya de porc</span>
+                            <span class="extra-menu-item-dots"></span>
+                            <span class="extra-menu-item-price">9 000 FCFA</span>
+                        </div>
+                        <div class="extra-menu-item">
+                            <span class="extra-menu-item-name">Sauté de queue de bœuf</span>
+                            <span class="extra-menu-item-dots"></span>
+                            <span class="extra-menu-item-price">9 000 FCFA</span>
+                        </div>
+                        <div class="extra-menu-item">
+                            <span class="extra-menu-item-name">¼ Agoutif</span>
+                            <span class="extra-menu-item-dots"></span>
+                            <span class="extra-menu-item-price">7 000 FCFA</span>
+                        </div>
+                        <div class="extra-menu-item">
+                            <span class="extra-menu-item-name">Mangouste</span>
+                            <span class="extra-menu-item-dots"></span>
+                            <span class="extra-menu-item-price">7 000 FCFA</span>
+                        </div>
+                        <div class="extra-menu-item">
+                            <span class="extra-menu-item-name">Rat de brousse</span>
+                            <span class="extra-menu-item-dots"></span>
+                            <span class="extra-menu-item-price">6 000 FCFA</span>
+                        </div>
+                        <div class="extra-menu-item">
+                            <span class="extra-menu-item-name">Ecureuil</span>
+                            <span class="extra-menu-item-dots"></span>
+                            <span class="extra-menu-item-price">4 000 FCFA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!--VOLAILLES -->
+                <h3 class="menu-category-separator text-center"
+                    style="font-size: 1.5rem; margin-top: 1rem; border: none; color: var(--color-gold);">Les Volailles
+                </h3>
+                <div class="menu-grid">
+                    <div class="menu-card">
+                        <div class="menu-card-img-container">
+                            <img src="assets/images/menu/riz_soumara_poulet.png" alt="Riz Soumara Poulet"
+                                class="menu-card-img" style="filter: sepia(0.3);">
+                        </div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title">Riz Soumara au Poulet</h3>
+                                <span class="menu-card-price">9 000 FCFA</span>
+                            </div>
+                            <p class="menu-card-desc">En plus de ces vertus thérapeutiques, le soumara offre au riz et
+                                au poulet une saveur atypique qui fouettera vos papilles gustatives.</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-img-container">
+                            <img src="assets/images/menu/kedjenou_pintade_2.png" alt="Kedjenou Pintade"
+                                class="menu-card-img">
+                        </div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title"> Kedjenou de pintade</h3>
+                                <span class="menu-card-price">8 000 FCFA</span>
+                            </div>
+                            <p class="menu-card-desc">La pintade, volaille par excellence, est mijotée avec les
+                                meilleurs ingrédients et épices locales. La sauce riche et onctueuse saveurs ne vous
+                                laissera pas indifférent.</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-img-container">
+                            <img src="assets/images/menu/poulet_braisé.png" alt="Poulet braisé" class="menu-card-img">
+                        </div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title">Poulet braisé</h3>
+                                <span class="menu-card-price">7 000 FCFA</span>
+                            </div>
+                            <p class="menu-card-desc">L'incontournable local issu des fermes environnantes dont la
+                                saveur est exaltée par la caresse des flammes..</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="extra-menu-container">
+                    <h4 class="extra-menu-title">Suite Volailles</h4>
+                    <div class="extra-menu-grid">
+                        <div class="extra-menu-item">
+                            <span class="extra-menu-item-name">Riz Soumara pintade</span>
+                            <span class="extra-menu-item-dots"></span>
+                            <span class="extra-menu-item-price">10 000 FCFA</span>
+                        </div>
+                        <div class="extra-menu-item">
+                            <span class="extra-menu-item-name">Riz cantonnais pintadet</span>
+                            <span class="extra-menu-item-dots"></span>
+                            <span class="extra-menu-item-price">10 000 FCFA</span>
+                        </div>
+                        <div class="extra-menu-item">
+                            <span class="extra-menu-item-name">Riz cantonnais au poulet</span>
+                            <span class="extra-menu-item-dots"></span>
+                            <span class="extra-menu-item-price">9 000 FCFA</span>
+                        </div>
+                        <div class="extra-menu-item">
+                            <span class="extra-menu-item-name">Pintade braisée</span>
+                            <span class="extra-menu-item-dots"></span>
+                            <span class="extra-menu-item-price">8 000 FCFA</span>
+                        </div>
+                        <div class="extra-menu-item">
+                            <span class="extra-menu-item-name">Pintade sautée</span>
+                            <span class="extra-menu-item-dots"></span>
+                            <span class="extra-menu-item-price">8 000 FCFA</span>
+                        </div>
+                        <div class="extra-menu-item">
+                            <span class="extra-menu-item-name">Poulet sauté</span>
+                            <span class="extra-menu-item-dots"></span>
+                            <span class="extra-menu-item-price">7 000 FCFA</span>
+                        </div>
+                        <div class="extra-menu-item">
+                            <span class="extra-menu-item-name">Kédjénou de poulet</span>
+                            <span class="extra-menu-item-dots"></span>
+                            <span class="extra-menu-item-price">7 000 FCFA</span>
+                        </div>
+                        <div class="extra-menu-item">
+                            <span class="extra-menu-item-name">Caille braisée</span>
+                            <span class="extra-menu-item-dots"></span>
+                            <span class="extra-menu-item-price">5 000 FCFA</span>
+                        </div>
+                        <div class="extra-menu-item">
+                            <span class="extra-menu-item-name">Caille sautée</span>
+                            <span class="extra-menu-item-dots"></span>
+                            <span class="extra-menu-item-price">5 000 FCFA</span>
+                        </div>
+                        <div class="extra-menu-item">
+                            <span class="extra-menu-item-name">Kedjenou de Caille</span>
+                            <span class="extra-menu-item-dots"></span>
+                            <span class="extra-menu-item-price">5 000 FCFA</span>
+                        </div>
+                        <div class="extra-menu-item">
+                            <span class="extra-menu-item-name">Perdrix braisée</span>
+                            <span class="extra-menu-item-dots"></span>
+                            <span class="extra-menu-item-price">4 000 FCFA</span>
+                        </div>
+                        <div class="extra-menu-item">
+                            <span class="extra-menu-item-name">Perdrix sautée</span>
+                            <span class="extra-menu-item-dots"></span>
+                            <span class="extra-menu-item-price">4 000 FCFA</span>
+                        </div>
+                        <div class="extra-menu-item">
+                            <span class="extra-menu-item-name">Kedjenou de Perdrix</span>
+                            <span class="extra-menu-item-dots"></span>
+                            <span class="extra-menu-item-price">4 000 FCFA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!--   CAILLE -->
+                <!--  <h3 class="menu-category-separator text-center"
+                    style="font-size: 1.5rem; margin-top: 1rem; border: none; color: var(--color-gold);">La Caille</h3>
+                <div class="menu-grid">
+                    <div class="menu-card">
+                        <div class="menu-card-img-container">
+                            <img src="assets/images/menu/caille.jpg" alt="Caille Braisée" class="menu-card-img">
+                        </div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title">Caille Braisée</h3>
+                                <span class="menu-card-price">5 000 FCFA</span>
+                            </div>
+                            <p class="menu-card-desc">Un met délicat et raffiné. Nos cailles sont grillées avec
+                                précision pour préserver leur finesse.</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-img-container">
+                            <img src="assets/images/menu/caille.jpg" alt="Caille Sautée" class="menu-card-img"
+                                style="filter: brightness(0.9);">
+                        </div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title">Caille Sautée</h3>
+                                <span class="menu-card-price">5 000 FCFA</span>
+                            </div>
+                            <p class="menu-card-desc">Sautées à la minute avec une touche de déglaçage pour un fini
+                                gourmand et succulent.</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-img-container">
+                            <img src="assets/images/menu/kedjenou.jpg" alt="Kédjénou de Caille" class="menu-card-img"
+                                style="filter: contrast(1.2);">
+                        </div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title">Kédjénou de Caille</h3>
+                                <span class="menu-card-price">5 000 FCFA</span>
+                            </div>
+                            <p class="menu-card-desc">Une concentration de saveurs dans ce petit format de kédjénou,
+                                intensément parfumé.</p>
+                        </div>
+                    </div>
+                </div>
+ -->
+                <!-- PERDRIX -->
+                <!--  <h3 class="menu-category-separator text-center"
+                    style="font-size: 1.5rem; margin-top: 1rem; border: none; color: var(--color-gold);">La Perdrix</h3>
+                <div class="menu-grid">
+                    <div class="menu-card">
+                        <div class="menu-card-img-container">
+                            <img src="assets/images/menu/caille.jpg" alt="Perdrix Braisée" class="menu-card-img"
+                                style="transform: scaleX(-1);">
+                        </div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title">Perdrix Braisée</h3>
+                                <span class="menu-card-price">4 000 FCFA</span>
+                            </div>
+                            <p class="menu-card-desc">Gibier local noble, dont la saveur sauvage est exaltée par la
+                                caresse des flammes.</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-img-container">
+                            <img src="assets/images/menu/caille.jpg" alt="Perdrix Sautée" class="menu-card-img"
+                                style="transform: scaleX(-1); filter: brightness(1.1);">
+                        </div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title">Perdrix Sautée</h3>
+                                <span class="menu-card-price">4 000 FCFA</span>
+                            </div>
+                            <p class="menu-card-desc">Préparée avec une garniture aromatique pour un équilibre parfait
+                                entre caractère et douceur.</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-img-container">
+                            <img src="assets/images/menu/kedjenou.jpg" alt="Kédjénou de Perdrix" class="menu-card-img"
+                                style="filter: brightness(0.8);">
+                        </div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title">Kédjénou de Perdrix</h3>
+                                <span class="menu-card-price">4 000 FCFA</span>
+                            </div>
+                            <p class="menu-card-desc">Mijotée patiemment, cette perdrix s'enrobe d'une sauce veloutée
+                                pleine d'histoire.</p>
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- AUTRES PLATS -->
+                <!--  <h2 class="menu-section-title">Incontournables</h2>
+                <div class="menu-grid">
+                    <div class="menu-card">
+                        <div class="menu-card-img-container">
+                            <img src="assets/images/menu/poisson_braise.png" alt="Poisson Braisé" class="menu-card-img">
+                        </div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title">Poisson Braisé</h3>
+                                <span class="menu-card-price">8 000 FCFA</span>
+                            </div>
+                            <p class="menu-card-desc">Le trésor de la lagune. Poisson charnu grillé, servi avec son
+                                attiéké et son accompagnement traditionnel.</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-img-container">
+                            <img src="assets/images/menu/escargot.jpg" alt="Escargots" class="menu-card-img">
+                        </div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title">Escargots Sautés</h3>
+                                <span class="menu-card-price">5 000 FCFA</span>
+                            </div>
+                            <p class="menu-card-desc">Gros escargots sautés généreusement, relevés par une pointe de
+                                piment et des poivrons colorés.</p>
+                        </div>
+                    </div>
+                </div>
+ -->
+                <!-- ACCOMPAGNEMENTS -->
+                <h2 class="menu-section-title">Nos Accompagnements</h2>
+                <div class="menu-grid" style="grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));">
+
+                    <div class="menu-card">
+                        <div class="menu-card-img-container" style="height: 180px;">
+                            <img src="assets/images/menu/frites.png" alt="Frites" class="menu-card-img">
+                        </div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title">Frites Pommes de terre</h3>
+                                <span class="menu-card-price">2 000 FCFA</span>
+                            </div>
+                            <p class="menu-card-desc">Croustillantes et faites maison.</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-card">
+                        <div class="menu-card-img-container" style="height: 180px;">
+                            <img src="assets/images/menu/alloco_1.png" alt="Alloco" class="menu-card-img">
+                        </div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title">Alloco</h3>
+                                <span class="menu-card-price">1 000 FCFA</span>
+                            </div>
+                            <p class="menu-card-desc">Bananes plantains frites, dorées et sucrées.</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-card">
+                        <div class="menu-card-img-container" style="height: 180px;">
+                            <img src="assets/images/menu/igname_bouillie.png" alt="Igname Bouillie"
+                                class="menu-card-img">
+                        </div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title">Igname Bouillie</h3>
+                                <span class="menu-card-price">1 000 FCFA</span>
+                            </div>
+                            <p class="menu-card-desc">Igname du terroir.</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-card">
+                        <div class="menu-card-img-container" style="height: 180px;">
+                            <img src="assets/images/menu/attiéké.png" alt="Attiéké" class="menu-card-img">
+                        </div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title">Attiéké ou Riz</h3>
+                                <span class="menu-card-price">500 FCFA</span>
+                            </div>
+                            <p class="menu-card-desc">Attiéké et riz local de haute qualité.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="extra-menu-container">
+                    <h4 class="extra-menu-title">Extras</h4>
+                    <div class="extra-menu-grid">
+                        <div class="extra-menu-item">
+                            <span class="extra-menu-item-name">Igname Frite</span>
+                            <span class="extra-menu-item-dots"></span>
+                            <span class="extra-menu-item-price">1 500 FCFA</span>
+                        </div>
+                        <div class="extra-menu-item">
+                            <span class="extra-menu-item-name">Sauce Graine</span>
+                            <span class="extra-menu-item-dots"></span>
+                            <span class="extra-menu-item-price">1 000 FCFA</span>
+                        </div>
+                        <div class="extra-menu-item">
+                            <span class="extra-menu-item-name">Sauce Arachide</span>
+                            <span class="extra-menu-item-dots"></span>
+                            <span class="extra-menu-item-price">1 000 FCFA</span>
+                        </div>
+                        <div class="extra-menu-item">
+                            <span class="extra-menu-item-name">Sauce Gnangnan</span>
+                            <span class="extra-menu-item-dots"></span>
+                            <span class="extra-menu-item-price">1 000 FCFA</span>
+                        </div>
+                        <div class="extra-menu-item">
+                            <span class="extra-menu-item-name">Sauce Aubergine</span>
+                            <span class="extra-menu-item-dots"></span>
+                            <span class="extra-menu-item-price">1 000 FCFA</span>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <!-- 
+                    <div class="menu-card">
+                        <div class="menu-card-img-container" style="height: 180px;">
+                            <img src="assets/images/menu/igname_bouillie.png" alt="Igname Bouillie ou Igname Frite"
+                                class="menu-card-img">
+                        </div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title">Igname Bouillie ou Igname Frite</h3>
+                                <span class="menu-card-price">1 000 FCFA</span>
+                            </div>
+                        </div>
+
+                        <div class="menu-card">
+                            <div class="menu-card-img-container" style="height: 180px;">
+                                <img src="assets/images/menu/attiéké.png" alt="attiéké" class="menu-card-img">
+                            </div>
+                            <div class="menu-card-content">
+                                <div class="menu-card-header">
+                                    <h3 class="menu-card-title">Attiéké ou Riz</h3>
+                                    <span class="menu-card-price">500 FCFA</span>
+                                </div>
+                            </div>
+                        </div> -->
+
+                <!--     <p class="menu-card-desc">Bananes plantains frites, dorées et sucrées.</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-card">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title">Igname Bouillie ou Igname Frite</h3>
+                                <span class="menu-card-price">1 000 FCFA</span>
+                            </div>
+                            <p class="menu-card-desc">Morceaux d'igname fondants cuits avec soin.</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title">Igname Bouillie ou Igname Frite</h3>
+                                <span class="menu-card-price">1 000 FCFA</span>
+                            </div>
+                            <p class="menu-card-desc">Un bâtonnet d'igname croustillant et original.</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title">Attiéké / Riz</h3>
+                                <span class="menu-card-price">500 FCFA</span>
+                            </div>
+                            <p class="menu-card-desc">Portion généreuse en supplément.</p>
+                        </div>
+                    </div> -->
+
+            </div> <!-- Fine of menu-grid accompaniments -->
+        </div> <!-- Fine of repas-content -->
+
+        <!-- SECTION BOISSONS -->
+        <div id="boissons-content" class="fade-in" style="display: none;">
+            <!-- SPIRITUEUX -->
+            <h2 class="menu-section-title">Spiritueux</h2>
+            <div class="category-banner-container">
+                <img src="assets/images/menu/spiritueux.png" alt="Spiritueux" class="category-banner-img">
+            </div>
+            <div class="extra-menu-container">
+                <div class="extra-menu-grid">
+                    <div class="extra-menu-item">
+                        <span class="extra-menu-item-name">Champagne</span>
+                        <span class="extra-menu-item-dots"></span>
+                        <span class="extra-menu-item-price">25 000 FCFA</span>
+                    </div>
+                    <div class="extra-menu-item">
+                        <span class="extra-menu-item-name">Martini</span>
+                        <span class="extra-menu-item-dots"></span>
+                        <span class="extra-menu-item-price">13 000 FCFA</span>
+                    </div>
+                    <div class="extra-menu-item">
+                        <span class="extra-menu-item-name">Campari</span>
+                        <span class="extra-menu-item-dots"></span>
+                        <span class="extra-menu-item-price">10 000 FCFA</span>
+                    </div>
+                    <div class="extra-menu-item">
+                        <span class="extra-menu-item-name">Vin mousseux</span>
+                        <span class="extra-menu-item-dots"></span>
+                        <span class="extra-menu-item-price">7 000 FCFA</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VINS -->
+            <h2 class="menu-section-title">Vins</h2>
+            <div class="category-banner-container">
+                <img src="assets/images/menu/vins.png" alt="Vins" class="category-banner-img">
+            </div>
+            <div class="extra-menu-container">
+                <div class="extra-menu-grid">
+                    <div class="extra-menu-item">
+                        <span class="extra-menu-item-name">Vin Bordeaux</span>
+                        <span class="extra-menu-item-dots"></span>
+                        <span class="extra-menu-item-price">3 000 --- 8 000 FCFA</span>
+                    </div>
+                    <div class="extra-menu-item">
+                        <span class="extra-menu-item-name">Vin Valpierre</span>
+                        <span class="extra-menu-item-dots"></span>
+                        <span class="extra-menu-item-price">2 500 FCFA</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BIERES -->
+            <h2 class="menu-section-title">Bières</h2>
+            <div class="category-banner-container">
+                <img src="assets/images/menu/bieres.png" alt="Bières" class="category-banner-img">
+            </div>
+            <div class="extra-menu-container">
+                <div class="extra-menu-grid">
+                    <div class="extra-menu-item">
+                        <span class="extra-menu-item-name">Beaufort</span>
+                        <span class="extra-menu-item-dots"></span>
+                        <span class="extra-menu-item-price">800 FCFA</span>
+                    </div>
+                    <div class="extra-menu-item">
+                        <span class="extra-menu-item-name">Téquila</span>
+                        <span class="extra-menu-item-dots"></span>
+                        <span class="extra-menu-item-price">700 FCFA</span>
+                    </div>
+                    <div class="extra-menu-item">
+                        <span class="extra-menu-item-name">Bock 66</span>
+                        <span class="extra-menu-item-dots"></span>
+                        <span class="extra-menu-item-price">700 FCFA</span>
+                    </div>
+                    <div class="extra-menu-item">
+                        <span class="extra-menu-item-name">Despérado</span>
+                        <span class="extra-menu-item-dots"></span>
+                        <span class="extra-menu-item-price">700 FCFA</span>
+                    </div>
+                    <div class="extra-menu-item">
+                        <span class="extra-menu-item-name">Racine</span>
+                        <span class="extra-menu-item-dots"></span>
+                        <span class="extra-menu-item-price">700 FCFA</span>
+                    </div>
+                    <div class="extra-menu-item">
+                        <span class="extra-menu-item-name">Dopel</span>
+                        <span class="extra-menu-item-dots"></span>
+                        <span class="extra-menu-item-price">700 FCFA</span>
+                    </div>
+                    <div class="extra-menu-item">
+                        <span class="extra-menu-item-name">Heineken</span>
+                        <span class="extra-menu-item-dots"></span>
+                        <span class="extra-menu-item-price">700 FCFA</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CAFES & SUCRERIES -->
+            <h2 class="menu-section-title">Cafés & Sucreries</h2>
+            <div class="category-banner-container">
+                <img src="assets/images/menu/sucreries.png" alt="Cafés & Sucreries" class="category-banner-img">
+            </div>
+            <div class="extra-menu-container">
+                <div class="extra-menu-grid">
+                    <div class="extra-menu-item">
+                        <span class="extra-menu-item-name">Café</span>
+                        <span class="extra-menu-item-dots"></span>
+                        <span class="extra-menu-item-price">1 000 FCFA</span>
+                    </div>
+                    <div class="extra-menu-item">
+                        <span class="extra-menu-item-name">Expresso</span>
+                        <span class="extra-menu-item-dots"></span>
+                        <span class="extra-menu-item-price">1 000 FCFA</span>
+                    </div>
+                    <div class="extra-menu-item">
+                        <span class="extra-menu-item-name">Orangina</span>
+                        <span class="extra-menu-item-dots"></span>
+                        <span class="extra-menu-item-price">1 000 FCFA</span>
+                    </div>
+                    <div class="extra-menu-item">
+                        <span class="extra-menu-item-name">Cody’s</span>
+                        <span class="extra-menu-item-dots"></span>
+                        <span class="extra-menu-item-price">1 000 FCFA</span>
+                    </div>
+                    <div class="extra-menu-item">
+                        <span class="extra-menu-item-name">Sanbitter</span>
+                        <span class="extra-menu-item-dots"></span>
+                        <span class="extra-menu-item-price">1 000 FCFA</span>
+                    </div>
+                    <div class="extra-menu-item">
+                        <span class="extra-menu-item-name">Sucreries (Fanta, Coca, etc..)</span>
+                        <span class="extra-menu-item-dots"></span>
+                        <span class="extra-menu-item-price">800 FCFA</span>
+                    </div>
+                    <div class="extra-menu-item">
+                        <span class="extra-menu-item-name">Rhino</span>
+                        <span class="extra-menu-item-dots"></span>
+                        <span class="extra-menu-item-price">700 FCFA</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-lg">
+                <a href="https://wa.me/22507941094" class="btn btn-primary btn-whatsapp">
+                    <i class="ph ph-whatsapp-logo btn-icon"></i>
+                    Commander / Réserver
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© 2026 Espace Beach Ahoué – Tous droits réservés</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="#" class="whatsapp-float" id="whatsappFloat" aria-label="Contacter sur WhatsApp">
+        <i class="ph ph-whatsapp-logo"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script src="assets/js/script.js"></script>
+    <script>
+        function switchTab(tabName) {
+            // Prevent default behavior if needed, although it's an anchor
+
+            // Hide all contents
+            document.getElementById('repas-content').style.display = 'none';
+            document.getElementById('boissons-content').style.display = 'none';
+
+            // Update tabs state
+            document.querySelectorAll('.menu-tab').forEach(tab => tab.classList.remove('active'));
+
+            // Show selected content
+            document.getElementById(tabName + '-content').style.display = 'block';
+
+            // Highlight active tab
+            // Using window.event for compatibility if not passed, but target is better
+            const clickedTab = Array.from(document.querySelectorAll('.menu-tab')).find(tab => tab.getAttribute('onclick').includes(tabName));
+            if (clickedTab) clickedTab.classList.add('active');
+        }
+    </script>
+</body>
+
+</html>
