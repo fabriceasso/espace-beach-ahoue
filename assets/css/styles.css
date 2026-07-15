@@ -694,6 +694,13 @@ p {
 }
 
 .hero-carousel .hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
   opacity: 0;
   transition: opacity 1.5s ease-in-out;
 }
@@ -825,6 +832,50 @@ p {
 
 .gallery-item:hover::after {
   opacity: 1;
+}
+
+.gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 12px 16px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  z-index: 2;
+}
+
+.gallery-item:hover .gallery-caption {
+  transform: translateY(0);
+}
+
+.gallery-extra {
+  display: none;
+}
+
+.gallery-extra.gallery-visible {
+  display: block;
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.gallery-cta {
+  text-align: center;
+  margin-top: var(--spacing-lg);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ============================================
@@ -1159,6 +1210,15 @@ p {
   }
 }
 
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
 /* ============================================
    PRINT STYLES
    ============================================ */
@@ -1184,6 +1244,7 @@ p {
   justify-content: center;
   text-align: center;
   position: relative;
+  overflow: hidden;
 }
 
 .menu-tabs {
@@ -1905,4 +1966,34 @@ p {
     height: 50px;
     font-size: 1.5rem;
   }
+}
+
+/* ============================================
+   TABS - SEO FRIENDLY VISIBILITY
+   ============================================ */
+.tab-panel {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.tab-panel.tab-active {
+  position: relative;
+  width: auto;
+  height: auto;
+  padding: inherit;
+  margin: inherit;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+  opacity: 1;
+  pointer-events: auto;
 }
