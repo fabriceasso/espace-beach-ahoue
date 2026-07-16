@@ -20,6 +20,16 @@ const CONFIG = {
 };
 
 // ============================================
+// SECURITY: Input Sanitization
+// ============================================
+function sanitizeHTML(str) {
+  if (typeof str !== 'string') return '';
+  const div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
+
+// ============================================
 // WHATSAPP INTEGRATION
 // ============================================
 function createWhatsAppLink(messageType = 'general') {
@@ -249,11 +259,13 @@ function initGlobalLightbox() {
 function openLightbox(src, alt) {
   const lightbox = document.createElement('div');
   lightbox.className = 'lightbox';
+  const safeSrc = sanitizeHTML(src);
+  const safeAlt = sanitizeHTML(alt);
   lightbox.innerHTML = `
     <div class="lightbox-overlay"></div>
     <div class="lightbox-content">
       <button class="lightbox-close" aria-label="Fermer">✕</button>
-      <img src="${src}" alt="${alt}">
+      <img src="${safeSrc}" alt="${safeAlt}">
     </div>
   `;
 
@@ -318,6 +330,11 @@ function openMenuModal(src, title, price, desc) {
   const buttonText = isAccommodation ? "Réserver cette chambre" : "Commander ce plat";
   const waMessage = isAccommodation ? "Bonjour, je souhaite réserver la chambre : " : "Bonjour, je souhaite commander : ";
 
+  const safeSrc = sanitizeHTML(src);
+  const safeTitle = sanitizeHTML(title);
+  const safePrice = sanitizeHTML(price);
+  const safeDesc = sanitizeHTML(desc);
+
   const modal = document.createElement('div');
   modal.className = 'menu-modal';
   modal.innerHTML = `
@@ -326,13 +343,13 @@ function openMenuModal(src, title, price, desc) {
       <button class="menu-modal-close" aria-label="Fermer">✕</button>
       <div class="menu-modal-grid">
         <div class="menu-modal-img">
-          <img src="${src}" alt="${title}">
+          <img src="${safeSrc}" alt="${safeTitle}">
         </div>
         <div class="menu-modal-info">
-          <h2 class="menu-modal-title">${title}</h2>
-          <div class="menu-modal-price">${price}</div>
-          <p class="menu-modal-description">${desc}</p>
-          <a href="https://wa.me/22507941094?text=${encodeURIComponent(waMessage + title)}" target="_blank" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+          <h2 class="menu-modal-title">${safeTitle}</h2>
+          <div class="menu-modal-price">${safePrice}</div>
+          <p class="menu-modal-description">${safeDesc}</p>
+          <a href="https://wa.me/22507941094?text=${encodeURIComponent(waMessage + title)}" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
             <i class="ph ph-whatsapp-logo"></i> ${buttonText}
           </a>
         </div>
@@ -348,7 +365,6 @@ function openMenuModal(src, title, price, desc) {
     if (closed) return;
     closed = true;
     document.removeEventListener('keydown', escapeHandler);
-    modal.classList.add('closing');
     modal.classList.add('closing');
     setTimeout(() => {
       try {
@@ -396,13 +412,14 @@ function initVirtualTour() {
 }
 
 function openVirtualTourModal(url) {
+  const safeUrl = sanitizeHTML(url);
   const modal = document.createElement('div');
   modal.className = 'menu-modal tour-modal';
   modal.innerHTML = `
     <div class="menu-modal-overlay"></div>
     <div class="menu-modal-content tour-modal-content" style="max-width: 90%; width: 1000px; height: 80vh;">
       <button class="menu-modal-close" aria-label="Fermer">✕</button>
-      <iframe src="${url}" width="100%" height="100%" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe src="${safeUrl}" width="100%" height="100%" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
     </div>
   `;
 
@@ -541,7 +558,7 @@ function initHeroCarousel() {
   // Changer d'image toutes les 5 secondes (5000ms)
   setInterval(changeImage, 5000);
 
-  console.log(`🎠 Carrousel initialisé avec ${images.length} images`);
+  // Carrousel initialisé silencieusement
 }
 
 // ============================================
@@ -586,7 +603,7 @@ function initParallax() {
 // ============================================
 function preloadCriticalImages() {
   const criticalImages = [
-    'ressources/images/paysage_0.jpg', // Hero image
+    'assets/images/hero/carrousel/11.png', // Hero image
   ];
 
   criticalImages.forEach(src => {
@@ -603,15 +620,12 @@ function preloadCriticalImages() {
 // ============================================
 function trackEvent(category, action, label) {
   // Placeholder pour Google Analytics ou autre
-  console.log('Event:', category, action, label);
-
-  // Exemple avec Google Analytics (décommenter si configuré):
-  // if (typeof gtag !== 'undefined') {
-  //   gtag('event', action, {
-  //     'event_category': category,
-  //     'event_label': label
-  //   });
-  // }
+  if (typeof gtag !== 'undefined') {
+    // gtag('event', action, {
+    //   'event_category': category,
+    //   'event_label': label
+    // });
+  }
 }
 
 // ============================================
@@ -670,11 +684,70 @@ function initContactForm() {
 }
 
 // ============================================
+// MENU TABS SWITCHING
+// ============================================
+function switchTab(tabName) {
+  // Remove active class from all tabs
+  document.querySelectorAll('.menu-tab').forEach(tab => {
+    tab.classList.remove('active');
+  });
+
+  // Remove tab-active class from all tab panels
+  document.querySelectorAll('.tab-panel').forEach(panel => {
+    panel.classList.remove('tab-active');
+  });
+
+  // Add active class to clicked tab
+  const clickedTab = document.querySelector(`.menu-tab[onclick="switchTab('${tabName}')"]`);
+  if (clickedTab) {
+    clickedTab.classList.add('active');
+  }
+
+  // Add tab-active class to corresponding panel
+  const panel = document.getElementById(`${tabName}-content`);
+  if (panel) {
+    panel.classList.add('tab-active');
+
+    // Force visibility for fade-in elements
+    if (panel.classList.contains('fade-in')) {
+      setTimeout(() => {
+        panel.classList.add('visible');
+      }, 10);
+    }
+  }
+}
+
+// ============================================
+// GALLERY TOGGLE (Voir plus / Voir moins)
+// ============================================
+function toggleGallery() {
+  const hiddenItems = document.querySelectorAll('.gallery-extra');
+  const btn = document.getElementById('galleryToggle');
+  const isExpanded = hiddenItems[0] && hiddenItems[0].classList.contains('gallery-visible');
+
+  hiddenItems.forEach((item, i) => {
+    if (isExpanded) {
+      item.classList.remove('gallery-visible');
+    } else {
+      setTimeout(() => {
+        item.classList.add('gallery-visible');
+      }, i * 50);
+    }
+  });
+
+  if (btn) {
+    if (isExpanded) {
+      btn.innerHTML = '<i class="ph ph-images-square btn-icon"></i> Voir plus';
+    } else {
+      btn.innerHTML = '<i class="ph ph-images-square btn-icon"></i> Voir moins';
+    }
+  }
+}
+
+// ============================================
 // INITIALIZATION
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('🏖️ Espace Beach Ahoué - Site chargé');
-
   // Initialiser toutes les fonctionnalités
   initWhatsAppButtons();
   initNavigation();
@@ -685,9 +758,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initVirtualTour();
   initLazyLoading();
   initScrollToTop();
-  // initHeroCarousel(); // Désactivé au profit de la vidéo d'ambiance
+  initHeroCarousel();
   initParallax();
-  initVirtualTour();
   initContactForm();
   preloadCriticalImages();
 
@@ -699,8 +771,6 @@ document.addEventListener('DOMContentLoaded', () => {
 // PERFORMANCE: Load event
 // ============================================
 window.addEventListener('load', () => {
-  console.log('✅ Tous les assets sont chargés');
-
   // SAFETY NET: Watchdog to unlock scroll if stuck
   setInterval(() => {
     const hasLightbox = document.querySelector('.lightbox');
@@ -714,11 +784,13 @@ window.addEventListener('load', () => {
     }
   }, 2000);
 
-  // Mesurer les performances (optionnel)
+  // Mesurer les performances (optionnel) - API moderne
   if ('performance' in window) {
-    const perfData = window.performance.timing;
-    const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
-    console.log(`⚡ Temps de chargement: ${pageLoadTime}ms`);
+    const navEntry = performance.getEntriesByType('navigation')[0];
+    if (navEntry) {
+      const pageLoadTime = Math.round(navEntry.loadEventEnd - navEntry.startTime);
+      // Performance tracking silencieux
+    }
   }
 });
 

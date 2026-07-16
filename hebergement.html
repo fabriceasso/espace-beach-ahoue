@@ -4,26 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; media-src 'self'; frame-src https://www.google.com https://www.google.com/maps; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none';">
     <meta name="description"
-        content="Découvrez nos hébergements à l'Espace Beach Ahoué. Chambres climatisées, bungalows tout confort et formules détente en bordure d'eau.">
+        content="Hébergement à Ahoué : chambres climatisées à 25 000 FCFA, bungalows prestige et suites familiales. Visites 360°, petit-déjeuner inclus.">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://espacebeachahoue.com/hebergement.html">
-    <meta property="og:title" content="Hébergement - Espace Beach Ahoué">
+    <meta property="og:title" content="Hébergement Ahoué - Chambres & Bungalows | Espace Beach Ahoué">
     <meta property="og:description"
-        content="Chambres climatisées, bungalows tout confort et formules détente en bordure d'eau à Ahoué.">
-    <meta property="og:image" content="assets/images/gallerie/paysage_22.png">
+        content="Chambres climatisées à partir de 25 000 FCFA, bungalows prestige et suites familiales en bordure d'eau à Ahoué.">
+    <meta property="og:image" content="https://espacebeachahoue.com/assets/images/hebergement/chambre_0.jpg">
+    <meta property="og:locale" content="fr_CI">
+    <meta property="og:site_name" content="Espace Beach Ahoué">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://espacebeachahoue.com/hebergement.html">
-    <meta property="twitter:title" content="Hébergement - Espace Beach Ahoué">
+    <meta property="twitter:title" content="Hébergement Ahoué - Chambres & Bungalows | Espace Beach Ahoué">
     <meta property="twitter:description"
-        content="Chambres climatisées, bungalows tout confort et formules détente en bordure d'eau à Ahoué.">
-    <meta property="twitter:image" content="assets/images/gallerie/paysage_22.png">
+        content="Chambres climatisées à partir de 25 000 FCFA, bungalows prestige et suites familiales en bordure d'eau à Ahoué.">
+    <meta property="twitter:image" content="https://espacebeachahoue.com/assets/images/hebergement/chambre_0.jpg">
 
-    <title>Hébergement - Espace Beach Ahoué</title>
+    <!-- Canonical -->
+    <link rel="canonical" href="https://espacebeachahoue.com/hebergement.html">
+
+    <title>Hébergement Ahoué - Chambres & Bungalows | Espace Beach Ahoué</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,20 +38,47 @@
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
         rel="stylesheet">
 
-    <!-- Phosphor Icons -->
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Phosphor Icons (hébergé en local) -->
+    <script src="assets/js/vendor/phosphor-icons.js"></script>
 
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/styles.css">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LodgingBusiness",
+      "name": "Espace Beach Ahoué",
+      "description": "Hôtel et hébergement en bordure d'eau à Ahoué, Côte d'Ivoire.",
+      "url": "https://espacebeachahoue.com/hebergement.html",
+      "telephone": "+2252733764359",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Route d'Alépé",
+        "addressLocality": "Ahoué",
+        "addressCountry": "CI"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 5.4992548,
+        "longitude": -3.9520831
+      },
+      "image": "https://espacebeachahoue.com/assets/images/hebergement/chambre_0.jpg",
+      "priceRange": "$$",
+      "numberOfRooms": "3",
+      "petsAllowed": false
+    }
+    </script>
 </head>
 
 <body>
 
     <!-- NAVIGATION -->
-    <nav class="navbar" id="navbar">
+    <nav class="navbar" id="navbar" aria-label="Navigation principale">
         <div class="container-wide">
             <a href="index.html" class="logo">
                 <img src="assets/images/logo.png" alt="Espace Beach Ahoué Logo" class="logo-img">
@@ -87,10 +120,16 @@
     </nav>
 
     <!-- HERO SECTION -->
-    <section class="menu-hero"
-        style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/images/hebergement/chambre_6.png');">
+    <section class="menu-hero">
+        <div class="hero-carousel">
+            <div class="hero-background active" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/images/hebergement/chambre_0.jpg');"></div>
+            <div class="hero-background" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/images/hebergement/chambre_1.jpg');"></div>
+            <div class="hero-background" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/images/hebergement/chambre_2.jpg');"></div>
+            <div class="hero-background" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/images/hebergement/chambre_3.jpg');"></div>
+            <div class="hero-background" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/images/hebergement/chambre_4.jpg');"></div>
+        </div>
         <div class="container">
-            <h1 class="fade-in" style="font-size: clamp(3rem, 6vw, 5rem); margin-bottom: 1rem;">Votre Séjour</h1>
+            <h1 class="fade-in" style="font-size: clamp(3rem, 6vw, 5rem); margin-bottom: 1rem;">Hébergement à Ahoué</h1>
             <p class="subtitle fade-in" style="color: var(--color-gold);">Un havre de paix entre confort et nature</p>
         </div>
     </section>
@@ -105,16 +144,16 @@
             </div>
 
             <!-- SECTION CHAMBRES -->
-            <div id="chambres-content" class="fade-in">
+            <div id="chambres-content" class="fade-in tab-panel tab-active">
                 <h2 class="menu-section-title">Hébergements disponibles</h2>
                 <div class="menu-grid">
                     <!-- Standard -->
                     <div class="menu-card">
                         <div class="menu-card-img-container">
-                            <img src="assets/images/hebergement/chambre_0.png" alt="Chambre Standard"
+                            <img src="assets/images/hebergement/chambre_0.jpg" alt="Chambre Standard"
                                 class="menu-card-img">
                             <div class="virtual-tour-badge">
-                                <a href="https://maps.app.goo.gl/CAoSFkNJSE0wb2dLRUlDQWdJQzd1UFMxYkE" target="_blank"
+                                <a href="https://maps.app.goo.gl/CAoSFkNJSE0wb2dLRUlDQWdJQzd1UFMxYkE" target="_blank" rel="noopener noreferrer"
                                     data-tour-url="https://www.google.com/maps/embed?pb=!4v1771272071524!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJQzd1UFMxYkE.!2m2!1d5.498889528276064!2d-3.95217469001989!3f247.8670901394431!4f-1.8908950135013782!5f0.4000000000000002">
                                     <i class="ph ph-video-camera"></i> Visite 360°
                                 </a>
@@ -138,10 +177,10 @@
                     <!-- Bungalow -->
                     <div class="menu-card">
                         <div class="menu-card-img-container">
-                            <img src="assets/images/hebergement/chambre_2.png" alt="Bungalow Prestige"
+                            <img src="assets/images/hebergement/chambre_2.jpg" alt="Bungalow Prestige"
                                 class="menu-card-img">
                             <div class="virtual-tour-badge">
-                                <a href="https://maps.app.goo.gl/CAoSF0NJSE0wb2dLRUlDQWdJQzd1UFREdVFF" target="_blank"
+                                <a href="https://maps.app.goo.gl/CAoSF0NJSE0wb2dLRUlDQWdJQzd1UFREdVFF" target="_blank" rel="noopener noreferrer"
                                     data-tour-url="https://www.google.com/maps/embed?pb=!4v1771275275103!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJQzd1UFREdVFF!2m2!1d5.498892895454854!2d-3.952099999487551!3f16.31537817641083!4f-3.6233211137409427!5f0.7820865974627469">
                                     <i class="ph ph-video-camera"></i> Visite 360°
                                 </a>
@@ -165,10 +204,10 @@
                     <!-- Suite -->
                     <div class="menu-card">
                         <div class="menu-card-img-container">
-                            <img src="assets/images/hebergement/chambre_6.png" alt="Suite Familiale"
+                            <img src="assets/images/hebergement/chambre_6.jpg" alt="Suite Familiale"
                                 class="menu-card-img">
                             <div class="virtual-tour-badge">
-                                <a href="https://maps.app.goo.gl/CAoSF0NJSE0wb2dLRUlDQWdJQzd1SXlLaGdF" target="_blank"
+                                <a href="https://maps.app.goo.gl/CAoSF0NJSE0wb2dLRUlDQWdJQzd1SXlLaGdF" target="_blank" rel="noopener noreferrer"
                                     data-tour-url="https://www.google.com/maps/embed?pb=!4v1771275942485!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJQzd1SXlLaGdF!2m2!1d5.498939390132213!2d-3.952194529710711!3f291.8365108202825!4f-9.775947342272346!5f0.4000000000000002">
                                     <i class="ph ph-video-camera"></i> Visite 360°
                                 </a>
@@ -195,7 +234,7 @@
                         Nos chambres sont conçues pour vous offrir une déconnexion totale. Chaque détail a été pensé
                         pour votre bien-être.
                     </p>
-                    <a href="https://wa.me/22507941094?text=Bonjour, je souhaite réserver une chambre" target="_blank"
+                    <a href="https://wa.me/22507941094?text=Bonjour, je souhaite réserver une chambre" target="_blank" rel="noopener noreferrer"
                         class="btn btn-primary mt-md">
                         <i class="ph ph-calendar-check btn-icon"></i> Réserver maintenant
                     </a>
@@ -203,7 +242,7 @@
             </div>
 
             <!-- SECTION FORMULES -->
-            <div id="formules-content" class="fade-in" style="display: none;">
+            <div id="formules-content" class="fade-in tab-panel">
                 <h2 class="menu-section-title">Nos Packs & Offres Spéciales</h2>
                 <div class="extra-menu-container">
                     <div class="extra-menu-grid">
@@ -254,10 +293,39 @@
         </div>
     </section>
 
+    <!-- LIENS INTERNES -->
+    <section class="section section-alt" aria-label="Découvrez aussi">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Découvrez aussi</h2>
+            </div>
+            <div class="features-grid fade-in">
+                <div class="feature-card" style="text-align: center;">
+                    <i class="ph ph-fork-knife event-icon" style="font-size: 2.5rem; color: var(--color-gold);"></i>
+                    <h3>Notre Menu</h3>
+                    <p>Spécialités ivoiriennes, poissons braisés, grillades et boissons.</p>
+                    <a href="menu.html" class="btn btn-primary mt-md" style="display: inline-block;">Voir la carte</a>
+                </div>
+                <div class="feature-card" style="text-align: center;">
+                    <i class="ph ph-confetti event-icon" style="font-size: 2.5rem; color: var(--color-gold);"></i>
+                    <h3>Événements</h3>
+                    <p>Mariages, baptêmes et séminaires jusqu'à 200 convives.</p>
+                    <a href="evenements.html" class="btn btn-primary mt-md" style="display: inline-block;">Voir nos offres</a>
+                </div>
+                <div class="feature-card" style="text-align: center;">
+                    <i class="ph ph-map-pin event-icon" style="font-size: 2.5rem; color: var(--color-gold);"></i>
+                    <h3>Nous trouver</h3>
+                    <p>Ahoué, route d'Alépé, à quelques kilomètres d'Abidjan.</p>
+                    <a href="index.html#contact" class="btn btn-primary mt-md" style="display: inline-block;">Plan & contact</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- FOOTER -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container text-center">
-            <p>&copy; 2026 Espace Beach Ahoué. Tous droits réservés.</p>
+            <p>&copy; 2026 Espace Beach Ahoué. Tous droits réservés. | <a href="mentions-legales.html" style="color: var(--color-gold); text-decoration: none;">Mentions Légales</a></p>
         </div>
     </footer>
 
@@ -266,30 +334,11 @@
     <!-- SCRIPTS -->
     <script src="assets/js/script.js"></script>
     <script>
-        // Fonction spécifique pour cette page (similaire à menu.html)
-        function switchTab(tab) {
-            const chambresContent = document.getElementById('chambres-content');
-            const formulesContent = document.getElementById('formules-content');
-            const tabs = document.querySelectorAll('.menu-tab');
-
-            tabs.forEach(t => t.classList.remove('active'));
-
-            if (tab === 'chambres') {
-                chambresContent.style.display = 'block';
-                formulesContent.style.display = 'none';
-                document.querySelector('[href="#chambres"]').classList.add('active');
-            } else {
-                chambresContent.style.display = 'none';
-                formulesContent.style.display = 'block';
-                document.querySelector('[href="#formules"]').classList.add('active');
-            }
-        }
-
         // Gérer le hash au chargement
         window.addEventListener('load', () => {
             const hash = window.location.hash.replace('#', '');
-            if (hash === 'formules') {
-                switchTab('formules');
+            if (['chambres', 'formules'].includes(hash)) {
+                switchTab(hash);
             }
         });
     </script>

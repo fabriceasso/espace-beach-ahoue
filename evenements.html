@@ -4,26 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; media-src 'self'; frame-src https://www.google.com https://www.google.com/maps; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none';">
     <meta name="description"
-        content="Organisez vos événements d'exception à l'Espace Beach Ahoué. Mariages, baptêmes, séminaires et soirées privées en bordure de lagune.">
+        content="Mariages, baptêmes, anniversaires et séminaires à Ahoué. Espace Beach Ahoué accueille vos événements jusqu'à 200 convives en bordure de lagune.">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://espacebeachahoue.com/evenements.html">
-    <meta property="og:title" content="Événements - Espace Beach Ahoué">
+    <meta property="og:title" content="Mariages & Événements Ahoué - Espace Beach Ahoué">
     <meta property="og:description"
-        content="Mariages, baptêmes, séminaires et soirées privées en bordure de lagune à Ahoué.">
-    <meta property="og:image" content="assets/images/gallerie/paysage_22.png">
+        content="Organisez vos mariages, baptêmes et séminaires dans un cadre idyllique en bord de lagune à Ahoué.">
+    <meta property="og:image" content="https://espacebeachahoue.com/assets/images/gallerie/mariage.jpg">
+    <meta property="og:locale" content="fr_CI">
+    <meta property="og:site_name" content="Espace Beach Ahoué">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://espacebeachahoue.com/evenements.html">
-    <meta property="twitter:title" content="Événements - Espace Beach Ahoué">
+    <meta property="twitter:title" content="Mariages & Événements Ahoué - Espace Beach Ahoué">
     <meta property="twitter:description"
-        content="Mariages, baptêmes, séminaires et soirées privées en bordure de lagune à Ahoué.">
-    <meta property="twitter:image" content="assets/images/gallerie/paysage_22.png">
+        content="Organisez vos mariages, baptêmes et séminaires dans un cadre idyllique en bord de lagune à Ahoué.">
+    <meta property="twitter:image" content="https://espacebeachahoue.com/assets/images/gallerie/mariage.jpg">
 
-    <title>Événements - Espace Beach Ahoué</title>
+    <!-- Canonical -->
+    <link rel="canonical" href="https://espacebeachahoue.com/evenements.html">
+
+    <title>Mariages & Événements Ahoué - Espace Beach Ahoué</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,20 +39,45 @@
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
         rel="stylesheet">
 
-    <!-- Phosphor Icons -->
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Phosphor Icons (hébergé en local) -->
+    <script src="assets/js/vendor/phosphor-icons.js"></script>
 
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/styles.css">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EventVenue",
+      "name": "Espace Beach Ahoué",
+      "description": "Lieu d'événements en bordure d'eau à Ahoué : mariages, baptêmes, séminaires.",
+      "url": "https://espacebeachahoue.com/evenements.html",
+      "telephone": "+2252733764359",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Route d'Alépé",
+        "addressLocality": "Ahoué",
+        "addressCountry": "CI"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 5.4992548,
+        "longitude": -3.9520831
+      },
+      "image": "https://espacebeachahoue.com/assets/images/gallerie/mariage.jpg",
+      "maximumAttendeeCapacity": 200
+    }
+    </script>
 </head>
 
 <body>
 
     <!-- NAVIGATION -->
-    <nav class="navbar" id="navbar">
+    <nav class="navbar" id="navbar" aria-label="Navigation principale">
         <div class="container-wide">
             <a href="index.html" class="logo">
                 <img src="assets/images/logo.png" alt="Espace Beach Ahoué Logo" class="logo-img">
@@ -87,10 +119,17 @@
     </nav>
 
     <!-- HERO SECTION -->
-    <section class="menu-hero"
-        style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/images/hero/carrousel/4.png');">
+    <section class="menu-hero">
+        <div class="hero-carousel">
+            <div class="hero-background active" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/images/gallerie/mariage.jpg');"></div>
+            <div class="hero-background" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/images/gallerie/anniversaire.jpg');"></div>
+            <div class="hero-background" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/images/gallerie/paysage_24.jpg');"></div>
+            <div class="hero-background" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/images/gallerie/restaurant_1.jpg');"></div>
+            <div class="hero-background" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/images/gallerie/repas_8.jpg');"></div>
+        </div>
         <div class="container">
-            <h1 class="fade-in" style="font-size: clamp(3rem, 6vw, 5rem); margin-bottom: 1rem;">Événements</h1>
+            <h1 class="fade-in" style="font-size: clamp(3rem, 6vw, 5rem); margin-bottom: 1rem;">Événements & Moments de
+                partage à Ahoué</h1>
             <p class="subtitle fade-in" style="color: var(--color-gold);">Le cadre idéal pour vos moments inoubliables
             </p>
         </div>
@@ -107,12 +146,12 @@
             </div>
 
             <!-- SECTION MARIAGES -->
-            <div id="mariages-content" class="fade-in">
+            <div id="mariages-content" class="fade-in tab-panel tab-active">
                 <div class="menu-grid">
                     <div class="menu-card" style="grid-column: 1 / -1; cursor: default;">
                         <div class="menu-modal-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0;">
                             <div class="menu-modal-img" style="height: 100%; min-height: 400px;">
-                                <img src="assets/images/gallerie/mariage.png" alt="Mariage au bord de l'eau">
+                                <img src="assets/images/gallerie/mariage.jpg" alt="Mariage au bord de l'eau">
                             </div>
                             <div class="menu-modal-info" style="padding: 3rem;">
                                 <h2 class="menu-modal-title">Mariages de Rêve</h2>
@@ -128,7 +167,7 @@
                                         nuptiale offerte pour les mariés</li>
                                 </ul>
                                 <a href="https://wa.me/22507941094?text=Bonjour, je souhaite des informations pour un mariage"
-                                    target="_blank" class="btn btn-primary">
+                                    target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                                     <i class="ph ph-calendar-plus btn-icon"></i> Devis personnalisé
                                 </a>
                             </div>
@@ -138,12 +177,12 @@
             </div>
 
             <!-- SECTION PRIVÉS -->
-            <div id="prives-content" class="fade-in" style="display: none;">
+            <div id="prives-content" class="fade-in tab-panel">
                 <div class="menu-grid">
                     <div class="menu-card" style="grid-column: 1 / -1; cursor: default;">
                         <div class="menu-modal-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0;">
                             <div class="menu-modal-img" style="height: 100%; min-height: 400px;">
-                                <img src="assets/images/gallerie/restaurant_1.png" alt="Fêtes de famille">
+                                <img src="assets/images/gallerie/restaurant_1.jpg" alt="Fêtes de famille">
                             </div>
                             <div class="menu-modal-info" style="padding: 3rem;">
                                 <h2 class="menu-modal-title">Baptêmes & Anniversaires</h2>
@@ -159,7 +198,7 @@
                                         buffet tout compris</li>
                                 </ul>
                                 <a href="https://wa.me/22507941094?text=Bonjour, je souhaite organiser une fête d'anniversaire/baptême"
-                                    target="_blank" class="btn btn-primary">
+                                    target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                                     <i class="ph ph-calendar-plus btn-icon"></i> Réserver une date
                                 </a>
                             </div>
@@ -169,12 +208,12 @@
             </div>
 
             <!-- SECTION ENTREPRISES -->
-            <div id="entreprises-content" class="fade-in" style="display: none;">
+            <div id="entreprises-content" class="fade-in tab-panel">
                 <div class="menu-grid">
                     <div class="menu-card" style="grid-column: 1 / -1; cursor: default;">
                         <div class="menu-modal-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0;">
                             <div class="menu-modal-img" style="height: 100%; min-height: 400px;">
-                                <img src="assets/images/gallerie/paysage_24.png" alt="Séminaire entreprise">
+                                <img src="assets/images/gallerie/paysage_24.jpg" alt="Séminaire entreprise">
                             </div>
                             <div class="menu-modal-info" style="padding: 3rem;">
                                 <h2 class="menu-modal-title">Séminaires & Team Building</h2>
@@ -190,7 +229,7 @@
                                         nautiques de cohésion</li>
                                 </ul>
                                 <a href="https://wa.me/22507941094?text=Bonjour, je souhaite organiser un séminaire d'entreprise"
-                                    target="_blank" class="btn btn-primary">
+                                    target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                                     <i class="ph ph-calendar-plus btn-icon"></i> Demander un devis
                                 </a>
                             </div>
@@ -209,31 +248,48 @@
         </div>
     </section>
 
+    <!-- LIENS INTERNES -->
+    <section class="section section-alt" aria-label="Découvrez aussi">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Découvrez aussi</h2>
+            </div>
+            <div class="features-grid fade-in">
+                <div class="feature-card" style="text-align: center;">
+                    <i class="ph ph-bed event-icon" style="font-size: 2.5rem; color: var(--color-gold);"></i>
+                    <h3>Hébergement</h3>
+                    <p>Chambres et bungalows pour vos invités à partir de 25 000 FCFA/nuit.</p>
+                    <a href="hebergement.html" class="btn btn-primary mt-md" style="display: inline-block;">Voir nos
+                        chambres</a>
+                </div>
+                <div class="feature-card" style="text-align: center;">
+                    <i class="ph ph-fork-knife event-icon" style="font-size: 2.5rem; color: var(--color-gold);"></i>
+                    <h3>Restaurant</h3>
+                    <p>Cuisine africaine moderne et sélection de boissons pour vos réceptions.</p>
+                    <a href="menu.html" class="btn btn-primary mt-md" style="display: inline-block;">Voir la carte</a>
+                </div>
+                <div class="feature-card" style="text-align: center;">
+                    <i class="ph ph-map-pin event-icon" style="font-size: 2.5rem; color: var(--color-gold);"></i>
+                    <h3>Nous trouver</h3>
+                    <p>Ahoué, route d'Alépé, à quelques kilomètres d'Abidjan.</p>
+                    <a href="index.html#contact" class="btn btn-primary mt-md" style="display: inline-block;">Plan &
+                        contact</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- FOOTER -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container text-center">
-            <p>&copy; 2026 Espace Beach Ahoué. Tous droits réservés.</p>
+            <p>&copy; 2026 Espace Beach Ahoué. Tous droits réservés. | <a href="mentions-legales.html"
+                    style="color: var(--color-gold); text-decoration: none;">Mentions Légales</a></p>
         </div>
     </footer>
 
     <!-- SCRIPTS -->
     <script src="assets/js/script.js"></script>
     <script>
-        function switchTab(tab) {
-            const contents = {
-                'mariages': document.getElementById('mariages-content'),
-                'prives': document.getElementById('prives-content'),
-                'entreprises': document.getElementById('entreprises-content')
-            };
-            const tabs = document.querySelectorAll('.menu-tab');
-
-            tabs.forEach(t => t.classList.remove('active'));
-            Object.values(contents).forEach(c => c.style.display = 'none');
-
-            contents[tab].style.display = 'block';
-            document.querySelector(`[href="#${tab}"]`).classList.add('active');
-        }
-
         window.addEventListener('load', () => {
             const hash = window.location.hash.replace('#', '');
             if (['mariages', 'prives', 'entreprises'].includes(hash)) {

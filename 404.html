@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Page non trouvée - Espace Beach Ahoué</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <style>
+        .error-page {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh;
+            text-align: center;
+            padding: 2rem;
+        }
+        .error-code {
+            font-family: var(--font-heading);
+            font-size: clamp(6rem, 15vw, 12rem);
+            font-weight: 700;
+            color: var(--color-gold);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+        .error-title {
+            font-family: var(--font-heading);
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            color: var(--color-text-main);
+            margin-bottom: 1.5rem;
+        }
+        .error-text {
+            color: var(--color-text-muted);
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin-bottom: 2rem;
+        }
+        .error-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAVIGATION -->
+    <nav class="navbar" id="navbar" aria-label="Navigation principale">
+        <div class="container-wide">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="Espace Beach Ahoué Logo" class="logo-img">
+                <span>Espace Beach Ahoué</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- ERROR CONTENT -->
+    <main class="error-page" role="main">
+        <div class="error-code">404</div>
+        <h1 class="error-title">Page introuvable</h1>
+        <p class="error-text">
+            Désolé, la page que vous recherchez n'existe pas ou a été déplacée.
+            N'hésitez pas à revenir à l'accueil ou à explorer nos autres pages.
+        </p>
+        <div class="error-links">
+            <a href="index.html" class="btn btn-primary">
+                <i class="ph ph-house btn-icon"></i> Retour à l'accueil
+            </a>
+            <a href="menu.html" class="btn btn-secondary">
+                <i class="ph ph-fork-knife btn-icon"></i> Notre Menu
+            </a>
+            <a href="hebergement.html" class="btn btn-secondary">
+                <i class="ph ph-bed btn-icon"></i> Hébergement
+            </a>
+            <a href="evenements.html" class="btn btn-secondary">
+                <i class="ph ph-confetti btn-icon"></i> Événements
+            </a>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer" role="contentinfo">
+        <div class="container text-center">
+            <p>&copy; 2026 Espace Beach Ahoué. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

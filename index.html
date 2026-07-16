@@ -4,8 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; media-src 'self'; frame-src https://www.google.com https://www.google.com/maps; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none';">
     <meta name="description"
-        content="Espace Beach Ahoué - Complexe hôtelier, restaurant & bar en bordure d'eau à Ahoué. Séjour, détente et convivialité en bordure de plan d'eau près d'Abidjan, Côte d'Ivoire.">
+        content="Espace Beach Ahoué - Hôtel, restaurant & bar en bordure d'eau à Ahoué près d'Abidjan. Chambres, cuisine africaine, événements et détente en Côte d'Ivoire.">
     <meta name="keywords"
         content="hôtel Ahoué, en bordure d'eau Abidjan, bar, restaurant bord d'eau, complexe hôtelier Côte d'Ivoire, week-end Abidjan, hébergement Ahoué">
     <meta name="author" content="Espace Beach Ahoué">
@@ -13,20 +15,25 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://espacebeachahoue.com/">
-    <meta property="og:title" content="Espace Beach Ahoué - Séjour, Détente & Convivialité">
+    <meta property="og:title" content="Hôtel & Restaurant Ahoué - Espace Beach Ahoué | Abidjan">
     <meta property="og:description"
-        content="Complexe hôtelier, restaurant & bar en bordure d'eau à Ahoué. Le cadre idéal pour vos séjours, mariages et séminaires.">
-    <meta property="og:image" content="assets/images/gallerie/paysage_22.png">
+        content="Complexe hôtelier, restaurant & bar en bordure d'eau à Ahoué. Chambres, cuisine africaine, mariages et séminaires près d'Abidjan.">
+    <meta property="og:image" content="https://espacebeachahoue.com/assets/images/gallerie/paysage_22.jpg">
+    <meta property="og:locale" content="fr_CI">
+    <meta property="og:site_name" content="Espace Beach Ahoué">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://espacebeachahoue.com/">
-    <meta property="twitter:title" content="Espace Beach Ahoué - Séjour, Détente & Convivialité">
+    <meta property="twitter:title" content="Hôtel & Restaurant Ahoué - Espace Beach Ahoué | Abidjan">
     <meta property="twitter:description"
-        content="Complexe hôtelier, restaurant & bar en bordure d'eau à Ahoué. Le cadre idéal pour vos séjours, mariages et séminaires.">
-    <meta property="twitter:image" content="assets/images/gallerie/paysage_22.png">
+        content="Complexe hôtelier, restaurant & bar en bordure d'eau à Ahoué. Chambres, cuisine africaine, mariages et séminaires près d'Abidjan.">
+    <meta property="twitter:image" content="https://espacebeachahoue.com/assets/images/gallerie/paysage_22.jpg">
 
-    <title>Espace Beach Ahoué - Séjour, détente et convivialité en bordure de plan d'eau</title>
+    <!-- Canonical -->
+    <link rel="canonical" href="https://espacebeachahoue.com/">
+
+    <title>Hôtel & Restaurant Ahoué - Espace Beach Ahoué | Abidjan</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,14 +42,48 @@
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
         rel="stylesheet">
 
-    <!-- Phosphor Icons -->
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Phosphor Icons (hébergé en local) -->
+    <script src="assets/js/vendor/phosphor-icons.js"></script>
 
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/styles.css">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LodgingBusiness",
+      "name": "Espace Beach Ahoué",
+      "description": "Complexe hôtelier, restaurant & bar en bordure d'eau à Ahoué près d'Abidjan, Côte d'Ivoire.",
+      "url": "https://espacebeachahoue.com",
+      "telephone": "+2252733764359",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Route d'Alépé",
+        "addressLocality": "Ahoué",
+        "addressCountry": "CI"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 5.4992548,
+        "longitude": -3.9520831
+      },
+      "image": "https://espacebeachahoue.com/assets/images/gallerie/paysage_22.jpg",
+      "priceRange": "$$",
+      "hasMap": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d900.9100300982662!2d-3.952083166456508!3d5.499254829872696",
+      "sameAs": [
+        "https://www.facebook.com/espace.beachahoue"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.5",
+        "reviewCount": "120"
+      }
+    }
+    </script>
 </head>
 
 <body>
@@ -50,7 +91,7 @@
     <!-- ============================================
          NAVIGATION
          ============================================ -->
-    <nav class="navbar" id="navbar">
+    <nav class="navbar" id="navbar" aria-label="Navigation principale">
         <div class="container-wide">
             <a href="#hero" class="logo">
                 <img src="assets/images/logo.png" alt="Espace Beach Ahoué Logo" class="logo-img">
@@ -92,20 +133,19 @@
     <!-- ============================================
          HERO SECTION
          ============================================ -->
-    <section id="hero" class="hero">
+    <section id="hero" class="hero" aria-label="Bannière principale">
         <!-- Vidéo d'ambiance en arrière-plan -->
         <video autoplay muted loop playsinline class="hero-video">
             <source src="assets/vids/ahoue_beach_presentation.mp4" type="video/mp4">
             <!-- Fallback image -->
-            <img src="assets/images/hero/carrousel/11.png" alt="Espace Beach Ahoué" class="hero-background">
+            <img src="assets/images/hero/carrousel/1.jpg" alt="Espace Beach Ahoué" class="hero-background">
         </video>
         <!-- Images fixes permanentes -->
         <img src="assets/images/hero/carrousel/acceuill.png" alt="" class="hero-static-layer">
         <img src="assets/images/logo.png" alt="Logo Espace Beach Ahoué" class="hero-logo-layer">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1>AKWABA à </h1>
-            <h1>l'Espace Beach Ahoué</h1>
+            <h1>Akwaba à l'Espace Beach Ahoué</h1>
             <p class="subtitle">Complexe hôtelier, restaurant & bar en bordure d'eau à Ahoué, à quelques
                 kilomètres
                 d'Abidjan.</p>
@@ -145,7 +185,7 @@
     <!-- ============================================
          PRÉSENTATION DU COMPLEXE
          ============================================ -->
-    <section id="presentation" class="section">
+    <section id="presentation" class="section" aria-label="Présentation du complexe">
         <div class="container">
             <div class="section-header fade-in">
                 <h2>Un lieu unique pour se détendre et se retrouver</h2>
@@ -156,7 +196,7 @@
             </div>
             <div class="content-split fade-in">
                 <div class="content-image">
-                    <img src="assets/images/hero/paysage_4.png" alt="Vue du complexe Espace Beach Ahoué">
+                    <img src="assets/images/hero/paysage_4.jpg" alt="Vue du complexe Espace Beach Ahoué">
                 </div>
                 <div class="content-text">
                     <p>
@@ -180,7 +220,7 @@
     <!-- ============================================
          HÉBERGEMENT
          ============================================ -->
-    <section id="hebergement" class="section section-alt">
+    <section id="hebergement" class="section section-alt" aria-label="Hébergement">
         <div class="container">
             <div class="section-header fade-in">
                 <h2>Séjournez dans un cadre paisible</h2>
@@ -208,26 +248,26 @@
                     </a>
                 </div>
                 <div class="content-image">
-                    <img src="assets/images/hebergement/chambre_3.png" alt="Chambre équipée Espace Beach Ahoué">
+                    <img src="assets/images/hebergement/chambre_3.jpg" alt="Chambre équipée Espace Beach Ahoué">
                 </div>
             </div>
 
             <!-- Galerie de chambres -->
             <div class="features-grid mt-lg fade-in">
                 <div class="feature-card">
-                    <img src="assets/images/hebergement/chambre_0.png" alt="Chambre 1"
+                    <img src="assets/images/hebergement/chambre_0.jpg" alt="Chambre 1"
                         style="width: 100%; border-radius: 12px; margin-bottom: 1rem;">
                     <h3>Confort moderne</h3>
                     <p>Chambres climatisées avec tout le nécessaire</p>
                 </div>
                 <div class="feature-card">
-                    <img src="assets/images/hebergement/chambre_2.png" alt="Chambre 2"
+                    <img src="assets/images/hebergement/chambre_2.jpg" alt="Chambre 2"
                         style="width: 100%; border-radius: 12px; margin-bottom: 1rem;">
                     <h3>Ambiance chaleureuse</h3>
                     <p>Décoration soignée et accueillante</p>
                 </div>
                 <div class="feature-card">
-                    <img src="assets/images/hebergement/chambre_4.png" alt="Chambre 3"
+                    <img src="assets/images/hebergement/chambre_4.jpg" alt="Chambre 3"
                         style="width: 100%; border-radius: 12px; margin-bottom: 1rem;">
                     <h3>Repos assuré</h3>
                     <p>Literie de qualité pour un sommeil réparateur</p>
@@ -239,7 +279,7 @@
     <!-- ============================================
          RESTAURANT & BAR
          ============================================ -->
-    <section id="restaurant" class="section">
+    <section id="restaurant" class="section" aria-label="Restaurant et bar">
         <div class="container">
             <div class="section-header fade-in">
                 <h2>Cuisine africaine moderne & ambiance conviviale</h2>
@@ -250,7 +290,7 @@
             </div>
             <div class="content-split fade-in">
                 <div class="content-image">
-                    <img src="assets/images/restaurant/repas_0.png" alt="Restaurant Espace Beach Ahoué">
+                    <img src="assets/images/restaurant/repas_0.jpg" alt="Restaurant Espace Beach Ahoué">
                 </div>
                 <div class="content-text">
                     <p>
@@ -280,13 +320,13 @@
             <!-- Galerie de plats -->
             <div class="gallery-grid mt-lg fade-in">
                 <div class="gallery-item">
-                    <img src="assets/images/restaurant/repas_13.png" alt="Kedjenou Agouti">
+                    <img src="assets/images/restaurant/repas_13.jpg" alt="Kedjenou Agouti">
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/restaurant/repas_1.png" alt="Marmite du pecheur">
+                    <img src="assets/images/restaurant/repas_1.jpg" alt="Marmite du pecheur">
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/restaurant/repas_3.png" alt="Grillades">
+                    <img src="assets/images/restaurant/repas_3.jpg" alt="Grillades">
                 </div>
             </div>
         </div>
@@ -295,7 +335,7 @@
     <!-- ============================================
          LOISIRS, SORTIES & ÉVÉNEMENTS
          ============================================ -->
-    <section id="evenements" class="section section-alt">
+    <section id="evenements" class="section section-alt" aria-label="Événements">
         <div class="container">
             <div class="section-header fade-in">
                 <h2>Des moments à partager</h2>
@@ -361,7 +401,7 @@
     <!-- ============================================
          ACTUALITÉS & AMBIANCE
          ============================================ -->
-    <section id="actualites" class="section">
+    <section id="actualites" class="section" aria-label="Actualités">
         <div class="container">
             <div class="section-header fade-in">
                 <h2>Actualités & vie du complexe</h2>
@@ -374,28 +414,29 @@
             <!-- Aperçu des événements récents -->
             <div class="gallery-grid fade-in">
                 <div class="gallery-item">
-                    <img src="assets/images/actualites/actualite_1.jpg" alt="Actualité Espace Beach Ahoué">
+                    <img src="assets/images/actualites/actualite_1.jpg" alt="Actualité Espace Beach Ahoué"
+                        loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/actualites/actualite_2.jpg" alt="Événement récent">
+                    <img src="assets/images/actualites/actualite_2.jpg" alt="Événement récent" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/actualites/actualite_3.jpg" alt="Soirée à Espace Beach">
+                    <img src="assets/images/actualites/actualite_3.jpg" alt="Soirée à Espace Beach" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/actualites/actualite_4.jpg" alt="Ambiance festive">
+                    <img src="assets/images/actualites/actualite_4.jpg" alt="Ambiance festive" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/actualites/actualite_5.jpg" alt="Vie du complexe">
+                    <img src="assets/images/actualites/actualite_5.jpg" alt="Vie du complexe" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/actualites/actualite_6.jpg" alt="Moments conviviaux">
+                    <img src="assets/images/actualites/actualite_6.jpg" alt="Moments conviviaux" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/actualites/actualite_7.jpg" alt="Événement spécial">
+                    <img src="assets/images/actualites/actualite_7.jpg" alt="Événement spécial" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/actualites/actualite_8.jpg" alt="Actualités du complexe">
+                    <img src="assets/images/actualites/actualite_8.jpg" alt="Actualités du complexe" loading="lazy">
                 </div>
             </div>
 
@@ -412,7 +453,7 @@
     <!-- ============================================
          GALERIE
          ============================================ -->
-    <section id="galerie" class="section section-alt">
+    <section id="galerie" class="section section-alt" aria-label="Galerie photos">
         <div class="container">
             <div class="section-header fade-in">
                 <h2>Découvrez Espace Beach Ahoué en images</h2>
@@ -425,41 +466,156 @@
 
             <div class="gallery-grid fade-in">
                 <div class="gallery-item">
-                    <img src="assets/images/gallerie/paysage_11.png" alt="Vue magnifique sur la lagune">
+                    <img src="assets/images/gallerie/paysage_11.jpg" alt="Vue panoramique sur la lagune d'Ahoué"
+                        loading="lazy">
+                    <span class="gallery-caption">Vue panoramique du site</span>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/gallerie/repas_15.png" alt="Plat de poisson braisé et garnitures">
+                    <img src="assets/images/gallerie/repas_15.jpg" alt="Poisson braisé servis avec attiéké"
+                        loading="lazy">
+                    <span class="gallery-caption">Partage entre amis</span>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/gallerie/cave.png" alt="Notre sélection de vins et spiritueux">
+                    <img src="assets/images/gallerie/cave.jpg" alt="Notre cave à vins sélectionnée" loading="lazy">
+                    <span class="gallery-caption">Notre sélection de vins fins</span>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/gallerie/paysage_25.png" alt="Espace détente en bord de mer">
+                    <img src="assets/images/gallerie/paysage_25.jpg" alt="Espace détente au bord de l'eau"
+                        loading="lazy">
+                    <span class="gallery-caption">Espace détente en bordure d'eau</span>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/gallerie/pintade.png" alt="Pintade braisée croustillante">
+                    <img src="assets/images/gallerie/pintade.jpg" alt="Pintade braisée croustillante" loading="lazy">
+                    <span class="gallery-caption">Escargots braisées croustillantes</span>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/gallerie/chambre_8.png" alt="Hébergement confortable et élégant">
+                    <img src="assets/images/gallerie/chambre_8.jpg" alt="Chambre confort avec vue" loading="lazy">
+                    <span class="gallery-caption">Chambre confort élégante</span>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/gallerie/paysage_14.png" alt="Cadre naturel apaisant">
+                    <img src="assets/images/gallerie/paysage_14.jpg" alt="Cocotiers au coucher du soleil"
+                        loading="lazy">
+                    <span class="gallery-caption">Espace pour des jeux en plein airl</span>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/gallerie/repas_8.png" alt="Accompagnements locaux savoureux">
+                    <img src="assets/images/gallerie/repas_9.jpg" alt="Accompagnements traditionnels" loading="lazy">
+                    <span class="gallery-caption">Brochettes d'Agoutis farcies</span>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/gallerie/anniversaire.png" alt="Célébrations et événements spéciaux">
+                    <img src="assets/images/gallerie/anniversaire.jpg" alt="Salle de fête décorée" loading="lazy">
+                    <span class="gallery-caption">Espace pour vos célébrations</span>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/gallerie/paysage_23.png" alt="Bungalows sous les palmiers">
+                    <img src="assets/images/gallerie/paysage_23.jpg" alt="Bungalows bordés de palmiers" loading="lazy">
+                    <span class="gallery-caption">Espace de détnte privilegié</span>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/gallerie/poulet_saute.png" alt="Poulet sauté aux épices">
+                    <img src="assets/images/gallerie/poulet_saute.jpg" alt="Poulet sauté aux épices" loading="lazy">
+                    <span class="gallery-caption">Herisson braisé aux épices locales</span>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/gallerie/restaurant_1.png" alt="Ambiance du restaurant principal">
+                    <img src="assets/images/gallerie/restaurant_1.jpg" alt="Terrasse du restaurant" loading="lazy">
+                    <span class="gallery-caption">Terrasse du restaurant en soirée</span>
                 </div>
+                <div class="gallery-item">
+                    <img src="assets/images/gallerie/paysage_22.jpg" alt="Vue large sur la lagune" loading="lazy">
+                    <span class="gallery-caption">Un bol d'air pur</span>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/gallerie/repas_12.jpg" alt="Assortiment de grillades" loading="lazy">
+                    <span class="gallery-caption">Marmite du pêcheur, notre spécialité</span>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/gallerie/mariage.jpg" alt="Cérémonie de mariage en plein air"
+                        loading="lazy">
+                    <span class="gallery-caption">Mariage en plein air et en borfure d'eau</span>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/gallerie/paysage_20.jpg" alt="Reflets sur la lagune" loading="lazy">
+                    <span class="gallery-caption">Reflets dorés sur le cours d'eau</span>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/gallerie/gambas_1.jpg" alt="Gambas fraîches sautées" loading="lazy">
+                    <span class="gallery-caption">Gambas fraîches sautées à l'ail</span>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/gallerie/chambre_6.jpg" alt="Suite familiale spacieuse" loading="lazy">
+                    <span class="gallery-caption">Chambre confortable & spacieuse</span>
+                </div>
+                <div class="gallery-item gallery-extra">
+                    <img src="assets/images/gallerie/paysage_19.jpg" alt="Végétation luxuriante" loading="lazy">
+                    <span class="gallery-caption">Végétation luxuriante du sitel</span>
+                </div>
+                <div class="gallery-item gallery-extra">
+                    <img src="assets/images/gallerie/repas_14.jpg" alt="Plat de riz soumara" loading="lazy">
+                    <span class="gallery-caption">Bon appétit!</span>
+                </div>
+                <div class="gallery-item gallery-extra">
+                    <img src="assets/images/gallerie/paysage_18.jpg" alt="Sentier nature bordé d'arbres" loading="lazy">
+                    <span class="gallery-caption">Tout pour la détente</span>
+                </div>
+                <div class="gallery-item gallery-extra">
+                    <img src="assets/images/gallerie/repas_16.jpg" alt="Table dressée pour événement" loading="lazy">
+                    <span class="gallery-caption">Tout nos plats réalisés avec des produits frais</span>
+                </div>
+                <div class="gallery-item gallery-extra">
+                    <img src="assets/images/gallerie/chambre_5.jpg" alt="Chambre standard cozy" loading="lazy">
+                    <span class="gallery-caption">Chambre standard climatisées</span>
+                </div>
+                <div class="gallery-item gallery-extra">
+                    <img src="assets/images/gallerie/paysage_24.jpg" alt="Vue aérienne du complexe" loading="lazy">
+                    <span class="gallery-caption">Tout est prévu pour la détente</span>
+                </div>
+                <div class="gallery-item gallery-extra">
+                    <img src="assets/images/gallerie/escargot.jpg" alt="Escargots sautés au beurre" loading="lazy">
+                    <span class="gallery-caption">Escargots sautés aux tomates fraiches</span>
+                </div>
+                <div class="gallery-item gallery-extra">
+                    <img src="assets/images/gallerie/chambre_7.jpg" alt="Chambre avec balcon" loading="lazy">
+                    <span class="gallery-caption">Parade de luimières et de glaces</span>
+                </div>
+                <div class="gallery-item gallery-extra">
+                    <img src="assets/images/gallerie/paysage_33.jpg" alt="Coucher de soleil magique" loading="lazy">
+                    <span class="gallery-caption">Cascade d'eau & de fraicheur</span>
+                </div>
+                <div class="gallery-item gallery-extra">
+                    <img src="assets/images/gallerie/repas_13.jpg" alt="Kédjénou de pintade" loading="lazy">
+                    <span class="gallery-caption">Braisé de poulet & de gambas mijotés</span>
+                </div>
+                <div class="gallery-item gallery-extra">
+                    <img src="assets/images/gallerie/chambre_11.jpg" alt="Suite premium luxe" loading="lazy">
+                    <span class="gallery-caption">chambre premium</span>
+                </div>
+                <div class="gallery-item gallery-extra">
+                    <img src="assets/images/gallerie/vin.jpg" alt="Verre de vin à la terrasse" loading="lazy">
+                    <span class="gallery-caption">Moment de détente avec un bon vin</span>
+                </div>
+                <div class="gallery-item gallery-extra">
+                    <img src="assets/images/gallerie/repas_3.jpg" alt="Assortiment de poissons" loading="lazy">
+                    <span class="gallery-caption">Bochettes Agoutis mariné'</span>
+                </div>
+                <div class="gallery-item gallery-extra">
+                    <img src="assets/images/gallerie/paysage_10.jpg" alt="Plage de sable fin" loading="lazy">
+                    <span class="gallery-caption">Plage privée de sable fin</span>
+                </div>
+                <div class="gallery-item gallery-extra">
+                    <img src="assets/images/gallerie/chambre_5.jpg" alt="Espace salon moderne" loading="lazy">
+                    <span class="gallery-caption">Espace salon moderne</span>
+                </div>
+                <div class="gallery-item gallery-extra">
+                    <img src="assets/images/gallerie/paysage_21.jpg" alt="Barrière de corail naturelle" loading="lazy">
+                    <span class="gallery-caption">Ecosystème marin préservé</span>
+                </div>
+                <div class="gallery-item gallery-extra">
+                    <img src="assets/images/gallerie/cocktail.jpg" alt="Cocktail tropical frais" loading="lazy">
+                    <span class="gallery-caption">Cocktail tropical maison</span>
+                </div>
+            </div>
+
+            <div class="gallery-cta fade-in">
+                <button class="btn btn-primary" id="galleryToggle" onclick="toggleGallery()">
+                    <i class="ph ph-images-square btn-icon"></i> Voir plus
+                </button>
             </div>
         </div>
     </section>
@@ -467,7 +623,7 @@
     <!-- ============================================
          CONTACT & ACCÈS
          ============================================ -->
-    <section id="contact" class="section">
+    <section id="contact" class="section" aria-label="Contact et accès">
         <div class="container">
             <div class="section-header fade-in">
                 <h2>Nous contacter & nous trouver</h2>
@@ -509,7 +665,8 @@
                         </div>
                         <div>
                             <strong>WhatsApp</strong>
-                            <a href="https://wa.me/22507941094" target="_blank">Discuter avec nous</a>
+                            <a href="https://wa.me/22507941094" target="_blank" rel="noopener noreferrer">Discuter avec
+                                nous</a>
                         </div>
                     </div>
 
@@ -519,13 +676,15 @@
                         </div>
                         <div>
                             <strong>Facebook</strong>
-                            <a href="https://www.facebook.com/espace.beachahoue" target="_blank">Espace Beach Ahoué</a>
+                            <a href="https://www.facebook.com/espace.beachahoue" target="_blank"
+                                rel="noopener noreferrer">Espace Beach Ahoué</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="contact-form-container">
-                    <form id="contactForm" action="https://formspree.io/f/xpqjrkdw" method="POST" class="contact-form">
+                    <form id="contactForm" action="https://formspree.io/f/xpqjrkdw" method="POST" class="contact-form"
+                        aria-label="Formulaire de contact">
                         <div class="form-group">
                             <label for="name">Votre Nom</label>
                             <input type="text" id="name" name="name" class="form-control" placeholder="Ex: Jean Dupont"
@@ -558,7 +717,8 @@
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d900.9100300982662!2d-3.952083166456508!3d5.499254829872696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc1910685f6dae5%3A0x88bf880e3aa09058!2sAhou%C3%A9%20Beach!5e1!3m2!1sfr!2sci!4v1770199340307!5m2!1sfr!2sci"
                     width="100%" height="400" style="border:0; border-radius: var(--radius-md);" allowfullscreen=""
-                    loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    sandbox="allow-scripts allow-same-origin allow-popups" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
             </div>
         </div>
@@ -567,7 +727,7 @@
     <!-- ============================================
          FOOTER
          ============================================ -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-content">
                 <h3>Espace Beach Ahoué</h3>
@@ -585,7 +745,8 @@
             </div>
 
             <div class="footer-bottom">
-                <p>© 2026 Espace Beach Ahoué – Tous droits réservés</p>
+                <p>© 2026 Espace Beach Ahoué – Tous droits réservés by nivaQuine | <a href="mentions-legales.html"
+                        style="color: var(--color-gold); text-decoration: none;">Mentions Légales</a></p>
             </div>
         </div>
     </footer>
