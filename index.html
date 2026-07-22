@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; media-src 'self'; frame-src https://www.google.com https://www.google.com/maps; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none';">
+        content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://fonts.gstatic.com https://*.facebook.com; media-src 'self'; frame-src https://www.google.com https://www.google.com/maps; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none';">
     <meta name="description"
-        content="Espace Beach Ahoué - Hôtel, restaurant & bar en bordure d'eau à Ahoué près d'Abidjan. Chambres, cuisine africaine, événements et détente en Côte d'Ivoire.">
+        content="Complexe hôtelier Ahoué  Beach - Hôtel, restaurant & bar en bordure d'eau à Ahoué près d'Abidjan. Chambres, cuisine africaine, événements et détente en Côte d'Ivoire.">
     <meta name="keywords"
         content="hôtel Ahoué, en bordure d'eau Abidjan, bar, restaurant bord d'eau, complexe hôtelier Côte d'Ivoire, week-end Abidjan, hébergement Ahoué">
     <meta name="author" content="Espace Beach Ahoué">
@@ -15,7 +15,7 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://espacebeachahoue.com/">
-    <meta property="og:title" content="Hôtel & Restaurant Ahoué - Espace Beach Ahoué | Abidjan">
+    <meta property="og:title" content="Hôtel & Restaurant Ahoué - Complexe Hôtelier Ahoué Beach | Abidjan">
     <meta property="og:description"
         content="Complexe hôtelier, restaurant & bar en bordure d'eau à Ahoué. Chambres, cuisine africaine, mariages et séminaires près d'Abidjan.">
     <meta property="og:image" content="https://espacebeachahoue.com/assets/images/gallerie/paysage_22.jpg">
@@ -23,17 +23,17 @@
     <meta property="og:site_name" content="Espace Beach Ahoué">
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://espacebeachahoue.com/">
-    <meta property="twitter:title" content="Hôtel & Restaurant Ahoué - Espace Beach Ahoué | Abidjan">
-    <meta property="twitter:description"
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://espacebeachahoue.com/">
+    <meta name="twitter:title" content="Hôtel & Restaurant Ahoué - Complexe Hôtelier Ahoué Beach | Abidjan">
+    <meta name="twitter:description"
         content="Complexe hôtelier, restaurant & bar en bordure d'eau à Ahoué. Chambres, cuisine africaine, mariages et séminaires près d'Abidjan.">
-    <meta property="twitter:image" content="https://espacebeachahoue.com/assets/images/gallerie/paysage_22.jpg">
+    <meta name="twitter:image" content="https://espacebeachahoue.com/assets/images/gallerie/paysage_22.jpg">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://espacebeachahoue.com/">
 
-    <title>Hôtel & Restaurant Ahoué - Espace Beach Ahoué | Abidjan</title>
+    <title>Hôtel & Restaurant Ahoué - Complexe Hôtelier Ahoué Beach | Abidjan</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -95,7 +95,7 @@
         <div class="container-wide">
             <a href="#hero" class="logo">
                 <img src="assets/images/logo.png" alt="Espace Beach Ahoué Logo" class="logo-img">
-                <span>Espace Beach Ahoué</span>
+                <span>Complexe Hôtelier Ahoué Beach</span>
             </a>
             <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menu">
                 <i class="ph ph-list"></i>
@@ -135,23 +135,56 @@
          HERO SECTION
          ============================================ -->
     <section id="hero" class="hero" aria-label="Bannière principale">
-        <!-- Vidéo d'ambiance en arrière-plan -->
-        <video autoplay muted loop playsinline class="hero-video">
-            <source src="assets/vids/ahoue_beach_presentation.mp4" type="video/mp4">
-            <!-- Fallback image -->
-            <img src="assets/images/hero/carrousel/1.jpg" alt="Espace Beach Ahoué" class="hero-background">
-        </video>
+        <!-- Carrousel d'images avec animations Ken Burns -->
+        <div class="hero-carousel" aria-hidden="true">
+            <div class="hero-carousel-slide active"
+                style="background-image: url('assets/images/hero/carrousel/paysage_1.jpg')" data-animation="zoomIn">
+            </div>
+            <div class="hero-carousel-slide" style="background-image: url('assets/images/hero/carrousel/chambre_0.jpg')"
+                data-animation="zoomOut"></div>
+            <div class="hero-carousel-slide" style="background-image: url('assets/images/hero/carrousel/repas_1.jpg')"
+                data-animation="panLeft"></div>
+            <div class="hero-carousel-slide" style="background-image: url('assets/images/hero/carrousel/cocktail.jpg')"
+                data-animation="panRight"></div>
+            <div class="hero-carousel-slide" style="background-image: url('assets/images/hero/carrousel/paysage_3.jpg')"
+                data-animation="zoomInPan"></div>
+            <div class="hero-carousel-slide" style="background-image: url('assets/images/hero/carrousel/chambre_2.jpg')"
+                data-animation="zoomOutPan"></div>
+            <div class="hero-carousel-slide" style="background-image: url('assets/images/hero/carrousel/repas_4.jpg')"
+                data-animation="panLeft"></div>
+            <div class="hero-carousel-slide" style="background-image: url('assets/images/hero/carrousel/vin.jpg')"
+                data-animation="zoomIn"></div>
+            <div class="hero-carousel-slide" style="background-image: url('assets/images/hero/carrousel/paysage_4.jpg')"
+                data-animation="panRight"></div>
+            <div class="hero-carousel-slide" style="background-image: url('assets/images/hero/carrousel/chambre_6.jpg')"
+                data-animation="zoomOut"></div>
+            <div class="hero-carousel-slide" style="background-image: url('assets/images/hero/carrousel/repas_9.jpg')"
+                data-animation="zoomInPan"></div>
+            <div class="hero-carousel-slide"
+                style="background-image: url('assets/images/hero/carrousel/paysage_11.jpg')"
+                data-animation="zoomOutPan"></div>
+            <div class="hero-carousel-slide" style="background-image: url('assets/images/hero/carrousel/repas_13.jpg')"
+                data-animation="panLeft"></div>
+            <div class="hero-carousel-slide"
+                style="background-image: url('assets/images/hero/carrousel/paysage_33.jpg')" data-animation="zoomIn">
+            </div>
+            <div class="hero-carousel-slide" style="background-image: url('assets/images/hero/carrousel/repas_65.jpg')"
+                data-animation="panRight"></div>
+            <div class="hero-carousel-slide" style="background-image: url('assets/images/hero/carrousel/repas_0.jpg')"
+                data-animation="zoomOutPan"></div>
+        </div>
         <!-- Image fixe permanente -->
-        <img src="assets/images/hero/acceuill.png" alt="" class="hero-static-layer">
+        <img src="assets/images/hero/acceuill.png" alt="" class="hero-static-layer" aria-hidden="true">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1>Akwaba à l'Espace Beach Ahoué</h1>
+            <h1>Akwaba au Complexe Hôtelier Ahoué Beach</h1>
             <p class="subtitle">Complexe hôtelier, restaurant & bar en bordure d'eau à Ahoué, à quelques
                 kilomètres
                 d'Abidjan.</p>
             <p class="hero-text">
                 Offrez-vous une pause hors de la ville.<br>
-                À l'Espace Beach Ahoué, profitez d'un cadre naturel en plein air, de chambres confortables, d'une
+                Au Complexe Hôtelier Ahoué Beach, profitez d'un cadre naturel en plein air, de chambres confortables,
+                d'une
                 cuisine Africaine
                 moderne et d'une ambiance conviviale.
             </p>
@@ -196,7 +229,7 @@
             </div>
             <div class="content-split fade-in">
                 <div class="content-image">
-                    <img src="assets/images/espace/paysage_33.jpg" alt="Vue du complexe Espace Beach Ahoué">
+                    <img src="assets/images/espace/paysage_33.jpg" alt="Vue du Complexe Hôtelier Ahoué Beach">
                 </div>
                 <div class="content-text">
                     <p>
@@ -243,7 +276,9 @@
             <div class="section-header fade-in">
                 <h2>Séjournez dans un cadre paisible</h2>
                 <p>
-                    Espace Beach Ahoué dispose de chambres équipées, confortables et adaptées aux courts séjours comme
+                    Le Complexe Hôtelier Ahoué Beach dispose de chambres équipées, confortables et adaptées aux courts
+                    séjours
+                    comme
                     aux week-ends de détente.
                 </p>
             </div>
@@ -366,7 +401,7 @@
             <div class="section-header fade-in">
                 <h2>Des moments à partager</h2>
                 <p>
-                    Espace Beach Ahoué est un lieu de vie et de rencontre.<br>
+                    Le Complexe Hôtelier Ahoué Beach est un lieu de vie et de rencontre.<br>
                     Nous accueillons régulièrement des événements et proposons un cadre idéal pour vos moments
                     importants.
                 </p>
@@ -432,7 +467,7 @@
             <div class="section-header fade-in">
                 <h2>Ce que disent nos clients</h2>
                 <p>
-                    Découvrez les avis de ceux qui ont visité Espace Beach Ahoué et vécu l'expérience.
+                    Découvrez les avis de ceux qui ont visité le Complexe Hôtelier Ahoué Beach et vécu l'expérience.
                 </p>
             </div>
 
@@ -510,7 +545,8 @@
                     <img src="assets/images/actualites/actualite_2.jpg" alt="Événement récent" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/actualites/actualite_3.jpg" alt="Soirée à Espace Beach" loading="lazy">
+                    <img src="assets/images/actualites/actualite_3.jpg" alt="Soirée au Complexe Hôtelier Ahoué Beach"
+                        loading="lazy">
                 </div>
                 <div class="gallery-item">
                     <img src="assets/images/actualites/actualite_4.jpg" alt="Ambiance festive" loading="lazy">
@@ -545,11 +581,11 @@
     <section id="galerie" class="section section-alt" aria-label="Galerie photos">
         <div class="container">
             <div class="section-header fade-in">
-                <h2>Découvrez Espace Beach Ahoué en images</h2>
+                <h2>Découvrez le Complexe Hôtelier Ahoué Beach en images</h2>
                 <p>
                     Un aperçu de notre cadre, de nos chambres, de notre restaurant, de l'espace naturel et de
                     l'ambiance qui
-                    fait l'esprit d'Espace Beach Ahoué.
+                    fait l'esprit du Complexe Hôtelier Ahoué Beach.
                 </p>
             </div>
 
@@ -766,7 +802,7 @@
                         <div>
                             <strong>Facebook</strong>
                             <a href="https://www.facebook.com/espace.beachahoue" target="_blank"
-                                rel="noopener noreferrer">Espace Beach Ahoué</a>
+                                rel="noopener noreferrer">Complexe Hôtelier Ahoué Beach</a>
                         </div>
                     </div>
                 </div>
@@ -822,7 +858,7 @@
                 <div class="footer-col brand-col">
                     <div class="footer-logo">
                         <img src="assets/images/logo.png" alt="Logo Espace Beach Ahoué" class="footer-logo-img">
-                        <h3>Espace Beach Ahoué</h3>
+                        <h3>Complexe Hôtelier Ahoué Beach</h3>
                     </div>
                     <p class="footer-tagline">Séjour, restauration & détente dans un cadre naturel d'exception en
                         bordure d'eau à Ahoué.</p>
@@ -831,7 +867,7 @@
                             class="social-link" aria-label="Facebook">
                             <i class="ph ph-facebook-logo"></i>
                         </a>
-                        <a href="#" class="social-link" id="whatsappFooter" aria-label="WhatsApp">
+                        <a href="https://wa.me/22507941094" class="social-link" id="whatsappFooter" aria-label="WhatsApp">
                             <i class="ph ph-whatsapp-logo"></i>
                         </a>
                     </div>
@@ -861,8 +897,9 @@
             </div>
 
             <div class="footer-bottom">
-                <p>© 2026 Espace Beach Ahoué – Tous droits réservés by nivaQuine | <a
-                        href="mentions-legales.html">Mentions Légales</a></p>
+                <p>© 2026 - Complexe Hôtelier Ahoué Beach – Tous droits réservés by <a
+                        href="mailto:nivaquine@yahoo.com">nivaQuine</a> | <a href="mentions-legales.html">Mentions
+                        Légales</a></p>
             </div>
         </div>
     </footer>
@@ -870,7 +907,7 @@
     <!-- ============================================
          FLOATING WHATSAPP BUTTON
          ============================================ -->
-    <a href="#" class="whatsapp-float" id="whatsappFloat" aria-label="Contacter sur WhatsApp">
+    <a href="https://wa.me/22507941094" class="whatsapp-float" id="whatsappFloat" aria-label="Contacter sur WhatsApp">
         <i class="ph ph-whatsapp-logo"></i>
     </a>
 

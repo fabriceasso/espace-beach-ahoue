@@ -617,33 +617,91 @@ function initScrollToTop() {
 }
 
 // ============================================
-// HERO CAROUSEL
+// HERO CAROUSEL – Ken Burns dynamique
 // ============================================
 function initHeroCarousel() {
   const carousel = document.querySelector('.hero-carousel');
   if (!carousel) return;
 
-  const images = carousel.querySelectorAll('.hero-background');
-  if (images.length === 0) return;
+  const slides = carousel.querySelectorAll('.hero-carousel-slide');
+  if (slides.length === 0) return;
 
+  const KB_CLASSES = ['kb-zoomIn', 'kb-zoomOut', 'kb-panLeft', 'kb-panRight', 'kb-zoomInPan', 'kb-zoomOutPan'];
+  const INTERVAL_MS = 6500;
   let currentIndex = 0;
+  let intervalId = null;
+  let isTransitioning = false;
 
-  // Fonction pour changer d'image
-  function changeImage() {
-    // Retirer la classe active de l'image actuelle
-    images[currentIndex].classList.remove('active');
-
-    // Passer à l'image suivante
-    currentIndex = (currentIndex + 1) % images.length;
-
-    // Ajouter la classe active à la nouvelle image
-    images[currentIndex].classList.add('active');
+  function clearKBAnimations(slide) {
+    KB_CLASSES.forEach(cls => slide.classList.remove(cls));
+    slide.style.animation = 'none';
   }
 
-  // Changer d'image toutes les 5 secondes (5000ms)
-  setInterval(changeImage, 5000);
+  function resetSlide(slide) {
+    clearKBAnimations(slide);
+    slide.classList.remove('active');
+    void slide.offsetWidth;
+    slide.style.animation = '';
+  }
 
-  // Carrousel initialisé silencieusement
+  function activateSlide(index) {
+    const slide = slides[index];
+    const animAttr = slide.getAttribute('data-animation');
+    const kbClass = 'kb-' + animAttr;
+
+    // Préparer le slide invisiblement
+    clearKBAnimations(slide);
+    slide.classList.remove('active');
+    void slide.offsetWidth;
+    slide.style.animation = '';
+
+    // Appliquer l'animation Ken Burns
+    if (KB_CLASSES.includes(kbClass)) {
+      slide.classList.add(kbClass);
+    }
+    slide.classList.add('active');
+  }
+
+  function nextSlide() {
+    if (isTransitioning) return;
+    isTransitioning = true;
+
+    const prev = slides[currentIndex];
+    currentIndex = (currentIndex + 1) % slides.length;
+    const next = slides[currentIndex];
+
+    // Préparer le slide suivant derrière (opacity 0, Ken Burns prêt)
+    const animAttr = next.getAttribute('data-animation');
+    const kbClass = 'kb-' + animAttr;
+    clearKBAnimations(next);
+    next.classList.remove('active');
+    next.style.animation = '';
+    void next.offsetWidth;
+
+    // Le rendre visible par-dessus l'ancien
+    if (KB_CLASSES.includes(kbClass)) {
+      next.classList.add(kbClass);
+    }
+    next.classList.add('active');
+
+    // Nettoyer l'ancien slide après la transition
+    setTimeout(() => {
+      clearKBAnimations(prev);
+      prev.classList.remove('active');
+      prev.style.animation = '';
+      isTransitioning = false;
+    }, 2200);
+  }
+
+  // Démarrer
+  activateSlide(0);
+  intervalId = setInterval(nextSlide, INTERVAL_MS);
+
+  carousel.addEventListener('mouseenter', () => clearInterval(intervalId));
+  carousel.addEventListener('mouseleave', () => {
+    clearInterval(intervalId);
+    intervalId = setInterval(nextSlide, INTERVAL_MS);
+  });
 }
 
 // ============================================
@@ -651,11 +709,10 @@ function initHeroCarousel() {
 // ============================================
 function initParallax() {
   const hero = document.querySelector('.hero');
-  const heroBackground = document.querySelector('.hero-background');
-  const heroVideo = document.querySelector('.hero-video');
+  const carousel = document.querySelector('.hero-carousel');
   const staticLayer = document.querySelector('.hero-static-layer');
 
-  if (hero && (heroBackground || staticLayer || heroVideo)) {
+  if (hero && (carousel || staticLayer)) {
     let ticking = false;
 
     window.addEventListener('scroll', () => {
@@ -665,11 +722,8 @@ function initParallax() {
           const heroHeight = hero.offsetHeight;
 
           if (scrolled < heroHeight) {
-            if (heroBackground) {
-              heroBackground.style.transform = `translateY(${scrolled * 0.4}px) translateZ(0)`;
-            }
-            if (heroVideo) {
-              heroVideo.style.transform = `translateY(${scrolled * 0.3}px) translateZ(0)`;
+            if (carousel) {
+              carousel.style.transform = `translateY(${scrolled * 0.3}px) translateZ(0)`;
             }
             if (staticLayer) {
               staticLayer.style.transform = `translateY(${scrolled * 0.2}px) translateZ(0)`;
@@ -688,7 +742,7 @@ function initParallax() {
 // ============================================
 function preloadCriticalImages() {
   const criticalImages = [
-    'assets/images/hero/carrousel/11.png', // Hero image
+    'assets/images/hero/carrousel/paysage_1.jpg', // Hero image
   ];
 
   criticalImages.forEach(src => {

@@ -527,29 +527,7 @@ p {
   overflow: hidden;
 }
 
-.hero-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -2;
-  pointer-events: none;
-}
-
-.hero-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -3;
-  /* Derrière la vidéo pour servir de fallback */
-  will-change: transform;
-  transform: translateZ(0);
-}
+/* Supprimé: hero-video et hero-background (remplacés par le carrousel) */
 
 .hero-static-layer {
   position: absolute;
@@ -592,7 +570,7 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7));
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55));
   /* Overlay plus fort pour le Kente */
   z-index: -1;
 }
@@ -694,7 +672,7 @@ p {
 }
 
 /* ============================================
-   HERO CAROUSEL
+   HERO CAROUSEL – Ken Burns Animations
    ============================================ */
 .hero-carousel {
   position: absolute;
@@ -703,41 +681,81 @@ p {
   width: 100%;
   height: 100%;
   z-index: -2;
+  overflow: hidden;
 }
 
-.hero-carousel .hero-background {
+.hero-carousel-slide {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background-size: cover;
   background-position: center;
   opacity: 0;
-  transition: opacity 1.5s ease-in-out;
+  will-change: opacity, transform;
+  transform: scale(1);
+  filter: brightness(1.15);
+  /* Crossfade ultra-smooth */
+  transition: opacity 2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.hero-carousel .hero-background.active {
+.hero-carousel-slide.active {
   opacity: 1;
+  z-index: 1;
 }
 
-/* Animation de fondu pour le carrousel */
-@keyframes carouselFade {
-  0% {
-    opacity: 0;
-  }
+/* --- Animations Ken Burns --- */
 
-  10% {
-    opacity: 1;
-  }
+.hero-carousel-slide.kb-zoomIn {
+  animation: kbZoomIn 7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
 
-  90% {
-    opacity: 1;
-  }
+@keyframes kbZoomIn {
+  from { transform: scale(1); }
+  to   { transform: scale(1.08); }
+}
 
-  100% {
-    opacity: 0;
-  }
+.hero-carousel-slide.kb-zoomOut {
+  animation: kbZoomOut 7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes kbZoomOut {
+  from { transform: scale(1.1); }
+  to   { transform: scale(1); }
+}
+
+.hero-carousel-slide.kb-panLeft {
+  animation: kbPanLeft 7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes kbPanLeft {
+  from { transform: scale(1.04) translateX(0); }
+  to   { transform: scale(1.04) translateX(-4%); }
+}
+
+.hero-carousel-slide.kb-panRight {
+  animation: kbPanRight 7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes kbPanRight {
+  from { transform: scale(1.04) translateX(0); }
+  to   { transform: scale(1.04) translateX(4%); }
+}
+
+.hero-carousel-slide.kb-zoomInPan {
+  animation: kbZoomInPan 7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes kbZoomInPan {
+  from { transform: scale(1) translate(0, 0); }
+  to   { transform: scale(1.06) translate(-2%, -1%); }
+}
+
+.hero-carousel-slide.kb-zoomOutPan {
+  animation: kbZoomOutPan 7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes kbZoomOutPan {
+  from { transform: scale(1.08) translate(2%, 1%); }
+  to   { transform: scale(1) translate(0, 0); }
 }
 
 /* ============================================
