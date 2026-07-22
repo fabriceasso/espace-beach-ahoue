@@ -623,11 +623,17 @@ function initHeroCarousel() {
   const carousel = document.querySelector('.hero-carousel');
   if (!carousel) return;
 
-  const slides = carousel.querySelectorAll('.hero-carousel-slide');
+  // Supporte les deux structures : .hero-carousel-slide (index) et .hero-background (sous-pages)
+  let slides = carousel.querySelectorAll('.hero-carousel-slide');
+  let isLegacy = false;
+  if (slides.length === 0) {
+    slides = carousel.querySelectorAll('.hero-background');
+    isLegacy = true;
+  }
   if (slides.length === 0) return;
 
   const KB_CLASSES = ['kb-zoomIn', 'kb-zoomOut', 'kb-panLeft', 'kb-panRight', 'kb-zoomInPan', 'kb-zoomOutPan'];
-  const INTERVAL_MS = 6500;
+  const INTERVAL_MS = isLegacy ? 5000 : 6500;
   let currentIndex = 0;
   let intervalId = null;
   let isTransitioning = false;
@@ -646,16 +652,21 @@ function initHeroCarousel() {
 
   function activateSlide(index) {
     const slide = slides[index];
+
+    if (isLegacy) {
+      // Sous-pages : simple crossfade sans Ken Burns
+      slides.forEach(s => s.classList.remove('active'));
+      slide.classList.add('active');
+      return;
+    }
+
+    // Index.html : Ken Burns
     const animAttr = slide.getAttribute('data-animation');
     const kbClass = 'kb-' + animAttr;
-
-    // Préparer le slide invisiblement
     clearKBAnimations(slide);
     slide.classList.remove('active');
     void slide.offsetWidth;
     slide.style.animation = '';
-
-    // Appliquer l'animation Ken Burns
     if (KB_CLASSES.includes(kbClass)) {
       slide.classList.add(kbClass);
     }
@@ -670,21 +681,28 @@ function initHeroCarousel() {
     currentIndex = (currentIndex + 1) % slides.length;
     const next = slides[currentIndex];
 
-    // Préparer le slide suivant derrière (opacity 0, Ken Burns prêt)
+    if (isLegacy) {
+      // Sous-pages : simple crossfade
+      next.classList.add('active');
+      setTimeout(() => {
+        prev.classList.remove('active');
+        isTransitioning = false;
+      }, 1900);
+      return;
+    }
+
+    // Index.html : Ken Burns crossfade
     const animAttr = next.getAttribute('data-animation');
     const kbClass = 'kb-' + animAttr;
     clearKBAnimations(next);
     next.classList.remove('active');
     next.style.animation = '';
     void next.offsetWidth;
-
-    // Le rendre visible par-dessus l'ancien
     if (KB_CLASSES.includes(kbClass)) {
       next.classList.add(kbClass);
     }
     next.classList.add('active');
 
-    // Nettoyer l'ancien slide après la transition
     setTimeout(() => {
       clearKBAnimations(prev);
       prev.classList.remove('active');
