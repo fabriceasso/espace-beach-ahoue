@@ -196,8 +196,11 @@ function initScrollAnimations() {
 }
 
 // ============================================
-// GALLERY LIGHTBOX
+// GALLERY LIGHTBOX WITH NAVIGATION
 // ============================================
+let galleryImagesList = [];
+let currentLightboxIndex = 0;
+
 function initGallery() {
   const galleryItems = document.querySelectorAll('.gallery-item');
 
@@ -206,34 +209,26 @@ function initGallery() {
       e.stopPropagation();
       const img = item.querySelector('img');
       if (img) {
-        openLightbox(img.src, img.alt);
+        const section = item.closest('section');
+        updateGalleryList(section);
+        const index = galleryImagesList.findIndex(gItem => gItem.src === img.src);
+        openLightbox(index >= 0 ? index : 0);
       }
     });
   });
 }
 
 function initGlobalLightbox() {
-  // Select all images within the main content sections
   const sections = document.querySelectorAll('#presentation, #hebergement, #restaurant, #evenements, #actualites, #galerie');
   const candidates = [];
 
   sections.forEach(section => {
     const images = section.querySelectorAll('img');
     images.forEach(img => {
-      // Exclude logic:
-      // 1. Icons (often small or svg, or specific classes)
-      // 2. Already in a gallery item (handled by initGallery)
-      // 3. Explicitly excluded classes (like btn-icon)
       if (img.closest('.gallery-item')) return;
       if (img.classList.contains('logo-img')) return;
       if (img.classList.contains('btn-icon')) return;
       if (img.closest('.event-icon')) return;
-
-      // Filter out small icons based on natural size if loaded, or class naming
-      // Assuming content images are larger. 
-      // Let's rely on container classes to be safe, but broaden the scope.
-
-      // SIMPLIFIED APPROACH: Include all images in these sections, unless explicitly excluded above.
       candidates.push(img);
     });
   });
@@ -251,32 +246,96 @@ function initGlobalLightbox() {
 
     img.addEventListener('click', (e) => {
       e.stopPropagation();
-      openLightbox(img.src, img.alt);
+      const section = img.closest('section');
+      updateGalleryList(section);
+      const index = galleryImagesList.findIndex(item => item.src === img.src);
+      if (index >= 0) {
+        openLightbox(index);
+      } else {
+        galleryImagesList = [{ src: img.src, alt: img.alt, caption: '' }];
+        openLightbox(0);
+      }
     });
   });
 }
 
-function openLightbox(src, alt) {
+function updateGalleryList(section) {
+  let scope;
+  if (section) {
+    scope = section;
+  } else {
+    scope = document;
+  }
+
+  const allImgs = scope.querySelectorAll('.gallery-item:not(.gallery-extra) img, .gallery-item.gallery-visible img, .content-image img, .feature-card-img');
+  galleryImagesList = Array.from(allImgs).map(img => {
+    const captionEl = img.closest('.gallery-item')?.querySelector('.gallery-caption');
+    return {
+      src: img.src,
+      alt: img.alt || '',
+      caption: captionEl ? captionEl.textContent : (img.alt || '')
+    };
+  });
+}
+
+function openLightbox(index) {
+  if (!galleryImagesList || galleryImagesList.length === 0) return;
+  currentLightboxIndex = (index + galleryImagesList.length) % galleryImagesList.length;
+
+  const existingLightbox = document.querySelector('.lightbox');
+  if (existingLightbox) {
+    existingLightbox.remove();
+  }
+
+  const currentItem = galleryImagesList[currentLightboxIndex];
   const lightbox = document.createElement('div');
   lightbox.className = 'lightbox';
-  const safeSrc = sanitizeHTML(src);
-  const safeAlt = sanitizeHTML(alt);
+  const safeSrc = sanitizeHTML(currentItem.src);
+  const safeAlt = sanitizeHTML(currentItem.alt);
+  const safeCaption = sanitizeHTML(currentItem.caption);
+  const totalCount = galleryImagesList.length;
+
   lightbox.innerHTML = `
     <div class="lightbox-overlay"></div>
+    ${totalCount > 1 ? '<button class="lightbox-nav lightbox-prev" aria-label="Image précédente">❮</button>' : ''}
     <div class="lightbox-content">
       <button class="lightbox-close" aria-label="Fermer">✕</button>
       <img src="${safeSrc}" alt="${safeAlt}">
+      <div class="lightbox-info">
+        ${totalCount > 1 ? `<span class="lightbox-counter">${currentLightboxIndex + 1} / ${totalCount}</span>` : ''}
+        ${safeCaption ? `<span class="lightbox-caption-text">${safeCaption}</span>` : ''}
+      </div>
     </div>
+    ${totalCount > 1 ? '<button class="lightbox-nav lightbox-next" aria-label="Image suivante">❯</button>' : ''}
   `;
 
   document.body.appendChild(lightbox);
   document.body.style.overflow = 'hidden';
 
+  const updateLightboxContent = (newIndex) => {
+    currentLightboxIndex = (newIndex + galleryImagesList.length) % galleryImagesList.length;
+    const item = galleryImagesList[currentLightboxIndex];
+    const imgEl = lightbox.querySelector('.lightbox-content img');
+    const counterEl = lightbox.querySelector('.lightbox-counter');
+    const captionEl = lightbox.querySelector('.lightbox-caption-text');
+
+    if (imgEl) {
+      imgEl.style.opacity = '0';
+      setTimeout(() => {
+        imgEl.src = sanitizeHTML(item.src);
+        imgEl.alt = sanitizeHTML(item.alt);
+        imgEl.style.opacity = '1';
+      }, 150);
+    }
+    if (counterEl) counterEl.textContent = `${currentLightboxIndex + 1} / ${totalCount}`;
+    if (captionEl) captionEl.textContent = sanitizeHTML(item.caption);
+  };
+
   let closed = false;
   const closeLightbox = () => {
     if (closed) return;
     closed = true;
-    document.removeEventListener('keydown', escapeHandler);
+    document.removeEventListener('keydown', keyboardHandler);
     lightbox.style.animation = 'fadeOut 0.3s ease';
     setTimeout(() => {
       try {
@@ -286,7 +345,6 @@ function openLightbox(src, alt) {
       } catch (e) {
         console.error("Erreur fermeture lightbox:", e);
       } finally {
-        // Force restoration of scroll
         document.body.style.overflow = '';
         document.documentElement.style.overflow = '';
       }
@@ -296,12 +354,39 @@ function openLightbox(src, alt) {
   lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
   lightbox.querySelector('.lightbox-overlay').addEventListener('click', closeLightbox);
 
-  const escapeHandler = (e) => {
+  const prevBtn = lightbox.querySelector('.lightbox-prev');
+  const nextBtn = lightbox.querySelector('.lightbox-next');
+  if (prevBtn) prevBtn.addEventListener('click', () => updateLightboxContent(currentLightboxIndex - 1));
+  if (nextBtn) nextBtn.addEventListener('click', () => updateLightboxContent(currentLightboxIndex + 1));
+
+  // Key navigation (Left / Right / Escape)
+  const keyboardHandler = (e) => {
     if (e.key === 'Escape') {
       closeLightbox();
+    } else if (e.key === 'ArrowLeft' && totalCount > 1) {
+      updateLightboxContent(currentLightboxIndex - 1);
+    } else if (e.key === 'ArrowRight' && totalCount > 1) {
+      updateLightboxContent(currentLightboxIndex + 1);
     }
   };
-  document.addEventListener('keydown', escapeHandler);
+  document.addEventListener('keydown', keyboardHandler);
+
+  // Touch Swipe navigation for mobile
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  lightbox.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  lightbox.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    if (touchStartX - touchEndX > 50 && totalCount > 1) {
+      updateLightboxContent(currentLightboxIndex + 1); // Swipe Left -> Next
+    } else if (touchEndX - touchStartX > 50 && totalCount > 1) {
+      updateLightboxContent(currentLightboxIndex - 1); // Swipe Right -> Prev
+    }
+  }, { passive: true });
 }
 
 // ============================================
