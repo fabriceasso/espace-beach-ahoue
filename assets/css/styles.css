@@ -1310,26 +1310,32 @@ p {
   }
 
   .navbar .container-wide {
-    padding: 0.75rem var(--spacing-sm);
+    padding: 0.5rem var(--spacing-sm);
+    gap: 0.5rem;
+  }
+
+  .logo {
+    gap: 0.4rem;
+    min-width: 0;
+    flex: 1;
   }
 
   .logo span {
     display: block;
-    font-size: 1rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 140px;
+    font-size: 0.8rem;
+    line-height: 1.15;
   }
 
   .logo-img {
-    height: 40px;
+    height: 34px;
+    flex-shrink: 0;
   }
 
   .mobile-menu-toggle {
     display: block;
     color: var(--color-gold);
-    font-size: 1.75rem;
+    font-size: 1.6rem;
+    flex-shrink: 0;
   }
 
   .nav-menu {
@@ -1484,8 +1490,9 @@ p {
   }
 
   .hero {
-    min-height: 100vh;
-    height: auto;
+    min-height: 0;
+    height: calc(100vh - 70px);
+    padding-top: 80px;
     padding-bottom: 3.5rem;
   }
 
