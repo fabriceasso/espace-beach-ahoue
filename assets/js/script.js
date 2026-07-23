@@ -113,12 +113,26 @@ function initNavigation() {
 
       // Animation de l'icône
       if (navMenu.classList.contains('active')) {
-        mobileMenuToggle.textContent = '✕';
+        mobileMenuToggle.innerHTML = '<i class="ph ph-x"></i>';
       } else {
-        mobileMenuToggle.textContent = '☰';
+        mobileMenuToggle.innerHTML = '<i class="ph ph-list"></i>';
       }
     });
   }
+
+  // Accordion toggle for dropdowns on mobile
+  const dropdownToggles = document.querySelectorAll('.nav-item-dropdown > .nav-link');
+  dropdownToggles.forEach(toggle => {
+    toggle.addEventListener('click', (e) => {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        const parent = toggle.closest('.nav-item-dropdown');
+        if (parent) {
+          parent.classList.toggle('open');
+        }
+      }
+    });
+  });
 
   // Smooth scroll et fermeture du menu mobile
   navLinks.forEach(link => {
@@ -145,7 +159,7 @@ function initNavigation() {
           // Fermer le menu mobile
           if (navMenu.classList.contains('active')) {
             navMenu.classList.remove('active');
-            mobileMenuToggle.textContent = '☰';
+            mobileMenuToggle.innerHTML = '<i class="ph ph-list"></i>';
           }
         }
       }
@@ -157,7 +171,7 @@ function initNavigation() {
     if (navMenu && navMenu.classList.contains('active')) {
       if (!navMenu.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
         navMenu.classList.remove('active');
-        mobileMenuToggle.textContent = '☰';
+        mobileMenuToggle.innerHTML = '<i class="ph ph-list"></i>';
       }
     }
   });
