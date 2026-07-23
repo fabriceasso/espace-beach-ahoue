@@ -139,6 +139,11 @@ function initNavigation() {
     link.addEventListener('click', (e) => {
       const href = link.getAttribute('href');
 
+      // Skip dropdown parent links on mobile — handled by accordion toggle
+      if (window.innerWidth <= 768 && link.closest('.nav-item-dropdown')) {
+        return;
+      }
+
       // Vérifier si c'est un lien d'ancre
       if (href && href.startsWith('#')) {
         e.preventDefault();
