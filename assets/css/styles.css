@@ -1313,8 +1313,18 @@ p {
     padding: 0.75rem var(--spacing-sm);
   }
 
+  .logo span {
+    display: none;
+  }
+
+  .logo-img {
+    height: 40px;
+  }
+
   .mobile-menu-toggle {
     display: block;
+    color: var(--color-gold);
+    font-size: 1.75rem;
   }
 
   .nav-menu {
@@ -1329,6 +1339,14 @@ p {
     box-shadow: var(--shadow-lg);
     transition: left var(--transition-normal);
     white-space: normal;
+    overflow-y: auto;
+  }
+
+  .nav-menu .nav-link {
+    color: var(--color-charcoal);
+    text-shadow: none;
+    font-size: 1.1rem;
+    padding: 0.75rem 0.5rem;
   }
 
   /* Mobile Dropdown Adjustments */
@@ -1378,41 +1396,42 @@ p {
   }
 
   .hero h1 {
-    font-size: clamp(1.8rem, 8vw, 2.5rem);
+    font-size: clamp(1.6rem, 7vw, 2.2rem);
     margin-bottom: 0.5rem;
+    line-height: 1.2;
   }
 
   .hero .subtitle {
-    font-size: clamp(1rem, 4vw, 1.25rem);
-    margin-bottom: 0.75rem;
+    font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+    margin-bottom: 0.5rem;
   }
 
   .hero-text {
-    font-size: clamp(0.9rem, 3.5vw, 1.1rem);
-    line-height: 1.6;
-    margin-bottom: 1rem;
+    font-size: clamp(0.85rem, 3vw, 1rem);
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
   }
 
   .hero-static-layer {
     top: auto;
     bottom: 0;
-    height: 55%;
+    height: 50%;
     object-position: center bottom;
-    opacity: 0.35;
+    opacity: 0.25;
   }
 
   .hero-content {
-    padding: 1rem;
+    padding: 0.75rem;
     max-width: 100%;
   }
 
   .hero-ticker {
-    font-size: 0.75rem;
-    padding: 0.6rem 0;
+    font-size: 0.7rem;
+    padding: 0.5rem 0;
   }
 
   .hero {
-    min-height: 500px;
+    min-height: 480px;
   }
 
   .btn {
