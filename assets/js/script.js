@@ -122,14 +122,20 @@ function initNavigation() {
 
   // Accordion toggle for dropdowns on mobile
   const dropdownToggles = document.querySelectorAll('.nav-item-dropdown > .nav-link');
+  const isMobile = () => window.matchMedia('(max-width: 768px)').matches;
+
   dropdownToggles.forEach(toggle => {
     toggle.addEventListener('click', (e) => {
-      if (window.innerWidth <= 768) {
-        e.preventDefault();
-        const parent = toggle.closest('.nav-item-dropdown');
-        if (parent) {
-          parent.classList.toggle('open');
-        }
+      if (!isMobile()) return; // Desktop: normal link behavior
+      e.preventDefault();
+      e.stopPropagation();
+      const parent = toggle.closest('.nav-item-dropdown');
+      if (parent) {
+        const wasOpen = parent.classList.contains('open');
+        document.querySelectorAll('.nav-item-dropdown.open').forEach(item => {
+          if (item !== parent) item.classList.remove('open');
+        });
+        parent.classList.toggle('open', !wasOpen);
       }
     });
   });
@@ -140,7 +146,7 @@ function initNavigation() {
       const href = link.getAttribute('href');
 
       // Skip dropdown parent links on mobile — handled by accordion toggle
-      if (window.innerWidth <= 768 && link.closest('.nav-item-dropdown')) {
+      if (isMobile() && link.closest('.nav-item-dropdown')) {
         return;
       }
 
