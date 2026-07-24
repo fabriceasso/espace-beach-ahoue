@@ -95,11 +95,19 @@ function initNavigation() {
   function openMenu() {
     menu.classList.add('active');
     toggle.innerHTML = '<i class="ph ph-x"></i>';
+    // Ouvrir tous les sous-menus accordion par défaut sur mobile
+    menu.querySelectorAll('.nav-item-dropdown').forEach(function(dd) {
+      dd.classList.add('open');
+    });
   }
 
   function closeMenu() {
     menu.classList.remove('active');
     toggle.innerHTML = '<i class="ph ph-list"></i>';
+    // Fermer tous les sous-menus accordion
+    menu.querySelectorAll('.nav-item-dropdown').forEach(function(dd) {
+      dd.classList.remove('open');
+    });
   }
 
   toggle.onclick = function(e) {
@@ -795,6 +803,8 @@ function initContactForm() {
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    const honeypot = form.querySelector('input[name="_hp_website"]');
+    if (honeypot && honeypot.value) return;
     const data = new FormData(form);
     const submitBtn = form.querySelector('button[type="submit"]');
     const originalBtnText = submitBtn.innerHTML;
