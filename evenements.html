@@ -4,8 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://fonts.gstatic.com https://*.facebook.com; media-src 'self'; frame-src https://www.google.com https://www.google.com/maps; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none';">
     <meta name="description"
         content="Mariages, baptêmes, anniversaires et séminaires à Ahoué. Le Complexe Hôtelier Ahoué Beach accueille vos événements jusqu'à 200 convives en bordure de lagune.">
 
@@ -77,64 +75,24 @@
 <body>
 
     <!-- NAVIGATION -->
-    <nav class="navbar" id="navbar" aria-label="Navigation principale">
-        <div class="container-wide">
-            <a href="index.html" class="logo">
-                <img src="assets/images/logo.png" alt="Espace Beach Ahoué Logo" class="logo-img">
-                <span>Complexe Hôtelier Ahoué Beach</span>
-            </a>
-            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menu">
-                <i class="ph ph-list"></i>
-            </button>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html#presentation" class="nav-link">À propos</a></li>
-                <li class="nav-item-dropdown">
-                    <a href="hebergement.html" class="nav-link">
-                        Hébergement <i class="ph ph-caret-down caret-icon"></i>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="hebergement.html" class="dropdown-link">Nos Chambres</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item-dropdown">
-                    <a href="index.html#restaurant" class="nav-link">
-                        Restaurant & Bar <i class="ph ph-caret-down caret-icon"></i>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="menu.html" class="dropdown-link">Notre Carte</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item-dropdown">
-                    <a href="index.html#evenements" class="nav-link active">
-                        Événements <i class="ph ph-caret-down caret-icon"></i>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="evenements.html" class="dropdown-link">Nos Offres</a></li>
-                    </ul>
-                </li>
-                <li><a href="index.html#galerie" class="nav-link">Galerie</a></li>
-                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+    <!-- NAVIGATION (injectée par header.js) -->
+    <div id="header-placeholder"></div>
 
     <!-- HERO SECTION -->
     <section class="menu-hero">
         <div class="hero-carousel">
             <div class="hero-background active"
-                style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/images/gallerie/mariage.jpg');">
+                style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/images/events/entreprise_1.jpg');">
             </div>
             <div class="hero-background"
-                style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/images/gallerie/anniversaire.jpg');">
+                style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/images/events/entreprise_2.jpg');">
             </div>
             <div class="hero-background"
-                style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/images/gallerie/paysage_24.jpg');">
+                style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/images/events/repas_16.jpg');">
             </div>
+
             <div class="hero-background"
-                style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/images/gallerie/restaurant_1.jpg');">
-            </div>
-            <div class="hero-background"
-                style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/images/gallerie/repas_8.jpg');">
+                style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/images/events/repas_15.jpg');">
             </div>
         </div>
         <div class="container">
@@ -151,7 +109,7 @@
 
             <div class="menu-tabs fade-in">
                 <a href="#mariages" class="menu-tab active" onclick="switchTab('mariages')">Mariages</a>
-                <a href="#prives" class="menu-tab" onclick="switchTab('prives')">Fêtes Privées</a>
+                <a href="#prives" class="menu-tab" onclick="switchTab('prives')">Réceptions</a>
                 <a href="#entreprises" class="menu-tab" onclick="switchTab('entreprises')">Entreprises</a>
             </div>
 
@@ -164,10 +122,10 @@
                                 <img src="assets/images/gallerie/mariage.jpg" alt="Mariage au bord de l'eau">
                             </div>
                             <div class="menu-modal-info" style="padding: 3rem;">
-                                <h2 class="menu-modal-title">Mariages de Rêve</h2>
-                                <p class="menu-modal-description">Dites "Oui" dans un cadre idyllique entre lac et
-                                    ciel azur. Nous organisons votre cérémonie laïque ou religieuse sur notre plage
-                                    privée, suivie d'une réception sous les étoiles.</p>
+                                <h2 class="menu-modal-title">Nous saurons accompagner votre union</h2>
+                                <p class="menu-modal-description">Dans un cadre idyllique, nous organisons votre
+                                    cérémonie laïque ou religieuse sur notre beach, suivie d'une réception sous les
+                                    étoiles.</p>
                                 <ul class="info-list" style="margin-bottom: 2rem; color: rgba(255,255,255,0.8);">
                                     <li><i class="ph ph-check-circle" style="color: var(--color-gold);"></i> Capacité
                                         jusqu'à 200 convives</li>
@@ -197,8 +155,8 @@
                             <div class="menu-modal-info" style="padding: 3rem;">
                                 <h2 class="menu-modal-title">Baptêmes & Anniversaires</h2>
                                 <p class="menu-modal-description">Célébrez les moments forts du calendrier familial dans
-                                    une ambiance chaleureuse et sécurisée pour les enfants. Notre espace piscine et nos
-                                    terrasses sont parfaits pour vos réceptions.</p>
+                                    une ambiance chaleureuse et sécurisée pour les enfants. Notre espace est parfait
+                                    pour vos réceptions.</p>
                                 <ul class="info-list" style="margin-bottom: 2rem; color: rgba(255,255,255,0.8);">
                                     <li><i class="ph ph-check-circle" style="color: var(--color-gold);"></i> Décorations
                                         thématiques possibles</li>
@@ -228,7 +186,8 @@
                             <div class="menu-modal-info" style="padding: 3rem;">
                                 <h2 class="menu-modal-title">Séminaires & Team Building</h2>
                                 <p class="menu-modal-description">Sortez du cadre habituel pour stimuler vos équipes. Le
-                                    calme de la lagune offre un environnement propice à la réflexion et à la cohésion de
+                                    calme du plan d'eau offre un environnement propice à la réflexion et à la cohésion
+                                    de
                                     groupe.</p>
                                 <ul class="info-list" style="margin-bottom: 2rem; color: rgba(255,255,255,0.8);">
                                     <li><i class="ph ph-check-circle" style="color: var(--color-gold);"></i> Wi-Fi haute
@@ -289,16 +248,72 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="footer" role="contentinfo">
-        <div class="container text-center">
-            <p>© 2026 - Complexe Hôtelier Ahoué Beach – Tous droits réservés by <a
-                    href="mailto:nivaquine@yahoo.com">nivaQuine</a> | <a href="mentions-legales.html">Mentions
-                    Légales</a></p>
+    <!-- AVIS CLIENTS -->
+    <section class="section" aria-label="Témoignages clients">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Ce que disent nos clients</h2>
+                <p>
+                    Découvrez les avis de ceux qui ont organisé leurs événements au Complexe Hôtelier Ahoué Beach.
+                </p>
+            </div>
+
+            <div class="testimonials-grid fade-in">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        « Nous avons organisé notre mariage ici et c'était parfait. Le cadre en bordure d'eau est
+                        magique, l'équipe est professionnelle et à l'écoute. Nos invités étaient émerveillés. Merci pour
+                        cette belle journée ! »
+                    </p>
+                    <div class="testimonial-author">
+                        <strong>Agnès & Yves</strong>
+                        <span class="testimonial-date">Décembre 2024</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★</div>
+                    <p class="testimonial-text">
+                        « Notre séminaire d'entreprise s'est très bien déroulé. La salle est spacieuse, le décor naturel
+                        met tout le monde à l'aise. Le service est rapide et le repas copieux. On reviendra pour nos
+                        prochains événements. »
+                    </p>
+                    <div class="testimonial-author">
+                        <strong>Patrice Koné</strong>
+                        <span class="testimonial-date">Novembre 2024</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★☆</div>
+                    <p class="testimonial-text">
+                        « Superbe cadre pour un anniversaire entre amis. Le personnel est accueillant, la musique est
+                        bonne et le cadre naturel fait toute la différence. Je recommande vivement pour vos fêtes. »
+                    </p>
+                    <div class="testimonial-author">
+                        <strong>Marie-Claire</strong>
+                        <span class="testimonial-date">Janvier 2025</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-lg fade-in">
+                <a href="https://www.google.com/maps/place/Ahou%C3%A9+Beach/@5.4991558,-3.9541053,853m/data=!3m2!1e3!4b1!4m8!3m7!1s0xfc1910685f6dae5:0x88bf880e3aa09058!8m2!3d5.4991558!4d-3.9515304!9m1!1b1!16s%2Fg%2F11cmt3k4dc?entry=ttu&g_ep=EgoyMDI2MDcxNS4wIKXMDSoASAFQAw%3D%3D"
+                    target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                    <i class="ph ph-star btn-icon"></i>
+                    Voir tous les avis sur Google Maps
+                </a>
+            </div>
         </div>
-    </footer>
+    </section>
+
+    <!-- FOOTER (injecté par footer.js) -->
+    <div id="footer-placeholder"></div>
 
     <!-- SCRIPTS -->
+    <script src="assets/js/header.js"></script>
+    <script src="assets/js/footer.js"></script>
     <script src="assets/js/script.js"></script>
     <script>
         window.addEventListener('load', () => {
@@ -308,6 +323,9 @@
             }
         });
     </script>
+
+    <!-- WHATSAPP FLOAT (injecté par header.js) -->
+    <div id="whatsapp-placeholder"></div>
 </body>
 
 </html>

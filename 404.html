@@ -15,6 +15,9 @@
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
         rel="stylesheet">
 
+    <!-- Phosphor Icons (hébergé en local) -->
+    <script src="assets/js/vendor/phosphor-icons.js"></script>
+
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/styles.css">
 
@@ -62,15 +65,8 @@
 </head>
 
 <body>
-    <!-- NAVIGATION -->
-    <nav class="navbar" id="navbar" aria-label="Navigation principale">
-        <div class="container-wide">
-            <a href="index.html" class="logo">
-                <img src="assets/images/logo.png" alt="Espace Beach Ahoué Logo" class="logo-img">
-                <span>Complexe Hôtelier Ahoué Beach</span>
-            </a>
-        </div>
-    </nav>
+    <!-- NAVIGATION (injectée par header.js) -->
+    <div id="header-placeholder"></div>
 
     <!-- ERROR CONTENT -->
     <main class="error-page" role="main">
@@ -96,14 +92,13 @@
         </div>
     </main>
 
-    <!-- FOOTER -->
-    <footer class="footer" role="contentinfo">
-        <div class="container text-center">
-            <p>© 2026 - Complexe Hôtelier Ahoué Beach – Tous droits réservés by <a
-                    href="mailto:nivaquine@yahoo.com">nivaQuine</a> | <a href="mentions-legales.html">Mentions
-                    Légales</a></p>
-        </div>
-    </footer>
+    <!-- FOOTER (injecté par footer.js) -->
+    <div id="footer-placeholder"></div>
+
+    <!-- JavaScript -->
+    <script src="assets/js/header.js"></script>
+    <script src="assets/js/footer.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>

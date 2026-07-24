@@ -5,8 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://fonts.gstatic.com; frame-src https://www.google.com; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none';">
     <meta name="description"
         content="Mentions légales du site Espace Beach Ahoué. Informations juridiques, hébergeur et propriété intellectuelle.">
 
@@ -20,6 +18,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
         rel="stylesheet">
+
+    <!-- Phosphor Icons (hébergé en local) -->
+    <script src="assets/js/vendor/phosphor-icons.js"></script>
 
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/styles.css">
@@ -56,24 +57,8 @@
 
 <body>
 
-    <!-- NAVIGATION -->
-    <nav class="navbar" id="navbar" aria-label="Navigation principale">
-        <div class="container-wide">
-            <a href="index.html" class="logo">
-                <img src="assets/images/logo.png" alt="Espace Beach Ahoué Logo" class="logo-img">
-                <span>Complexe Hôtelier Ahoué Beach</span>
-            </a>
-            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menu">
-                <i class="ph ph-list"></i>
-            </button>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html" class="nav-link">Accueil</a></li>
-                <li><a href="menu.html" class="nav-link">Restaurant</a></li>
-                <li><a href="hebergement.html" class="nav-link">Hébergement</a></li>
-                <li><a href="evenements.html" class="nav-link">Événements</a></li>
-            </ul>
-        </div>
-    </nav>
+    <!-- NAVIGATION (injectée par header.js) -->
+    <div id="header-placeholder"></div>
 
     <!-- HERO -->
     <section class="menu-hero"
@@ -165,16 +150,12 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="footer" role="contentinfo">
-        <div class="container text-center">
-            <p>© 2026 - Complexe Hôtelier Ahoué Beach – Tous droits réservés by <a
-                    href="mailto:nivaquine@yahoo.com">nivaQuine</a> | <a href="mentions-legales.html">Mentions
-                    Légales</a></p>
-        </div>
-    </footer>
+    <!-- FOOTER (injecté par footer.js) -->
+    <div id="footer-placeholder"></div>
 
     <!-- JavaScript -->
+    <script src="assets/js/header.js"></script>
+    <script src="assets/js/footer.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
 

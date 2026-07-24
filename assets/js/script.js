@@ -87,105 +87,79 @@ function initWhatsAppButtons() {
 // NAVIGATION
 // ============================================
 function initNavigation() {
-  const navbar = document.getElementById('navbar');
-  const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-  const navMenu = document.getElementById('navMenu');
-  const navLinks = document.querySelectorAll('.nav-link');
+  var navbar = document.getElementById('navbar');
+  var toggle = document.getElementById('mobileMenuToggle');
+  var menu = document.getElementById('navMenu');
+  if (!menu || !toggle || !navbar) return;
 
-  // Scroll effect sur la navbar
-  let lastScroll = 0;
-  window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-
-    if (currentScroll > 100) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
-
-    lastScroll = currentScroll;
-  }, { passive: true });
-
-  // Toggle mobile menu
-  if (mobileMenuToggle && navMenu) {
-    mobileMenuToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-
-      // Animation de l'icône
-      if (navMenu.classList.contains('active')) {
-        mobileMenuToggle.innerHTML = '<i class="ph ph-x"></i>';
-      } else {
-        mobileMenuToggle.innerHTML = '<i class="ph ph-list"></i>';
-      }
-    });
+  function openMenu() {
+    menu.classList.add('active');
+    toggle.innerHTML = '<i class="ph ph-x"></i>';
   }
 
-  // Accordion toggle for dropdowns on mobile
-  const dropdownToggles = document.querySelectorAll('.nav-item-dropdown > .nav-link');
-  const isMobile = () => window.matchMedia('(max-width: 768px)').matches;
+  function closeMenu() {
+    menu.classList.remove('active');
+    toggle.innerHTML = '<i class="ph ph-list"></i>';
+  }
 
-  dropdownToggles.forEach(toggle => {
-    toggle.addEventListener('click', (e) => {
-      if (!isMobile()) return; // Desktop: normal link behavior
+  toggle.onclick = function(e) {
+    e.stopPropagation();
+    if (menu.classList.contains('active')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  };
+
+  menu.onclick = function(e) {
+    var link = e.target;
+    while (link && link.tagName !== 'A') link = link.parentNode;
+    if (!link) return;
+    var href = link.getAttribute('href') || '';
+
+    var isCaret = e.target.classList && e.target.classList.contains('caret-icon');
+    var isDropdownParent = link.parentNode && link.parentNode.classList.contains('nav-item-dropdown');
+
+    if (isCaret && isDropdownParent) {
       e.preventDefault();
       e.stopPropagation();
-      const parent = toggle.closest('.nav-item-dropdown');
-      if (parent) {
-        const wasOpen = parent.classList.contains('open');
-        document.querySelectorAll('.nav-item-dropdown.open').forEach(item => {
-          if (item !== parent) item.classList.remove('open');
-        });
-        parent.classList.toggle('open', !wasOpen);
-      }
-    });
-  });
-
-  // Smooth scroll et fermeture du menu mobile
-  navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      const href = link.getAttribute('href');
-
-      // Skip dropdown parent links on mobile — handled by accordion toggle
-      if (isMobile() && link.closest('.nav-item-dropdown')) {
-        return;
-      }
-
-      // Vérifier si c'est un lien d'ancre
-      if (href && href.startsWith('#')) {
-        e.preventDefault();
-
-        const targetId = href.substring(1);
-        const targetSection = document.getElementById(targetId);
-
-        if (targetSection) {
-          // Calculer l'offset pour la navbar fixe
-          const navbarHeight = navbar.offsetHeight;
-          const targetPosition = targetSection.offsetTop - navbarHeight;
-
-          window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-          });
-
-          // Fermer le menu mobile
-          if (navMenu.classList.contains('active')) {
-            navMenu.classList.remove('active');
-            mobileMenuToggle.innerHTML = '<i class="ph ph-list"></i>';
-          }
-        }
-      }
-    });
-  });
-
-  // Fermer le menu mobile en cliquant en dehors
-  document.addEventListener('click', (e) => {
-    if (navMenu && navMenu.classList.contains('active')) {
-      if (!navMenu.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
-        navMenu.classList.remove('active');
-        mobileMenuToggle.innerHTML = '<i class="ph ph-list"></i>';
-      }
+      var parent = link.parentNode;
+      parent.classList.toggle('open');
+      return;
     }
-  });
+
+    if (isDropdownParent && link.classList.contains('nav-link')) {
+      var parent = link.parentNode;
+      var wasOpen = parent.classList.contains('open');
+      if (!wasOpen) parent.classList.add('open');
+      closeMenu();
+      return;
+    }
+
+    if (link.classList.contains('dropdown-link')) {
+      closeMenu();
+      return;
+    }
+
+    if (href.length > 0 && href[0] === '#') {
+      e.preventDefault();
+      var target = document.getElementById(href.substring(1));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+      closeMenu();
+    } else if (href.length > 0) {
+      closeMenu();
+    }
+  };
+
+  document.onclick = function(e) {
+    if (!menu.classList.contains('active')) return;
+    if (menu.contains(e.target) || toggle.contains(e.target)) return;
+    closeMenu();
+  };
+
+  window.onscroll = function() {
+    navbar.classList.toggle('scrolled', window.pageYOffset > 100);
+  };
 }
 
 // ============================================
@@ -930,23 +904,21 @@ function toggleGallery() {
 // INITIALIZATION
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
-  // Initialiser toutes les fonctionnalités
-  initWhatsAppButtons();
-  initNavigation();
-  initScrollAnimations();
-  initGallery();
-  initGlobalLightbox();
-  initMenuModal();
-  initVirtualTour();
-  initLazyLoading();
-  initScrollToTop();
-  initHeroCarousel();
-  initParallax();
-  initContactForm();
-  preloadCriticalImages();
+  try { initWhatsAppButtons(); } catch (e) { console.error('initWhatsAppButtons:', e); }
+  try { initNavigation(); } catch (e) { console.error('initNavigation:', e); }
+  try { initScrollAnimations(); } catch (e) { console.error('initScrollAnimations:', e); }
+  try { initGallery(); } catch (e) { console.error('initGallery:', e); }
+  try { initGlobalLightbox(); } catch (e) { console.error('initGlobalLightbox:', e); }
+  try { initMenuModal(); } catch (e) { console.error('initMenuModal:', e); }
+  try { initVirtualTour(); } catch (e) { console.error('initVirtualTour:', e); }
+  try { initLazyLoading(); } catch (e) { console.error('initLazyLoading:', e); }
+  try { initScrollToTop(); } catch (e) { console.error('initScrollToTop:', e); }
+  try { initHeroCarousel(); } catch (e) { console.error('initHeroCarousel:', e); }
+  try { initParallax(); } catch (e) { console.error('initParallax:', e); }
+  try { initContactForm(); } catch (e) { console.error('initContactForm:', e); }
+  try { preloadCriticalImages(); } catch (e) { console.error('preloadCriticalImages:', e); }
 
-  // Tracker le chargement de la page
-  trackEvent('Site', 'Page Load', 'Home');
+  try { trackEvent('Site', 'Page Load', 'Home'); } catch (e) { console.error('trackEvent:', e); }
 });
 
 // ============================================

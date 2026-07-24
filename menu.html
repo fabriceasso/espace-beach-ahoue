@@ -4,8 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://fonts.gstatic.com https://*.facebook.com; media-src 'self'; frame-src https://www.google.com https://www.google.com/maps; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none';">
     <meta name="description"
         content="Menu du restaurant Espace Beach Ahoué : spécialités ivoiriennes, marmite du pêcheur, kedjenou, poissons grillés, viandes, volailles et boissons. Prix en FCFA.">
 
@@ -79,46 +77,8 @@
 
 <body>
 
-    <!-- NAVIGATION -->
-    <nav class="navbar" id="navbar" aria-label="Navigation principale">
-        <div class="container-wide">
-            <a href="index.html" class="logo">
-                <img src="assets/images/logo.png" alt="Espace Beach Ahoué Logo" class="logo-img">
-                <span>Complexe Hôtelier Ahoué Beach</span>
-            </a>
-            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menu">
-                <i class="ph ph-list"></i>
-            </button>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html#presentation" class="nav-link">À propos</a></li>
-                <li class="nav-item-dropdown">
-                    <a href="index.html#hebergement" class="nav-link">Hébergement <i
-                            class="ph ph-caret-down caret-icon"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="hebergement.html" class="dropdown-link">Nos Chambres</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item-dropdown">
-                    <a href="index.html#restaurant" class="nav-link active">
-                        Restaurant & Bar <i class="ph ph-caret-down caret-icon"></i>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="menu.html" class="dropdown-link">Notre Carte</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item-dropdown">
-                    <a href="index.html#evenements" class="nav-link">
-                        Événements <i class="ph ph-caret-down caret-icon"></i>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="evenements.html" class="dropdown-link">Nos Offres</a></li>
-                    </ul>
-                </li>
-                <li><a href="index.html#galerie" class="nav-link">Galerie</a></li>
-                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+    <!-- NAVIGATION (injectée par header.js) -->
+    <div id="header-placeholder"></div>
 
     <!-- HERO SECTION -->
     <section class="menu-hero">
@@ -140,8 +100,8 @@
             </div>
         </div>
         <div class="container">
-            <h1 class="fade-in" style="font-size: clamp(3rem, 6vw, 5rem); margin-bottom: 1rem;">Notre Menu - Restaurant
-                Ahoué</h1>
+            <h1 class="fade-in" style="font-size: clamp(3rem, 6vw, 5rem); margin-bottom: 1rem;">Restaurant Ahoué Beach
+            </h1>
             <p class="subtitle fade-in" style="color: var(--color-gold);">Une immersion culinaire en bordure d'eau</p>
         </div>
     </section>
@@ -1048,23 +1008,70 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="footer" role="contentinfo">
+    <!-- AVIS CLIENTS -->
+    <section class="section" aria-label="Témoignages clients">
         <div class="container">
-            <div class="footer-bottom">
-                <p>© 2026 - Complexe Hôtelier Ahoué Beach – Tous droits réservés by <a
-                        href="mailto:nivaquine@yahoo.com">nivaQuine</a> | <a href="mentions-legales.html">Mentions
-                        Légales</a></p>
+            <div class="section-header fade-in">
+                <h2>Ce que disent nos clients</h2>
+                <p>
+                    Découvrez les avis de ceux qui ont dine au Complexe Hôtelier Ahoué Beach.
+                </p>
+            </div>
+
+            <div class="testimonials-grid fade-in">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        « Un des meilleurs repas de l'année. Le poisson braisé était exceptionnel, le cadre magnifique avec vue sur l'eau. La préparation prend du temps mais ça en vaut absolument le coup. Je reviendrai ! »
+                    </p>
+                    <div class="testimonial-author">
+                        <strong>Derek Aka</strong>
+                        <span class="testimonial-date">Août 2024</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        « Cadre naturel superbe, personnel dynamique et sympathique. La cuisine est bien faite et rapide. Le ragoût de chèvre est un délice. Parfait pour une sortie dominicale en famille. »
+                    </p>
+                    <div class="testimonial-author">
+                        <strong>Guillaume Sigui</strong>
+                        <span class="testimonial-date">Juillet 2024</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★☆</div>
+                    <p class="testimonial-text">
+                        « Envie de manger une bonne viande de brousse ? C'est le bon endroit. Les saveurs sont authentiques et le prix reste raisonnable. On y retournera sans hésiter. »
+                    </p>
+                    <div class="testimonial-author">
+                        <strong>Awa Ouattara</strong>
+                        <span class="testimonial-date">2025</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-lg fade-in">
+                <a href="https://www.google.com/maps/place/Ahou%C3%A9+Beach/@5.4991558,-3.9541053,853m/data=!3m2!1e3!4b1!4m8!3m7!1s0xfc1910685f6dae5:0x88bf880e3aa09058!8m2!3d5.4991558!4d-3.9515304!9m1!1b1!16s%2Fg%2F11cmt3k4dc?entry=ttu&g_ep=EgoyMDI2MDcxNS4wIKXMDSoASAFQAw%3D%3D"
+                    target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                    <i class="ph ph-star btn-icon"></i>
+                    Voir tous les avis sur Google Maps
+                </a>
             </div>
         </div>
-    </footer>
+    </section>
 
-    <!-- Floating WhatsApp -->
-    <a href="https://wa.me/22507941094" class="whatsapp-float" id="whatsappFloat" aria-label="Contacter sur WhatsApp">
-        <i class="ph ph-whatsapp-logo"></i>
-    </a>
+    <!-- FOOTER (injecté par footer.js) -->
+    <div id="footer-placeholder"></div>
+
+    <!-- WHATSAPP FLOAT (injecté par header.js) -->
+    <div id="whatsapp-placeholder"></div>
 
     <!-- JavaScript -->
+    <script src="assets/js/header.js"></script>
+    <script src="assets/js/footer.js"></script>
     <script src="assets/js/script.js"></script>
     <script>
         // Default tab on load
