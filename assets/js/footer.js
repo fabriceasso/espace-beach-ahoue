@@ -64,7 +64,7 @@ function injectFooter() {
 
       <div class="footer-bottom">
         <p>© 2026 | Complexe Hôtelier Ahoué Beach | Tous droits réservés | powered by <a
-            href="mailto:nivaquine@yahoo.com">nivaQuine</a> | <a href="mentions-legales.html">Mentions
+            href="mailto:nivaquine&#64;yahoo&#46;com">nivaQuine</a> | <a href="mentions-legales.html">Mentions
             Légales</a></p>
       </div>
     </div>

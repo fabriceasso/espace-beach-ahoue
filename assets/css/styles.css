@@ -411,10 +411,15 @@ p {
   font-size: 1.65rem;
   font-weight: 700;
   color: var(--color-gold);
-
+  margin-right: auto;
   display: flex;
   align-items: center;
   gap: 0.75rem;
+}
+
+.logo span {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .logo-img {
@@ -528,6 +533,7 @@ p {
   display: none;
   font-size: 1.5rem;
   color: var(--color-charcoal);
+  border-radius: 8px;
 }
 
 /* ============================================
@@ -1361,21 +1367,27 @@ p {
   }
 
   .mobile-menu-toggle {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: var(--color-gold);
     font-size: 1.6rem;
+    width: 48px;
+    height: 48px;
     flex-shrink: 0;
     position: relative;
     z-index: 10001;
-    background: none;
-    border: none;
+    background: transparent;
+    border: 2px solid var(--color-gold);
+    border-radius: 10px;
     cursor: pointer;
-    padding: 0.5rem;
-    transition: transform 0.3s ease;
+    padding: 0;
+    transition: transform 0.3s ease, background-color 0.3s ease;
   }
 
   .mobile-menu-toggle:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
+    background-color: rgba(255, 215, 0, 0.15);
   }
 
   .nav-menu {
@@ -2497,30 +2509,11 @@ p {
    TABS - SEO FRIENDLY VISIBILITY
    ============================================ */
 .tab-panel {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-  opacity: 0;
-  pointer-events: none;
+  display: none;
 }
 
 .tab-panel.tab-active {
-  position: relative;
-  width: auto;
-  height: auto;
-  padding: inherit;
-  margin: inherit;
-  overflow: visible;
-  clip: auto;
-  white-space: normal;
-  opacity: 1;
-  pointer-events: auto;
+  display: block;
 }
 
 /* ============================================
@@ -2549,6 +2542,8 @@ p {
   }
 
   .mobile-menu-toggle {
+    width: 42px;
+    height: 42px;
     font-size: 1.4rem;
   }
 }

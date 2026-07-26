@@ -630,7 +630,6 @@ function initHeroCarousel() {
   const carousel = document.querySelector('.hero-carousel');
   if (!carousel) return;
 
-  // Supporte les deux structures : .hero-carousel-slide (index) et .hero-background (sous-pages)
   let slides = carousel.querySelectorAll('.hero-carousel-slide');
   let isLegacy = false;
   if (slides.length === 0) {
@@ -638,6 +637,13 @@ function initHeroCarousel() {
     isLegacy = true;
   }
   if (slides.length === 0) return;
+
+  // Lazy load non-critical carousel images
+  slides.forEach((slide, i) => {
+    if (i > 0) {
+      slide.loading = 'lazy';
+    }
+  });
 
   const KB_CLASSES = ['kb-zoomIn', 'kb-zoomOut', 'kb-panLeft', 'kb-panRight', 'kb-zoomInPan', 'kb-zoomOutPan'];
   const INTERVAL_MS = isLegacy ? 5000 : 6500;
@@ -766,17 +772,19 @@ function initParallax() {
 // PERFORMANCE: Preload critical images
 // ============================================
 function preloadCriticalImages() {
-  const criticalImages = [
-    'assets/images/hero/carrousel/paysage_1.jpg', // Hero image
-  ];
-
-  criticalImages.forEach(src => {
-    const link = document.createElement('link');
-    link.rel = 'preload';
-    link.as = 'image';
-    link.href = src;
-    document.head.appendChild(link);
-  });
+  const heroSlides = document.querySelectorAll('.hero-carousel-slide');
+  if (heroSlides.length > 0) {
+    const firstSlide = heroSlides[0];
+    const bg = firstSlide.style.backgroundImage;
+    const src = bg.replace(/^url\(["']?/, '').replace(/["']?\)$/, '');
+    if (src) {
+      const link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = 'image';
+      link.href = src;
+      document.head.appendChild(link);
+    }
+  }
 }
 
 // ============================================
@@ -935,18 +943,28 @@ document.addEventListener('DOMContentLoaded', () => {
 // PERFORMANCE: Load event
 // ============================================
 window.addEventListener('load', () => {
-  // SAFETY NET: Watchdog to unlock scroll if stuck
-  setInterval(() => {
+  // SAFETY NET: Watchdog to unlock scroll if stuck (MutationObserver)
+  let scrollLocked = false;
+  const scrollWatchdog = new MutationObserver(() => {
     const hasLightbox = document.querySelector('.lightbox');
     const hasModal = document.querySelector('.menu-modal');
+    const bodyLocked = document.body.style.overflow === 'hidden' || document.documentElement.style.overflow === 'hidden';
 
-    // Si aucun modal n'est ouvert mais que le body est scroll-locked
-    if (!hasLightbox && !hasModal && (document.body.style.overflow === 'hidden' || document.documentElement.style.overflow === 'hidden')) {
-      console.warn('⚠️ Scroll bloqué détecté sans modal - Déblocage forcé');
-      document.body.style.overflow = '';
-      document.documentElement.style.overflow = '';
+    if (!hasLightbox && !hasModal && bodyLocked) {
+      if (!scrollLocked) {
+        scrollLocked = true;
+        setTimeout(() => {
+          if (!document.querySelector('.lightbox') && !document.querySelector('.menu-modal')) {
+            document.body.style.overflow = '';
+            document.documentElement.style.overflow = '';
+          }
+          scrollLocked = false;
+        }, 500);
+      }
     }
-  }, 2000);
+  });
+  scrollWatchdog.observe(document.body, { attributes: true, attributeFilter: ['style'] });
+  scrollWatchdog.observe(document.documentElement, { attributes: true, attributeFilter: ['style'] });
 
   // Mesurer les performances (optionnel) - API moderne
   if ('performance' in window) {
