@@ -646,34 +646,49 @@ function initHeroCarousel() {
   });
 
   const KB_CLASSES = ['kb-zoomIn', 'kb-zoomOut', 'kb-panLeft', 'kb-panRight', 'kb-zoomInPan', 'kb-zoomOutPan'];
-  const INTERVAL_MS = isLegacy ? 5000 : 3000;
+  const INTERVAL_MS = isLegacy ? 5000 : 5000;
+  const CROSSFADE_MS = 2500;
   let currentIndex = 0;
   let intervalId = null;
   let isTransitioning = false;
+
+  // --- Carousel dots ---
+  const dotsContainer = document.querySelector('.hero-dots');
+  let dots = [];
+  if (dotsContainer && !isLegacy) {
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.classList.add('hero-dot');
+      if (i === 0) dot.classList.add('active');
+      dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+      dot.addEventListener('click', () => {
+        if (i !== currentIndex && !isTransitioning) {
+          goToSlide(i);
+        }
+      });
+      dotsContainer.appendChild(dot);
+      dots.push(dot);
+    });
+  }
+
+  function updateDots() {
+    dots.forEach((d, i) => d.classList.toggle('active', i === currentIndex));
+  }
 
   function clearKBAnimations(slide) {
     KB_CLASSES.forEach(cls => slide.classList.remove(cls));
     slide.style.animation = 'none';
   }
 
-  function resetSlide(slide) {
-    clearKBAnimations(slide);
-    slide.classList.remove('active');
-    void slide.offsetWidth;
-    slide.style.animation = '';
-  }
-
   function activateSlide(index) {
     const slide = slides[index];
 
     if (isLegacy) {
-      // Sous-pages : simple crossfade sans Ken Burns
       slides.forEach(s => s.classList.remove('active'));
       slide.classList.add('active');
       return;
     }
 
-    // Index.html : Ken Burns
     const animAttr = slide.getAttribute('data-animation');
     const kbClass = 'kb-' + animAttr;
     clearKBAnimations(slide);
@@ -686,25 +701,24 @@ function initHeroCarousel() {
     slide.classList.add('active');
   }
 
-  function nextSlide() {
+  function goToSlide(index) {
     if (isTransitioning) return;
     isTransitioning = true;
 
     const prev = slides[currentIndex];
-    currentIndex = (currentIndex + 1) % slides.length;
+    currentIndex = index;
     const next = slides[currentIndex];
 
     if (isLegacy) {
-      // Sous-pages : simple crossfade
       next.classList.add('active');
       setTimeout(() => {
         prev.classList.remove('active');
         isTransitioning = false;
-      }, 2000);
+      }, CROSSFADE_MS);
+      updateDots();
       return;
     }
 
-    // Index.html : Ken Burns crossfade
     const animAttr = next.getAttribute('data-animation');
     const kbClass = 'kb-' + animAttr;
     clearKBAnimations(next);
@@ -715,13 +729,19 @@ function initHeroCarousel() {
       next.classList.add(kbClass);
     }
     next.classList.add('active');
+    updateDots();
 
     setTimeout(() => {
       clearKBAnimations(prev);
       prev.classList.remove('active');
       prev.style.animation = '';
       isTransitioning = false;
-    }, 2000);
+    }, CROSSFADE_MS);
+  }
+
+  function nextSlide() {
+    const nextIndex = (currentIndex + 1) % slides.length;
+    goToSlide(nextIndex);
   }
 
   // Démarrer
@@ -730,6 +750,13 @@ function initHeroCarousel() {
 
   carousel.addEventListener('mouseenter', () => clearInterval(intervalId));
   carousel.addEventListener('mouseleave', () => {
+    clearInterval(intervalId);
+    intervalId = setInterval(nextSlide, INTERVAL_MS);
+  });
+
+  // Pause on focus for accessibility
+  carousel.addEventListener('focusin', () => clearInterval(intervalId));
+  carousel.addEventListener('focusout', () => {
     clearInterval(intervalId);
     intervalId = setInterval(nextSlide, INTERVAL_MS);
   });
@@ -919,6 +946,52 @@ function toggleGallery() {
 }
 
 // ============================================
+// HERO TITLE – Staggered word reveal
+// ============================================
+function initHeroTitleReveal() {
+  const h1 = document.querySelector('.hero-content h1');
+  if (!h1) return;
+
+  const text = h1.textContent.trim();
+  const words = text.split(/\s+/);
+  h1.innerHTML = '';
+  h1.setAttribute('aria-label', text);
+
+  words.forEach((word, i) => {
+    const span = document.createElement('span');
+    span.classList.add('hero-word');
+    span.textContent = word;
+    span.style.animationDelay = (i * 0.1) + 's';
+    h1.appendChild(span);
+    if (i < words.length - 1) {
+      h1.appendChild(document.createTextNode(' '));
+    }
+  });
+}
+
+// ============================================
+// SCROLL INDICATOR – Fade on scroll
+// ============================================
+function initScrollIndicator() {
+  const indicator = document.querySelector('.hero-scroll-indicator');
+  if (!indicator) return;
+
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        const scrolled = window.pageYOffset;
+        const heroHeight = document.querySelector('.hero')?.offsetHeight || 800;
+        const ratio = Math.min(scrolled / (heroHeight * 0.3), 1);
+        indicator.style.opacity = 1 - ratio;
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+}
+
+// ============================================
 // INITIALIZATION
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
@@ -932,6 +1005,8 @@ document.addEventListener('DOMContentLoaded', () => {
   try { initLazyLoading(); } catch (e) { console.error('initLazyLoading:', e); }
   try { initScrollToTop(); } catch (e) { console.error('initScrollToTop:', e); }
   try { initHeroCarousel(); } catch (e) { console.error('initHeroCarousel:', e); }
+  try { initHeroTitleReveal(); } catch (e) { console.error('initHeroTitleReveal:', e); }
+  try { initScrollIndicator(); } catch (e) { console.error('initScrollIndicator:', e); }
   try { initParallax(); } catch (e) { console.error('initParallax:', e); }
   try { initContactForm(); } catch (e) { console.error('initContactForm:', e); }
   try { preloadCriticalImages(); } catch (e) { console.error('preloadCriticalImages:', e); }
