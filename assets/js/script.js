@@ -949,7 +949,7 @@ function toggleGallery() {
 // HERO TITLE – Staggered word reveal
 // ============================================
 function initHeroTitleReveal() {
-  const h1 = document.querySelector('.hero-content h1');
+  const h1 = document.querySelector('.hero-title');
   if (!h1) return;
 
   const text = h1.textContent.trim();
