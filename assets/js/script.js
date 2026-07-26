@@ -646,7 +646,7 @@ function initHeroCarousel() {
   });
 
   const KB_CLASSES = ['kb-zoomIn', 'kb-zoomOut', 'kb-panLeft', 'kb-panRight', 'kb-zoomInPan', 'kb-zoomOutPan'];
-  const INTERVAL_MS = isLegacy ? 5000 : 6500;
+  const INTERVAL_MS = isLegacy ? 5000 : 3000;
   let currentIndex = 0;
   let intervalId = null;
   let isTransitioning = false;
@@ -700,7 +700,7 @@ function initHeroCarousel() {
       setTimeout(() => {
         prev.classList.remove('active');
         isTransitioning = false;
-      }, 1900);
+      }, 2000);
       return;
     }
 
@@ -721,7 +721,7 @@ function initHeroCarousel() {
       prev.classList.remove('active');
       prev.style.animation = '';
       isTransitioning = false;
-    }, 2200);
+    }, 2000);
   }
 
   // Démarrer
