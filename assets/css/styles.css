@@ -738,13 +738,16 @@ p {
 
 .hero-carousel-slide {
   position: absolute;
-  inset: 0;
+  inset: -4%;
+  width: 108%;
+  height: 108%;
   background-size: cover;
   background-position: center;
   opacity: 0;
   will-change: opacity, transform;
   transform: scale(1);
   filter: brightness(1.15);
+  overflow: hidden;
   /* Crossfade ultra-smooth */
   transition: opacity 2s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -779,8 +782,8 @@ p {
 }
 
 @keyframes kbPanLeft {
-  from { transform: scale(1.04) translateX(0); }
-  to   { transform: scale(1.04) translateX(-4%); }
+  from { transform: scale(1) translateX(0); }
+  to   { transform: scale(1) translateX(-3%); }
 }
 
 .hero-carousel-slide.kb-panRight {
@@ -788,8 +791,8 @@ p {
 }
 
 @keyframes kbPanRight {
-  from { transform: scale(1.04) translateX(0); }
-  to   { transform: scale(1.04) translateX(4%); }
+  from { transform: scale(1) translateX(0); }
+  to   { transform: scale(1) translateX(3%); }
 }
 
 .hero-carousel-slide.kb-zoomInPan {
@@ -798,7 +801,7 @@ p {
 
 @keyframes kbZoomInPan {
   from { transform: scale(1) translate(0, 0); }
-  to   { transform: scale(1.06) translate(-2%, -1%); }
+  to   { transform: scale(1.04) translate(-1.5%, -0.5%); }
 }
 
 .hero-carousel-slide.kb-zoomOutPan {
@@ -806,7 +809,7 @@ p {
 }
 
 @keyframes kbZoomOutPan {
-  from { transform: scale(1.08) translate(2%, 1%); }
+  from { transform: scale(1.06) translate(1.5%, 0.5%); }
   to   { transform: scale(1) translate(0, 0); }
 }
 
