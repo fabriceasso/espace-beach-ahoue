@@ -640,8 +640,8 @@ p {
   max-width: 720px;
   padding: 2.5rem 3rem;
   background: rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   border: 1px solid rgba(255, 215, 0, 0.2);
   border-radius: 16px;
   box-shadow:
