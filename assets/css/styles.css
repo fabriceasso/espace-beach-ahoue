@@ -697,6 +697,8 @@ p {
 }
 
 .hero-buttons {
+  position: relative;
+  z-index: 2;
   display: flex;
   gap: var(--spacing-md);
   justify-content: center;
