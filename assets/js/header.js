@@ -41,6 +41,10 @@ function injectHeader() {
         <img src="assets/images/logo.png" alt="Espace Beach Ahoué Logo" class="logo-img">
         <span>Complexe Hôtelier Ahoué Beach</span>
       </a>
+      <div class="header-phone">
+        <a href="tel:+2252733764359"><i class="ph ph-phone"></i> 27 33 76 43 59</a>
+        <a href="tel:+2250102630733"><i class="ph ph-phone"></i> 01 02 63 07 33</a>
+      </div>
       <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menu">
         <i class="ph ph-list"></i>
       </button>
