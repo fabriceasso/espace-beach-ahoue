@@ -1,12 +1,13 @@
 # Robots.txt - Espace Beach Ahoué
-# https://espacebeachahoue.com
+# https://ahouebeach.net
 
 User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://espacebeachahoue.com/sitemap.xml
+Sitemap: https://ahouebeach.net/sitemap.xml
 
 # Dirs privées
 Disallow: /assets/js/vendor/
 Disallow: /.git/
+

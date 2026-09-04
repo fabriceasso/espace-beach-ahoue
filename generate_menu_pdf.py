@@ -319,7 +319,7 @@ def build_cover():
     cf = get_font(18)
     center_text(draw, "Route d'Alépé, Ahoué  |  +225 27 33 76 43 59", 820, cf, MUTED)
     sf2 = get_font(16)
-    center_text(draw, "espacebeachahoue.com", 860, sf2, (150, 150, 150))
+    center_text(draw, "ahouebeach.net", 860, sf2, (150, 150, 150))
 
     return page
 
@@ -475,3 +475,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+

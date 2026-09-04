@@ -30,8 +30,8 @@ function injectFooter() {
             <img src="assets/images/logo.png" alt="Logo Espace Beach Ahoué" class="footer-logo-img">
             <h3>Complexe Hôtelier Ahoué Beach</h3>
           </div>
-          <p class="footer-tagline">Séjour, restauration & détente dans un cadre naturel d'exception en
-            bordure d'eau à Ahoué.</p>
+          <p class="footer-tagline">Séjour, restauration africaine & loisirs en plein air, dans un cadre naturel
+            d'exception en bordure d'eau à Ahoué, près d'Abidjan.</p>
           <div class="social-links">
             <a href="https://www.facebook.com/espace.beachahoue" target="_blank" rel="noopener noreferrer"
               class="social-link" aria-label="Facebook">
@@ -54,7 +54,8 @@ function injectFooter() {
         <div class="footer-col">
           <h4>Infos & Accès</h4>
           <ul class="footer-info-list">
-            <li><i class="ph ph-map-pin"></i> Route d'Alépé, Ahoué, Côte d'Ivoire</li>
+            <li><i class="ph ph-map-pin"></i> Route d'Alépé, Ahoué – près d'Abidjan</li>
+            <li><i class="ph ph-mailbox"></i> 01 BP 1233 Abidjan 01, Côte d'Ivoire</li>
             <li><i class="ph ph-phone"></i> <a href="tel:+2252733764359">27 33 76 43 59</a> / <a
                 href="tel:+2250102630733">01 02 63 07 33</a></li>
             <li><i class="ph ph-clock"></i> Ouvert 7j/7 - 24h/24</li>
