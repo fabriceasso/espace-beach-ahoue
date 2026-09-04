@@ -432,7 +432,7 @@ const MenuPDF = {
     pdf.text("Route d'Alépé, Ahoué  |  +225 27 33 76 43 59", 105, 190, { align: 'center' });
     pdf.setFontSize(6);
     pdf.setTextColor(150, 150, 150);
-    pdf.text('espacebeachahoue.com', 105, 196, { align: 'center' });
+    pdf.text('ahouebeach.net', 105, 196, { align: 'center' });
   },
 
   buildFoodPage(pdf) {
