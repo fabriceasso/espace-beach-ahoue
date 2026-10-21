@@ -27,7 +27,7 @@ function injectFooter() {
       <div class="footer-grid">
         <div class="footer-col brand-col">
           <div class="footer-logo">
-            <img src="assets/images/logo.png" alt="Logo Espace Beach Ahoué" class="footer-logo-img">
+            <img src="assets/images/logo-96.png" width="45" height="45" loading="lazy" decoding="async" alt="Logo Espace Beach Ahoué" class="footer-logo-img">
             <h3>Complexe Hôtelier Ahoué Beach</h3>
           </div>
           <p class="footer-tagline">Séjour, restauration africaine & loisirs en plein air, dans un cadre naturel

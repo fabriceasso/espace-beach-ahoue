@@ -638,12 +638,48 @@ function initHeroCarousel() {
   }
   if (slides.length === 0) return;
 
-  // Lazy load non-critical carousel images
-  slides.forEach((slide, i) => {
-    if (i > 0) {
-      slide.loading = 'lazy';
+  // Chargement différé des images du carrousel.
+  // Seule la première image est chargée avec la page ; les suivantes le sont
+  // au fil du carrousel (la prochaine est préchargée à l'avance).
+  const slideLoads = new Map();
+
+  function loadSlideBackground(index, done) {
+    const slide = slides[index];
+    const url = slide.dataset.bg;
+
+    if (!url) {
+      if (done) done();
+      return;
     }
-  });
+
+    // Un chargement est peut-être déjà en cours pour cette image.
+    if (slideLoads.has(url)) {
+      slideLoads.get(url).then(() => { if (done) done(); });
+      return;
+    }
+
+    const load = new Promise((resolve) => {
+      const img = new Image();
+      img.decoding = 'async';
+
+      const finish = () => {
+        slide.style.backgroundImage = `url("${url}")`;
+        slide.removeAttribute('data-bg');
+        resolve();
+      };
+
+      img.onload = finish;
+      img.onerror = finish;
+      img.src = url;
+    });
+
+    slideLoads.set(url, load);
+    if (done) load.then(done);
+  }
+
+  function prefetchNext(index) {
+    loadSlideBackground((index + 1) % slides.length);
+  }
 
   const KB_CLASSES = ['kb-zoomIn', 'kb-zoomOut', 'kb-panLeft', 'kb-panRight', 'kb-zoomInPan', 'kb-zoomOutPan'];
   const INTERVAL_MS = isLegacy ? 5000 : 5000;
@@ -705,38 +741,47 @@ function initHeroCarousel() {
     if (isTransitioning) return;
     isTransitioning = true;
 
-    const prev = slides[currentIndex];
-    currentIndex = index;
-    const next = slides[currentIndex];
+    const startTransition = () => {
+      const prev = slides[currentIndex];
+      currentIndex = index;
+      const next = slides[currentIndex];
 
-    if (isLegacy) {
+      if (isLegacy) {
+        next.classList.add('active');
+        setTimeout(() => {
+          prev.classList.remove('active');
+          isTransitioning = false;
+        }, CROSSFADE_MS);
+        updateDots();
+        prefetchNext(currentIndex);
+        return;
+      }
+
+      const animAttr = next.getAttribute('data-animation');
+      const kbClass = 'kb-' + animAttr;
+      clearKBAnimations(next);
+      next.classList.remove('active');
+      next.style.animation = '';
+      void next.offsetWidth;
+      if (KB_CLASSES.includes(kbClass)) {
+        next.classList.add(kbClass);
+      }
       next.classList.add('active');
+      updateDots();
+
+      // Précharge la diapositive suivante pendant l'affichage de celle-ci.
+      prefetchNext(currentIndex);
+
       setTimeout(() => {
+        clearKBAnimations(prev);
         prev.classList.remove('active');
+        prev.style.animation = '';
         isTransitioning = false;
       }, CROSSFADE_MS);
-      updateDots();
-      return;
-    }
+    };
 
-    const animAttr = next.getAttribute('data-animation');
-    const kbClass = 'kb-' + animAttr;
-    clearKBAnimations(next);
-    next.classList.remove('active');
-    next.style.animation = '';
-    void next.offsetWidth;
-    if (KB_CLASSES.includes(kbClass)) {
-      next.classList.add(kbClass);
-    }
-    next.classList.add('active');
-    updateDots();
-
-    setTimeout(() => {
-      clearKBAnimations(prev);
-      prev.classList.remove('active');
-      prev.style.animation = '';
-      isTransitioning = false;
-    }, CROSSFADE_MS);
+    // On attend que l'image soit prête pour éviter un flash vide.
+    loadSlideBackground(index, startTransition);
   }
 
   function nextSlide() {
@@ -746,6 +791,7 @@ function initHeroCarousel() {
 
   // Démarrer
   activateSlide(0);
+  prefetchNext(0);
   intervalId = setInterval(nextSlide, INTERVAL_MS);
 
   carousel.addEventListener('mouseenter', () => clearInterval(intervalId));

@@ -188,17 +188,20 @@ Le design est optimisé mobile-first avec :
 - **HTML5** - Structure sémantique
 - **CSS3** - Design system avec variables CSS
 - **JavaScript Vanilla** - Pas de dépendances
-- **Google Fonts** - Playfair Display & Poppins
+- **Polices auto-hébergées** - Cormorant Garamond & Montserrat (sous-ensemble latin)
 - **Intersection Observer API** - Animations au scroll
 - **WhatsApp Business API** - Intégration messaging
 
 ## 📊 Performance
 
-- Lazy loading des images
+- Lazy loading des images et chargement progressif du carrousel
+- CSS critique inline et feuilles de styles complètes non bloquantes
+- En-tête pré-rendu dans la page d'accueil pour un affichage immédiat
+- Polices et icônes auto-hébergées, en sous-ensembles (icônes : 144 Ko → 5 Ko)
 - CSS optimisé avec variables
 - JavaScript modulaire
 - Pas de frameworks lourds
-- Images optimisées pour le web
+- Images optimisées pour le web (WebP, redimensionnement, dimensions explicites)
 
 ## 🌍 Déploiement
 

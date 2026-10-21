@@ -38,7 +38,7 @@ function injectHeader() {
   <nav class="navbar" id="navbar" aria-label="Navigation principale">
     <div class="container-wide">
       <a href="${logoHref}" class="logo">
-        <img src="assets/images/logo.png" alt="Espace Beach Ahoué Logo" class="logo-img">
+        <img src="assets/images/logo-96.png" width="50" height="50" alt="Espace Beach Ahoué Logo" class="logo-img">
         <span>Complexe Hôtelier Ahoué Beach</span>
       </a>
       <div class="header-phone">

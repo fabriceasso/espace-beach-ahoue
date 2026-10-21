@@ -4,6 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Préchargements critiques -->
+    <link rel="preload" as="image" href="assets/images/hero/carrousel/1_paysage_1.jpg" fetchpriority="high">
+    <link rel="preload" href="assets/fonts/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin fetchpriority="low">
+    <link rel="preload" href="assets/fonts/cormorant-garamond-latin.woff2" as="font" type="font/woff2" crossorigin fetchpriority="low">
+    <link rel="preload" href="assets/js/vendor/Phosphor-subset.woff2" as="font" type="font/woff2" crossorigin fetchpriority="low">
+    <link rel="preload" href="assets/js/vendor/phosphor-used.css" as="style">
+    <link rel="preload" href="assets/css/styles.css" as="style" fetchpriority="high">
+    <style data-critical>@media (max-width: 768px){.scroll-to-top{width:45px;height:45px;bottom:5rem;right:1rem}}@font-face{font-family:Phosphor;src:url(assets/js/vendor/Phosphor-subset.woff2)format("woff2");font-weight:400;font-style:normal;font-display:block}.ph.ph-list:before{content:""}@font-face{font-family:Cormorant Garamond;font-style:normal;font-weight:400 700;font-display:swap;src:url(assets/fonts/cormorant-garamond-latin.woff2)format("woff2");unicode-range:U+??,U+131,U+152-153,U+2BB-2BC,U+2C6,U+2DA,U+2DC,U+304,U+308,U+329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Montserrat;font-style:normal;font-weight:300 600;font-display:swap;src:url(assets/fonts/montserrat-latin.woff2)format("woff2");unicode-range:U+??,U+131,U+152-153,U+2BB-2BC,U+2C6,U+2DA,U+2DC,U+304,U+308,U+329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}h1{font-family:var(--font-heading);color:var(--color-gold);margin-bottom:var(--spacing-md);font-size:clamp(3rem,7vw,5rem);font-weight:700;line-height:1.2}.container{max-width:1200px;padding:0 var(--spacing-md);margin:0 auto}.section{padding:var(--spacing-xl)0;position:relative}@keyframes pulse{0%,to{box-shadow:0 0 #25d366b3}50%{box-shadow:0 0 0 20px #25d36600}}.mobile-menu-toggle{color:var(--color-charcoal);border-radius:8px;font-size:1.5rem;display:none}@keyframes scrollPulse{0%,to{opacity:.5;transform:translate(-50%)translateY(0)}50%{opacity:1;transform:translate(-50%)translateY(6px)}}@keyframes fadeInWord{to{opacity:1;transform:translateY(0)}}@keyframes fadeInUp{0%{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}@keyframes ticker{0%{transform:translate(0)}to{transform:translate(-50%)}}@keyframes kbZoomIn{0%{transform:scale(1)}to{transform:scale(1.08)}}@keyframes kbZoomOut{0%{transform:scale(1.1)}to{transform:scale(1)}}@keyframes kbPanLeft{0%{transform:scale(1)translate(0)}to{transform:scale(1)translate(-3%)}}@keyframes kbPanRight{0%{transform:scale(1)translate(0)}to{transform:scale(1)translate(3%)}}@keyframes kbZoomInPan{0%{transform:scale(1)translate(0)}to{transform:scale(1.04)translate(-1.5%,-.5%)}}@keyframes kbZoomOutPan{0%{transform:scale(1.06)translate(1.5%,.5%)}to{transform:scale(1)translate(0)}}@media (max-width: 1099px){:root{--spacing-lg:3rem;--spacing-xl:4rem}.navbar .container-wide{padding:.5rem var(--spacing-sm);gap:.5rem}.logo{flex:1;gap:.4rem;min-width:0}.logo span{font-size:1.1rem;line-height:1.15;display:block}.logo-img{flex-shrink:0;height:48px}.mobile-menu-toggle{color:var(--color-gold);z-index:10001;border:2px solid var(--color-gold);cursor:pointer;background:0 0;border-radius:10px;flex-shrink:0;justify-content:center;align-items:center;width:48px;height:48px;padding:0;font-size:1.6rem;transition:transform .3s,background-color .3s;display:flex;position:relative}.mobile-menu-toggle:hover{background-color:#ffd70026;transform:scale(1.05)}.nav-menu{backdrop-filter:blur(10px);z-index:10000;opacity:0;visibility:hidden;pointer-events:none;background:#000000eb;flex-direction:row;width:100%;height:100dvh;transition:opacity .4s,visibility .4s,transform .4s;position:fixed;top:0;left:0;overflow:hidden;transform:translateY(-10px)}.nav-links{flex-direction:column;justify-content:center;align-items:flex-start;gap:0;width:100%;height:100%;padding:5rem 2rem 3rem;overflow-y:auto}.nav-links .nav-link{color:var(--color-text-main);text-shadow:none;letter-spacing:.2em;text-transform:uppercase;text-align:left;opacity:0;border-bottom:1px solid #ffd7001a;border-radius:0;width:100%;padding:1.1rem 0;font-size:.85rem;font-weight:500;transition:color .3s,padding-left .3s;display:block;transform:translate(20px)}@keyframes navLinkFadeIn{0%{opacity:0;transform:translate(20px)}to{opacity:1;transform:translate(0)}}.nav-links .nav-link:hover,.nav-links .nav-link:active{color:var(--color-gold);background:0 0;padding-left:.5rem}.nav-item-dropdown{text-align:left;width:100%}.nav-item-dropdown>.nav-link{cursor:pointer;justify-content:flex-start;align-items:center;gap:.5rem;display:flex}.nav-item-dropdown .caret-icon{font-size:.8rem;transition:transform .3s}.nav-menu:before{display:none}.hero-buttons{flex-direction:column;align-items:stretch}.hero-title{letter-spacing:2px;margin-bottom:.5rem;font-size:clamp(1.8rem,6vw,2.5rem);line-height:1.2}.hero .subtitle{letter-spacing:1px;margin-bottom:.5rem;font-size:clamp(.85rem,3vw,1rem)}.hero-static-layer{object-position:center bottom;opacity:.25;height:50%;top:auto;bottom:0}.hero-content{border-radius:12px;max-width:95%;padding:1.5rem 1.25rem}.hero-ticker{padding:.5rem 0;font-size:.7rem}.hero:after{bottom:58px}.hero-dots{gap:6px;padding:6px 10px;bottom:68px}.hero-dot.active{width:18px}.hero{min-height:480px}.btn{width:100%}.whatsapp-float{width:55px;height:55px;font-size:1.75rem;bottom:1rem;right:1rem}.section{padding:var(--spacing-lg)0}}@media (width>=1100px) and (max-width: 1899px){.navbar .container-wide{flex:auto;min-width:0;padding-left:1.5rem;padding-right:1.5rem}.logo{flex:auto;gap:.5rem;min-width:0;margin-right:1rem}.logo span{white-space:nowrap;font-size:1.15rem;line-height:1.2}.logo-img{height:44px}.nav-menu{flex:none}.nav-links{gap:.35rem}.nav-link{letter-spacing:.02em;padding:.5rem .45rem;font-size:.85rem}.caret-icon{margin-left:.15rem;font-size:.65rem}}@media (max-width: 480px){.hero{height:calc(100vh - 70px);min-height:0;padding-top:80px;padding-bottom:3.5rem}.hero-title{letter-spacing:1px;font-size:1.4rem}.hero .subtitle{font-size:.8rem}.hero-static-layer{opacity:.15;height:45%}.hero-content{backdrop-filter:blur(10px);border-radius:10px;padding:1.2rem 1rem}.hero-dots{gap:5px;padding:5px 8px;bottom:48px}.hero-dot{width:6px;height:6px}.hero-dot.active{width:16px}.hero:after{bottom:42px}.hero-buttons .btn{padding:.6rem .85rem;font-size:.75rem}}@keyframes spin{0%{transform:rotate(0)}to{transform:rotate(360deg)}}@media print{.navbar,.whatsapp-float,.btn{display:none}}@keyframes modalFadeIn{0%{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}@keyframes modalFadeOut{0%{opacity:1;transform:scale(1)}to{opacity:0;transform:scale(.95)}}@media (max-width: 360px){.nav-links{padding:4rem 1.5rem 2rem}.nav-links .nav-link{letter-spacing:.15em;font-size:.75rem}.logo span{font-size:.95rem}.logo-img{height:38px}.mobile-menu-toggle{width:42px;height:42px;font-size:1.4rem}}.scroll-to-top{background-color:var(--color-ochre);color:#fff;cursor:pointer;opacity:0;visibility:hidden;z-index:199;width:50px;height:50px;box-shadow:var(--shadow-md);border:none;border-image:;border-radius:50%;font-size:1.5rem;transition:all .3s;position:fixed;bottom:6rem;right:2rem}.scroll-to-top:hover{background-color:var(--color-palm);transform:translateY(-3px)}@media (max-width: 768px){.scroll-to-top{width:45px;height:45px;bottom:5rem;right:1rem}}@font-face{font-family:Phosphor;src:url(assets/js/vendor/Phosphor-subset.woff2)format("woff2");font-weight:400;font-style:normal;font-display:block}.ph{font-variant:discretionary-ligatures;text-transform:none;letter-spacing:0;font-feature-settings:"liga";-webkit-font-smoothing:antialiased;font-style:normal;font-weight:400;line-height:1;font-family:Phosphor!important}.ph.ph-bed:before{content:""}.ph.ph-caret-down:before{content:""}.ph.ph-fork-knife:before{content:""}.ph.ph-whatsapp-logo:before{content:""}@font-face{font-family:Cormorant Garamond;font-style:normal;font-weight:400 700;font-display:swap;src:url(assets/fonts/cormorant-garamond-latin.woff2)format("woff2");unicode-range:U+??,U+131,U+152-153,U+2BB-2BC,U+2C6,U+2DA,U+2DC,U+304,U+308,U+329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Montserrat;font-style:normal;font-weight:300 600;font-display:swap;src:url(assets/fonts/montserrat-latin.woff2)format("woff2");unicode-range:U+??,U+131,U+152-153,U+2BB-2BC,U+2C6,U+2DA,U+2DC,U+304,U+308,U+329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}:root{--color-bg-main:#121212;--color-bg-card:#1e1e1e;--color-bg-alt:#1a1a1a;--color-gold:gold;--color-gold-dark:#b8860b;--color-green:#00a859;--color-red:#e31b23;--color-text-main:#f5ede5;--color-text-muted:#d4c4b0;--color-sand:var(--color-bg-alt);--color-sand-light:var(--color-bg-card);--color-ochre:var(--color-gold);--color-palm:var(--color-green);--color-lagoon:var(--color-red);--color-charcoal:var(--color-text-main);--color-white:var(--color-bg-card);--color-off-white:var(--color-bg-main);--gradient-sunset:linear-gradient(135deg, var(--color-gold) 0%, orange 50%, var(--color-red) 100%);--gradient-overlay:linear-gradient(180deg, #000000b3 0%, #0006 100%);--gradient-sand:linear-gradient(135deg, var(--color-bg-card) 0%, var(--color-bg-alt) 100%);--font-heading:"Cormorant Garamond", serif;--font-body:"Montserrat", sans-serif;--spacing-xs:.5rem;--spacing-sm:1rem;--spacing-md:2rem;--spacing-lg:4rem;--spacing-xl:6rem;--spacing-xxl:8rem;--radius-sm:8px;--radius-md:16px;--radius-lg:24px;--radius-full:9999px;--shadow-sm:0 4px 12px #00000080;--shadow-md:0 8px 24px #0009;--shadow-lg:0 16px 48px #000000b3;--shadow-xl:0 24px 64px #000c;--transition-fast:.2s ease;--transition-normal:.3s ease;--transition-slow:.5s ease;--z-base:1;--z-dropdown:100;--z-sticky:200;--z-fixed:300;--z-modal:400;--z-tooltip:500}*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;font-size:16px}body{font-family:var(--font-body);color:var(--color-text-main);background-color:var(--color-bg-main);-webkit-font-smoothing:antialiased;min-height:100vh;line-height:1.7;overflow-x:hidden}img{border:2px solid var(--color-gold);border-radius:var(--radius-sm);max-width:100%;height:auto;display:block}.logo-img{border:none;border-image:}a{color:inherit;transition:var(--transition-normal);text-decoration:none}button{font-family:var(--font-body);cursor:pointer;transition:var(--transition-normal);background:0 0;border:none;border-image:}h1{font-family:var(--font-heading);color:var(--color-gold);margin-bottom:var(--spacing-md);font-size:clamp(3rem,7vw,5rem);font-weight:700;line-height:1.2}p{margin-bottom:var(--spacing-sm);font-size:clamp(1rem,2vw,1.125rem);line-height:1.8}.subtitle{color:var(--color-ochre);margin-bottom:var(--spacing-sm);font-size:clamp(1.125rem,2.5vw,1.5rem);font-weight:500}.container-wide{max-width:1400px;padding:0 var(--spacing-md);margin:0 auto}.btn{justify-content:center;align-items:center;gap:var(--spacing-xs);font-family:var(--font-body);text-transform:uppercase;letter-spacing:1px;border-radius:var(--radius-sm);cursor:pointer;transition:all var(--transition-normal);white-space:nowrap;padding:.85rem 1.75rem;font-size:.9rem;font-weight:600;display:inline-flex}.btn-icon{margin-right:.25rem;font-size:1.25rem}.btn-primary{background-color:var(--color-gold);color:var(--color-bg-main);border:1px solid var(--color-gold);box-shadow:var(--shadow-sm)}.btn-primary:hover{color:var(--color-gold);box-shadow:var(--shadow-md);background-color:#0000;transform:translateY(-2px)}.btn-secondary{color:var(--color-text-main);border:1px solid var(--color-text-main);box-shadow:var(--shadow-sm);background-color:#0000}.btn-secondary:hover{background-color:var(--color-text-main);color:var(--color-bg-main);transform:translateY(-2px)}.btn-rounded{border-radius:50px}.ph{vertical-align:middle}.whatsapp-float{width:60px;height:60px;color:var(--color-white);box-shadow:var(--shadow-xl);z-index:var(--z-fixed);transition:all var(--transition-normal);background-color:#25d366;border-radius:50%;justify-content:center;align-items:center;font-size:2rem;animation:2s infinite pulse;display:flex;position:fixed;bottom:2rem;right:2rem}.whatsapp-float:hover{background-color:#20ba5a;transform:scale(1.1)}.navbar{backdrop-filter:blur(3px);z-index:var(--z-fixed);transition:all var(--transition-normal);border-bottom:2px solid var(--color-gold);background-image:linear-gradient(#00000080,#00000080),url(assets/images/kente_bg.jpg);background-position:50%;background-size:cover;justify-content:space-between;align-items:center;display:flex;position:fixed;top:0;left:0;right:0;box-shadow:0 4px 30px #0006}.navbar .container-wide{padding:1rem var(--spacing-md);justify-content:space-between;align-items:center;display:flex}.logo{font-family:var(--font-heading);color:var(--color-gold);align-items:center;gap:.75rem;margin-right:auto;font-size:1.65rem;font-weight:700;display:flex}.logo span{text-transform:uppercase;letter-spacing:.05em}.logo-img{width:auto;height:50px;transition:transform var(--transition-normal);border-radius:50%}.logo:hover .logo-img{transform:rotate(5deg)scale(1.05)}.nav-menu{align-items:center;gap:1.25rem;display:flex}.nav-links{white-space:nowrap;align-items:center;gap:1.25rem;list-style:none;display:flex}.nav-link{color:var(--color-text-main);border-radius:var(--radius-sm);transition:var(--transition-fast);text-shadow:0 1px 4px #000c;padding:.5rem .75rem;font-size:1.15rem;font-weight:600}.nav-link:hover{color:var(--color-gold);background-color:#ffd7001a}.nav-item-dropdown{position:relative}.caret-icon{vertical-align:middle;transition:transform var(--transition-normal);margin-left:.25rem;font-size:.8rem}.nav-item-dropdown:hover .caret-icon{transform:rotate(180deg)}.dropdown-menu{background-color:var(--color-bg-card);border-radius:var(--radius-sm);min-width:220px;box-shadow:var(--shadow-lg);opacity:0;visibility:hidden;transition:all var(--transition-normal);z-index:var(--z-dropdown);pointer-events:none;border:1px solid #ffd70033;padding:.5rem 0;list-style:none;position:absolute;top:100%;left:50%;transform:translate(-50%)translateY(10px)}.nav-item-dropdown:hover .dropdown-menu{opacity:1;visibility:visible;pointer-events:auto;transform:translate(-50%)translateY(0)}.dropdown-link{color:var(--color-text-main);font-family:var(--font-body);transition:all var(--transition-fast);text-align:left;padding:.75rem 1.5rem;font-size:1rem;font-weight:600;text-decoration:none;display:block}.dropdown-link:hover{color:var(--color-gold);background-color:#ffd7001a;padding-left:1.75rem}.hero{text-align:center;height:100vh;min-height:600px;color:var(--color-white);flex-direction:column;justify-content:center;align-items:center;gap:1.25rem;padding-top:80px;display:flex;position:relative;overflow:hidden}.hero-static-layer{object-fit:contain;object-position:left bottom;z-index:1;pointer-events:none;will-change:transform;border:none;border-image:;outline:none;width:100%;height:calc(100% - 120px);position:absolute;top:120px;left:0;transform:translateZ(0)}.hero-overlay{z-index:-1;background:radial-gradient(#0000 40%,#00000080 100%),linear-gradient(#0009 0%,#00000059 40%,#0f0a0080 100%);width:100%;height:100%;position:absolute;top:0;left:0}.hero:before,.hero:after{content:"";background:linear-gradient(90deg,transparent,var(--color-gold),transparent);z-index:10;opacity:.6;width:100%;height:2px;position:absolute;left:0}.hero:before{top:0}.hero:after{bottom:68px}.hero-title{z-index:2;color:#fff;font-family:var(--font-heading);letter-spacing:3px;text-transform:uppercase;text-shadow:0 2px 20px #00000080;margin-bottom:var(--spacing-sm);text-align:center;max-width:800px;padding:0 var(--spacing-md);font-size:clamp(2rem,5vw,3.5rem);font-weight:300;line-height:1.3;position:relative}.hero-title .hero-word{opacity:0;animation:.5s forwards fadeInWord;display:inline-block;transform:translateY(12px)}.hero-content{z-index:2;max-width:600px;padding:0;position:relative}.hero .subtitle{color:#f0f0f0e6;font-family:var(--font-body);letter-spacing:1px;text-shadow:0 2px 8px #00000080;margin-bottom:0;font-size:clamp(.9rem,2vw,1.1rem);font-style:italic;font-weight:300}.hero-buttons{z-index:2;gap:var(--spacing-sm);flex-wrap:wrap;justify-content:center;display:flex;position:relative}.hero-buttons .btn-primary{color:var(--color-gold);border:1px solid var(--color-gold);background-color:#0000;transition:all .4s;position:relative;overflow:hidden}.hero-buttons .btn-primary:before{content:"";background:conic-gradient(from 0deg,transparent,var(--color-gold),transparent,var(--color-gold),transparent);z-index:-1;opacity:0;border-radius:inherit;transition:opacity .4s;position:absolute;inset:-2px}.hero-buttons .btn-primary:hover:before{opacity:.4}.hero-buttons .btn-primary:hover{color:var(--color-gold);border-color:var(--color-gold);background-color:#ffd7001a;transform:translateY(-2px);box-shadow:0 0 24px #ffd7004d}.hero-buttons .btn-secondary{color:#ffffffd9;backdrop-filter:blur(4px);border:1px solid #ffd70066;transition:all .4s}.hero-buttons .btn-secondary:hover{border-color:var(--color-gold);color:var(--color-gold);background:#ffd70014;transform:translateY(-2px)}.hero-dots{z-index:10;backdrop-filter:blur(8px);background:#0000004d;border:1px solid #ffd70026;border-radius:20px;gap:8px;padding:8px 14px;display:flex;position:absolute;bottom:80px;left:50%;transform:translate(-50%)}.hero-dot{cursor:pointer;background:#ffffff59;border:none;border-image:;border-radius:50%;width:8px;height:8px;padding:0;transition:all .4s cubic-bezier(.4,0,.2,1)}.hero-dot.active{background:var(--color-gold);border-radius:4px;width:24px;box-shadow:0 0 10px #ffd70080}.hero-dot:hover:not(.active){background:#fff9}.hero-scroll-indicator{z-index:10;opacity:.7;flex-direction:column;align-items:center;gap:6px;animation:2s ease-in-out infinite scrollPulse;display:flex;position:absolute;bottom:120px;left:50%;transform:translate(-50%)}.hero-scroll-indicator span{font-family:var(--font-body);text-transform:uppercase;letter-spacing:3px;color:#fff9;font-size:.65rem}.hero-scroll-indicator svg{width:20px;height:20px;stroke:var(--color-gold);stroke-width:2px;fill:none}.hero-ticker{width:100%;color:var(--color-gold);z-index:10;backdrop-filter:blur(8px);background:linear-gradient(90deg,#14120cf2 0%,#231e14f2 50%,#14120cf2 100%);border-top:1px solid #ffd7004d;border-bottom:1px solid #ffd7001a;padding:.85rem 0;position:absolute;bottom:0;left:0;overflow:hidden;box-shadow:0 -8px 25px #00000080}.hero-ticker-track{white-space:nowrap;width:fit-content;animation:45s linear infinite ticker;display:flex}.hero-ticker-track span{font-family:var(--font-body);text-transform:uppercase;letter-spacing:1.5px;padding-right:4rem;font-size:.95rem;font-weight:600;display:inline-block}.hero-carousel{z-index:-2;width:100%;height:100%;position:absolute;top:0;left:0;overflow:hidden}.hero-carousel-slide{opacity:0;filter:brightness(1.15);background-position:50%;background-size:cover;width:108%;height:108%;transition:opacity 2.5s cubic-bezier(.4,0,.2,1);position:absolute;inset:-4%;overflow:hidden;transform:scale(1)}.hero-carousel-slide.active{opacity:1;z-index:1;will-change:opacity, transform}.hero-carousel-slide.kb-zoomIn{animation:6s cubic-bezier(.25,.46,.45,.94) forwards kbZoomIn}@media (max-width: 1099px){:root{--spacing-lg:3rem;--spacing-xl:4rem}.navbar .container-wide{padding:.5rem var(--spacing-sm);gap:.5rem}.logo{flex:1;gap:.4rem;min-width:0}.logo span{font-size:1.1rem;line-height:1.15;display:block}.logo-img{flex-shrink:0;height:48px}.nav-menu{backdrop-filter:blur(10px);z-index:10000;opacity:0;visibility:hidden;pointer-events:none;background:#000000eb;flex-direction:row;width:100%;height:100dvh;transition:opacity .4s,visibility .4s,transform .4s;position:fixed;top:0;left:0;overflow:hidden;transform:translateY(-10px)}.nav-links{flex-direction:column;justify-content:center;align-items:flex-start;gap:0;width:100%;height:100%;padding:5rem 2rem 3rem;overflow-y:auto}.nav-links .nav-link{color:var(--color-text-main);text-shadow:none;letter-spacing:.2em;text-transform:uppercase;text-align:left;opacity:0;border-bottom:1px solid #ffd7001a;border-radius:0;width:100%;padding:1.1rem 0;font-size:.85rem;font-weight:500;transition:color .3s,padding-left .3s;display:block;transform:translate(20px)}@keyframes navLinkFadeIn{0%{opacity:0;transform:translate(20px)}to{opacity:1;transform:translate(0)}}.nav-links .nav-link:hover,.nav-links .nav-link:active{color:var(--color-gold);background:0 0;padding-left:.5rem}.nav-item-dropdown{text-align:left;width:100%}.nav-item-dropdown>.nav-link{cursor:pointer;justify-content:flex-start;align-items:center;gap:.5rem;display:flex}.nav-item-dropdown .dropdown-menu{opacity:1;visibility:visible;pointer-events:auto;box-shadow:none;text-align:left;background:0 0;border:none;border-image:;border-radius:0;min-width:0;margin:0;padding:.25rem 0 .25rem 1rem;list-style:none;display:none;position:static;transform:none}.nav-item-dropdown .caret-icon{font-size:.8rem;transition:transform .3s}.nav-item-dropdown .dropdown-link{color:#6bbf7a;letter-spacing:.15em;text-transform:uppercase;border-bottom:none;padding:.5rem 0;font-size:.8rem;transition:color .2s,padding-left .3s;display:block}.nav-item-dropdown .dropdown-link:hover{color:#a8e6b0;background:0 0;padding-left:.5rem}.nav-menu:before{display:none}.hero-buttons{flex-direction:column;align-items:stretch}.hero-title{letter-spacing:2px;margin-bottom:.5rem;font-size:clamp(1.8rem,6vw,2.5rem);line-height:1.2}.hero .subtitle{letter-spacing:1px;margin-bottom:.5rem;font-size:clamp(.85rem,3vw,1rem)}.hero-static-layer{object-position:center bottom;opacity:.25;height:50%;top:auto;bottom:0}.hero-content{border-radius:12px;max-width:95%;padding:1.5rem 1.25rem}.hero-ticker{padding:.5rem 0;font-size:.7rem}.hero:after{bottom:58px}.hero-dots{gap:6px;padding:6px 10px;bottom:68px}.hero-dot.active{width:18px}.hero-scroll-indicator{display:none}.hero{min-height:480px}.btn{width:100%}.whatsapp-float{width:55px;height:55px;font-size:1.75rem;bottom:1rem;right:1rem}}@media (width>=1100px) and (max-width: 1899px){.navbar .container-wide{flex:auto;min-width:0;padding-left:1.5rem;padding-right:1.5rem}.logo{flex:auto;gap:.5rem;min-width:0;margin-right:1rem}.logo span{white-space:nowrap;font-size:1.15rem;line-height:1.2}.logo-img{height:44px}.nav-menu{flex:none}.nav-links{gap:.35rem}.nav-link{letter-spacing:.02em;padding:.5rem .45rem;font-size:.85rem}.caret-icon{margin-left:.15rem;font-size:.65rem}}@media (max-width: 480px){.hero{height:calc(100vh - 70px);min-height:0;padding-top:80px;padding-bottom:3.5rem}.hero-title{letter-spacing:1px;font-size:1.4rem}.hero .subtitle{font-size:.8rem}.hero-static-layer{opacity:.15;height:45%}.hero-content{backdrop-filter:blur(10px);border-radius:10px;padding:1.2rem 1rem}.hero-dots{gap:5px;padding:5px 8px;bottom:48px}.hero-dot{width:6px;height:6px}.hero-dot.active{width:16px}.hero:after{bottom:42px}.hero-scroll-indicator{display:none}.hero-buttons .btn{padding:.6rem .85rem;font-size:.75rem}}@media print{.navbar,.whatsapp-float,.btn{display:none}}@media (max-width: 360px){.nav-links{padding:4rem 1.5rem 2rem}.nav-links .nav-link{letter-spacing:.15em;font-size:.75rem}.nav-item-dropdown .dropdown-link{font-size:.7rem}.logo span{font-size:.95rem}.logo-img{height:38px}}.header-phone{display:none}@media (min-width:1900px){.header-phone{display:flex;gap:1rem;align-items:center;margin-left:1rem}.header-phone a{color:var(--color-text-main);font-family:var(--font-body);font-size:.95rem;font-weight:600;text-decoration:none;display:flex;align-items:center;gap:.4rem;transition:color var(--transition-fast);text-shadow:0 1px 4px #000c;white-space:nowrap}.header-phone a:hover{color:var(--color-gold)}.header-phone i{font-size:1rem}}</style>
     <meta name="robots" content="index, follow">
     <meta name="description"
         content="Complexe hôtelier Ahoué Beach : hôtel, restaurant africain & bar en plein air, en bordure d'eau à Ahoué, près d'Abidjan. Chambres, loisirs, événements et détente en Côte d'Ivoire.">
@@ -37,21 +45,16 @@
     <!-- Google Search Console : coller le code de vérification après mise en place
     <meta name="google-site-verification" content="CODE_A_COMPLETER"> -->
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
-        rel="stylesheet" crossorigin>
-
-    <!-- Phosphor Icons (hébergé en local) -->
-    <script src="assets/js/vendor/phosphor-icons.js"></script>
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- CSS complet : non bloquant, appliqué dès réception -->
+    <link rel="stylesheet" href="assets/js/vendor/phosphor-used.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="assets/css/styles.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="assets/js/vendor/phosphor-used.css">
+        <link rel="stylesheet" href="assets/css/styles.css">
+    </noscript>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="assets/images/favicon-48.png">
     <meta name="theme-color" content="#121212">
 
     <!-- JSON-LD Structured Data -->
@@ -141,14 +144,55 @@
       ]
     }
     </script>
-
-    <link rel="preload" as="image" href="assets/images/hero/carrousel/1_paysage_1.jpg">
 </head>
 
 <body>
 
-    <!-- NAVIGATION (injectée par header.js) -->
-    <div id="header-placeholder"></div>
+    <!-- NAVIGATION (pré-rendue pour un affichage immédiat ; header.js ne la réinjecte pas) -->
+    <nav class="navbar" id="navbar" aria-label="Navigation principale">
+        <div class="container-wide">
+            <a href="#hero" class="logo">
+                <img src="assets/images/logo-96.png" width="50" height="50" alt="Espace Beach Ahoué Logo"
+                    class="logo-img">
+                <span>Complexe Hôtelier Ahoué Beach</span>
+            </a>
+            <div class="header-phone">
+                <a href="tel:+2252733764359"><i class="ph ph-phone"></i> 27 33 76 43 59</a>
+                <a href="tel:+2250102630733"><i class="ph ph-phone"></i> 01 02 63 07 33</a>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menu">
+                <i class="ph ph-list"></i>
+            </button>
+        </div>
+        <div class="nav-menu" id="navMenu">
+            <div class="nav-links">
+                <a href="#presentation" class="nav-link">À propos</a>
+                <div class="nav-item-dropdown">
+                    <a href="#hebergement" class="nav-link">Hébergement <i
+                            class="ph ph-caret-down caret-icon"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="hebergement.html" class="dropdown-link">Nos Chambres</a>
+                    </div>
+                </div>
+                <div class="nav-item-dropdown">
+                    <a href="#restaurant" class="nav-link">Restaurant &amp; Bar <i
+                            class="ph ph-caret-down caret-icon"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="menu.html" class="dropdown-link">Notre Carte</a>
+                    </div>
+                </div>
+                <div class="nav-item-dropdown">
+                    <a href="#evenements" class="nav-link">Événements <i
+                            class="ph ph-caret-down caret-icon"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="evenements.html" class="dropdown-link">Nos Offres</a>
+                    </div>
+                </div>
+                <a href="#galerie" class="nav-link">Galerie</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
 
     <!-- ============================================
          HERO SECTION
@@ -159,50 +203,43 @@
             <div class="hero-carousel-slide active"
                 style="background-image: url('assets/images/hero/carrousel/1_paysage_1.jpg')" data-animation="zoomIn">
             </div>
-            <div class="hero-carousel-slide" style="background-image: url('assets/images/hero/carrousel/2_repas_0.jpg')"
+            <div class="hero-carousel-slide" data-bg="assets/images/hero/carrousel/2_repas_0.jpg"
                 data-animation="zoomOutPan"></div>
-            <div class="hero-carousel-slide"
-                style="background-image: url('assets/images/hero/carrousel/3_cocktail.jpg')" data-animation="panRight">
-            </div>
-            <div class="hero-carousel-slide"
-                style="background-image: url('assets/images/hero/carrousel/4_chambre_6.jpg')" data-animation="zoomOut">
-            </div>
-            <div class="hero-carousel-slide"
-                style="background-image: url('assets/images/hero/carrousel/5_paysage_4.jpg')" data-animation="panRight">
-            </div>
-            <div class="hero-carousel-slide" style="background-image: url('assets/images/hero/carrousel/6_repas_1.jpg')"
+            <div class="hero-carousel-slide" data-bg="assets/images/hero/carrousel/3_cocktail.jpg"
+                data-animation="panRight"></div>
+            <div class="hero-carousel-slide" data-bg="assets/images/hero/carrousel/4_chambre_6.jpg"
+                data-animation="zoomOut"></div>
+            <div class="hero-carousel-slide" data-bg="assets/images/hero/carrousel/5_paysage_4.jpg"
+                data-animation="panRight"></div>
+            <div class="hero-carousel-slide" data-bg="assets/images/hero/carrousel/6_repas_1.jpg"
                 data-animation="panLeft"></div>
-            <div class="hero-carousel-slide" style="background-image: url('assets/images/hero/carrousel/7_vin.jpg')"
+            <div class="hero-carousel-slide" data-bg="assets/images/hero/carrousel/7_vin.jpg"
                 data-animation="zoomIn"></div>
-            <div class="hero-carousel-slide"
-                style="background-image: url('assets/images/hero/carrousel/8_paysage_33.jpg')" data-animation="zoomIn">
-            </div>
-            <div class="hero-carousel-slide" style="background-image: url('assets/images/hero/carrousel/9_repas_4.jpg')"
+            <div class="hero-carousel-slide" data-bg="assets/images/hero/carrousel/8_paysage_33.jpg"
+                data-animation="zoomIn"></div>
+            <div class="hero-carousel-slide" data-bg="assets/images/hero/carrousel/9_repas_4.jpg"
                 data-animation="panLeft"></div>
-            <div class="hero-carousel-slide"
-                style="background-image: url('assets/images/hero/carrousel/10_paysage_11.jpg')"
+            <div class="hero-carousel-slide" data-bg="assets/images/hero/carrousel/10_paysage_11.jpg"
                 data-animation="zoomOutPan"></div>
-            <div class="hero-carousel-slide"
-                style="background-image: url('assets/images/hero/carrousel/11_repas_65.jpg')" data-animation="panRight">
-            </div>
-            <div class="hero-carousel-slide"
-                style="background-image: url('assets/images/hero/carrousel/12_chambre_2.jpg')"
+            <div class="hero-carousel-slide" data-bg="assets/images/hero/carrousel/11_repas_65.jpg"
+                data-animation="panRight"></div>
+            <div class="hero-carousel-slide" data-bg="assets/images/hero/carrousel/12_chambre_2.jpg"
                 data-animation="zoomOutPan"></div>
-            <div class="hero-carousel-slide"
-                style="background-image: url('assets/images/hero/carrousel/13_paysage_3.jpg')"
+            <div class="hero-carousel-slide" data-bg="assets/images/hero/carrousel/13_paysage_3.jpg"
                 data-animation="zoomInPan"></div>
-            <div class="hero-carousel-slide"
-                style="background-image: url('assets/images/hero/carrousel/14_repas_9.jpg')" data-animation="zoomInPan">
-            </div>
-            <div class="hero-carousel-slide"
-                style="background-image: url('assets/images/hero/carrousel/15_chambre_0.jpg')" data-animation="zoomOut">
-            </div>
-            <div class="hero-carousel-slide"
-                style="background-image: url('assets/images/hero/carrousel/16_repas_13.jpg')" data-animation="panLeft">
-            </div>
+            <div class="hero-carousel-slide" data-bg="assets/images/hero/carrousel/14_repas_9.jpg"
+                data-animation="zoomInPan"></div>
+            <div class="hero-carousel-slide" data-bg="assets/images/hero/carrousel/15_chambre_0.jpg"
+                data-animation="zoomOut"></div>
+            <div class="hero-carousel-slide" data-bg="assets/images/hero/carrousel/16_repas_13.jpg"
+                data-animation="panLeft"></div>
         </div>
         <!-- Image fixe permanente -->
-        <img src="assets/images/hero/acceuill.png" alt="" class="hero-static-layer" aria-hidden="true">
+        <picture>
+            <source srcset="assets/images/hero/acceuill.webp" type="image/webp">
+            <img width="796" height="800" src="assets/images/hero/acceuill.png" alt="" class="hero-static-layer"
+                aria-hidden="true" decoding="async" fetchpriority="high">
+        </picture>
         <div class="hero-overlay"></div>
 
         <!-- Titre hors du cadre -->
@@ -270,7 +307,7 @@
             </div>
             <div class="content-split fade-in">
                 <div class="content-image">
-                    <img src="assets/images/espace/paysage_33.jpg" alt="Vue du Complexe Hôtelier Ahoué Beach">
+                    <img width="800" height="600" decoding="async" loading="lazy" src="assets/images/espace/paysage_33.jpg" alt="Vue du Complexe Hôtelier Ahoué Beach">
                 </div>
                 <div class="content-text">
                     <p>
@@ -295,17 +332,17 @@
             <!-- Galerie du complexe -->
             <div class="features-grid mt-lg fade-in">
                 <div class="feature-card">
-                    <img src="assets/images/espace/21.jpg" alt="Vue du complexe" class="feature-card-img">
+                    <img width="800" height="600" decoding="async" loading="lazy" src="assets/images/espace/21-800.jpg" alt="Vue du complexe" class="feature-card-img">
                     <h3>Panorama</h3>
                     <p>Une vue imprenable sur le site</p>
                 </div>
                 <div class="feature-card">
-                    <img src="assets/images/espace/paysage_11.jpg" alt="Espace naturel" class="feature-card-img">
+                    <img width="800" height="600" decoding="async" loading="lazy" src="assets/images/espace/paysage_11.jpg" alt="Espace naturel" class="feature-card-img">
                     <h3>Espace naturel</h3>
                     <p>Un cadre verdoyant et paisible</p>
                 </div>
                 <div class="feature-card">
-                    <img src="assets/images/espace/paysage_3.jpg" alt="Ambiance du complexe" class="feature-card-img">
+                    <img width="800" height="600" decoding="async" loading="lazy" src="assets/images/espace/paysage_3.jpg" alt="Ambiance du complexe" class="feature-card-img">
                     <h3>Ambiance</h3>
                     <p>Un lieu de rencontre et de détente</p>
                 </div>
@@ -342,24 +379,24 @@
                     </ul>
                 </div>
                 <div class="content-image">
-                    <img src="assets/images/hebergement/chambre_3.jpg" alt="Chambre équipée Espace Beach Ahoué">
+                    <img width="602" height="800" decoding="async" loading="lazy" src="assets/images/hebergement/chambre_3.jpg" alt="Chambre équipée Espace Beach Ahoué">
                 </div>
             </div>
 
             <!-- Galerie de chambres -->
             <div class="features-grid mt-lg fade-in">
                 <div class="feature-card">
-                    <img src="assets/images/hebergement/chambre_0.jpg" alt="Chambre 1" class="feature-card-img">
+                    <img width="768" height="1024" decoding="async" loading="lazy" src="assets/images/hebergement/chambre_0.jpg" alt="Chambre 1" class="feature-card-img">
                     <h3>Confort moderne</h3>
                     <p>Chambres climatisées avec tout le nécessaire</p>
                 </div>
                 <div class="feature-card">
-                    <img src="assets/images/hebergement/chambre_2.jpg" alt="Chambre 2" class="feature-card-img">
+                    <img width="622" height="800" decoding="async" loading="lazy" src="assets/images/hebergement/chambre_2.jpg" alt="Chambre 2" class="feature-card-img">
                     <h3>Ambiance chaleureuse</h3>
                     <p>Décoration soignée et accueillante</p>
                 </div>
                 <div class="feature-card">
-                    <img src="assets/images/hebergement/chambre_4.jpg" alt="Chambre 3" class="feature-card-img">
+                    <img width="659" height="800" decoding="async" loading="lazy" src="assets/images/hebergement/chambre_4.jpg" alt="Chambre 3" class="feature-card-img">
                     <h3>Repos assuré</h3>
                     <p>Literie de qualité pour un sommeil réparateur</p>
                 </div>
@@ -387,7 +424,7 @@
             </div>
             <div class="content-split fade-in">
                 <div class="content-image">
-                    <img src="assets/images/restaurant/repas_0.jpg" alt="Restaurant Espace Beach Ahoué">
+                    <img width="622" height="800" decoding="async" loading="lazy" src="assets/images/restaurant/repas_0.jpg" alt="Restaurant Espace Beach Ahoué">
                 </div>
                 <div class="content-text">
                     <p>
@@ -412,20 +449,20 @@
             <!-- Galerie de plats -->
             <div class="features-grid mt-lg fade-in">
                 <div class="feature-card">
-                    <img src="assets/images/restaurant/repas_13.jpg" alt="Viandes & Volailles" class="feature-card-img">
+                    <img width="1080" height="902" decoding="async" loading="lazy" src="assets/images/restaurant/repas_13.jpg" alt="Viandes & Volailles" class="feature-card-img">
                     <h3>Viandes & Volailles</h3>
                     <p>Découvrez une généreuse sélection de gibiers et de volailles, préparés avec passion en grillades
                         ou en sauce, mijotés à la perfection à partir de produits frais soigneusement sélectionnés
                         auprès de producteurs locaux.</p>
                 </div>
                 <div class="feature-card">
-                    <img src="assets/images/restaurant/repas_1.jpg" alt="Poissons & Crustacés" class="feature-card-img">
+                    <img width="800" height="800" decoding="async" loading="lazy" src="assets/images/restaurant/repas_1.jpg" alt="Poissons & Crustacés" class="feature-card-img">
                     <h3>Poissons & Crustacés</h3>
                     <p>Savourez des poissons et crustacés d'une fraîcheur irréprochable, rigoureusement sélectionnés
                         pour révéler toute la richesse de leurs saveurs et satisfaire les palais les plus exigeants.</p>
                 </div>
                 <div class="feature-card">
-                    <img src="assets/images/menu/bieres.jpg" alt="Boissons fraîches & cocktails"
+                    <img width="640" height="640" decoding="async" loading="lazy" src="assets/images/menu/bieres.jpg" alt="Boissons fraîches & cocktails"
                         class="feature-card-img">
                     <h3>Boissons fraîches & cocktails</h3>
                     <p>Laissez-vous séduire par notre large sélection de boissons fraîches et notre cave à vins,
@@ -527,30 +564,30 @@
             <!-- Aperçu des événements récents -->
             <div class="gallery-grid fade-in">
                 <div class="gallery-item">
-                    <img src="assets/images/actualites/actualite_1.jpg" alt="Actualité Espace Beach Ahoué"
+                    <img width="800" height="420" decoding="async" src="assets/images/actualites/actualite_1.jpg" alt="Actualité Espace Beach Ahoué"
                         loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/actualites/actualite_2.jpg" alt="Événement récent" loading="lazy">
+                    <img width="1200" height="630" decoding="async" src="assets/images/actualites/actualite_2.jpg" alt="Événement récent" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/actualites/actualite_3.jpg" alt="Soirée au Complexe Hôtelier Ahoué Beach"
+                    <img width="800" height="420" decoding="async" src="assets/images/actualites/actualite_3.jpg" alt="Soirée au Complexe Hôtelier Ahoué Beach"
                         loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/actualites/actualite_4.jpg" alt="Ambiance festive" loading="lazy">
+                    <img width="755" height="800" decoding="async" src="assets/images/actualites/actualite_4.jpg" alt="Ambiance festive" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/actualites/actualite_5.jpg" alt="Vie du complexe" loading="lazy">
+                    <img width="800" height="800" decoding="async" src="assets/images/actualites/actualite_5.jpg" alt="Vie du complexe" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/actualites/actualite_6.jpg" alt="Moments conviviaux" loading="lazy">
+                    <img width="800" height="800" decoding="async" src="assets/images/actualites/actualite_6.jpg" alt="Moments conviviaux" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/actualites/actualite_7.jpg" alt="Événement spécial" loading="lazy">
+                    <img width="800" height="800" decoding="async" src="assets/images/actualites/actualite_7.jpg" alt="Événement spécial" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/actualites/actualite_8.jpg" alt="Actualités du complexe" loading="lazy">
+                    <img width="760" height="800" decoding="async" src="assets/images/actualites/actualite_8.jpg" alt="Actualités du complexe" loading="lazy">
                 </div>
             </div>
 
@@ -580,148 +617,148 @@
 
             <div class="gallery-grid fade-in">
                 <div class="gallery-item">
-                    <img src="assets/images/gallerie/paysage_11.jpg" alt="Vue panoramique sur le plan d'eau d'Ahoué"
+                    <img width="800" height="600" decoding="async" src="assets/images/gallerie/paysage_11.jpg" alt="Vue panoramique sur le plan d'eau d'Ahoué"
                         loading="lazy">
                     <span class="gallery-caption">Vue panoramique du site</span>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/gallerie/repas_15.jpg" alt="Poisson braisé servi avec attiéké"
+                    <img width="617" height="800" decoding="async" src="assets/images/gallerie/repas_15.jpg" alt="Poisson braisé servi avec attiéké"
                         loading="lazy">
                     <span class="gallery-caption">Partage entre amis</span>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/gallerie/cave.jpg" alt="Notre cave à vins sélectionnée" loading="lazy">
+                    <img width="575" height="800" decoding="async" src="assets/images/gallerie/cave.jpg" alt="Notre cave à vins sélectionnée" loading="lazy">
                     <span class="gallery-caption">Notre sélection de vins fins</span>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/gallerie/paysage_25.jpg" alt="Espace détente au bord de l'eau"
+                    <img width="800" height="600" decoding="async" src="assets/images/gallerie/paysage_25.jpg" alt="Espace détente au bord de l'eau"
                         loading="lazy">
                     <span class="gallery-caption">Espace détente en bordure d'eau</span>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/gallerie/pintade.jpg" alt="Pintade braisée croustillante" loading="lazy">
+                    <img width="800" height="600" decoding="async" src="assets/images/gallerie/pintade.jpg" alt="Pintade braisée croustillante" loading="lazy">
                     <span class="gallery-caption">Escargots braisés croustillants</span>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/gallerie/chambre_8.jpg" alt="Chambre confort avec vue" loading="lazy">
+                    <img width="640" height="800" decoding="async" src="assets/images/gallerie/chambre_8.jpg" alt="Chambre confort avec vue" loading="lazy">
                     <span class="gallery-caption">Chambre confort élégante</span>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/gallerie/paysage_14.jpg" alt="Cocotiers au coucher du soleil"
+                    <img width="800" height="600" decoding="async" src="assets/images/gallerie/paysage_14.jpg" alt="Cocotiers au coucher du soleil"
                         loading="lazy">
                     <span class="gallery-caption">Espace pour des jeux en plein air</span>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/gallerie/repas_9.jpg" alt="Accompagnements traditionnels" loading="lazy">
+                    <img width="1080" height="1080" decoding="async" src="assets/images/gallerie/repas_9.jpg" alt="Accompagnements traditionnels" loading="lazy">
                     <span class="gallery-caption">Brochettes d'Agoutis farcies</span>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/gallerie/anniversaire.jpg" alt="Salle de fête décorée" loading="lazy">
+                    <img width="600" height="800" decoding="async" src="assets/images/gallerie/anniversaire.jpg" alt="Salle de fête décorée" loading="lazy">
                     <span class="gallery-caption">Espace pour vos célébrations</span>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/gallerie/paysage_23.jpg" alt="Bungalows bordés de palmiers" loading="lazy">
+                    <img width="800" height="450" decoding="async" src="assets/images/gallerie/paysage_23.jpg" alt="Bungalows bordés de palmiers" loading="lazy">
                     <span class="gallery-caption">Espace de détente privilégié</span>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/gallerie/poulet_saute.jpg" alt="Poulet sauté aux épices" loading="lazy">
+                    <img width="600" height="800" decoding="async" src="assets/images/gallerie/poulet_saute.jpg" alt="Poulet sauté aux épices" loading="lazy">
                     <span class="gallery-caption">Hérisson braisé aux épices locales</span>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/gallerie/restaurant_1.jpg" alt="Terrasse du restaurant" loading="lazy">
+                    <img width="800" height="588" decoding="async" src="assets/images/gallerie/restaurant_1.jpg" alt="Terrasse du restaurant" loading="lazy">
                     <span class="gallery-caption">Terrasse du restaurant en soirée</span>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/gallerie/paysage_22.jpg" alt="Vue large sur le plan d'eau en bordure du complexe" loading="lazy">
+                    <img width="800" height="360" decoding="async" src="assets/images/gallerie/paysage_22.jpg" alt="Vue large sur le plan d'eau en bordure du complexe" loading="lazy">
                     <span class="gallery-caption">Un bol d'air pur</span>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/gallerie/repas_12.jpg" alt="Assortiment de grillades" loading="lazy">
+                    <img width="800" height="450" decoding="async" src="assets/images/gallerie/repas_12.jpg" alt="Assortiment de grillades" loading="lazy">
                     <span class="gallery-caption">Marmite du pêcheur, notre spécialité</span>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/gallerie/mariage.jpg" alt="Cérémonie de mariage en plein air"
+                    <img width="800" height="600" decoding="async" src="assets/images/gallerie/mariage.jpg" alt="Cérémonie de mariage en plein air"
                         loading="lazy">
                     <span class="gallery-caption">Mariage en plein air et en bordure d'eau</span>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/gallerie/paysage_20.jpg" alt="Reflets sur le plan d'eau" loading="lazy">
+                    <img width="440" height="800" decoding="async" src="assets/images/gallerie/paysage_20.jpg" alt="Reflets sur le plan d'eau" loading="lazy">
                     <span class="gallery-caption">Reflets dorés sur le cours d'eau</span>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/gallerie/gambas_1.jpg" alt="Gambas fraîches sautées" loading="lazy">
+                    <img width="488" height="316" decoding="async" src="assets/images/gallerie/gambas_1.jpg" alt="Gambas fraîches sautées" loading="lazy">
                     <span class="gallery-caption">Gambas fraîches sautées à l'ail</span>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/gallerie/chambre_6.jpg" alt="Suite familiale spacieuse" loading="lazy">
+                    <img width="699" height="800" decoding="async" src="assets/images/gallerie/chambre_6.jpg" alt="Suite familiale spacieuse" loading="lazy">
                     <span class="gallery-caption">Chambre confortable & spacieuse</span>
                 </div>
                 <div class="gallery-item gallery-extra">
-                    <img src="assets/images/gallerie/paysage_19.jpg" alt="Végétation luxuriante" loading="lazy">
+                    <img width="400" height="800" decoding="async" src="assets/images/gallerie/paysage_19.jpg" alt="Végétation luxuriante" loading="lazy">
                     <span class="gallery-caption">Végétation luxuriante du site</span>
                 </div>
                 <div class="gallery-item gallery-extra">
-                    <img src="assets/images/gallerie/repas_14.jpg" alt="Plat de riz soumara" loading="lazy">
+                    <img width="800" height="576" decoding="async" src="assets/images/gallerie/repas_14.jpg" alt="Plat de riz soumara" loading="lazy">
                     <span class="gallery-caption">Bon appétit!</span>
                 </div>
                 <div class="gallery-item gallery-extra">
-                    <img src="assets/images/gallerie/paysage_18.jpg" alt="Sentier nature bordé d'arbres" loading="lazy">
+                    <img width="599" height="800" decoding="async" src="assets/images/gallerie/paysage_18.jpg" alt="Sentier nature bordé d'arbres" loading="lazy">
                     <span class="gallery-caption">Tout pour la détente</span>
                 </div>
                 <div class="gallery-item gallery-extra">
-                    <img src="assets/images/gallerie/repas_16.jpg" alt="Table dressée pour événement" loading="lazy">
+                    <img width="800" height="512" decoding="async" src="assets/images/gallerie/repas_16.jpg" alt="Table dressée pour événement" loading="lazy">
                     <span class="gallery-caption">Tous nos plats réalisés avec des produits frais</span>
                 </div>
                 <div class="gallery-item gallery-extra">
-                    <img src="assets/images/gallerie/chambre_5.jpg" alt="Chambre standard cozy" loading="lazy">
+                    <img width="800" height="470" decoding="async" src="assets/images/gallerie/chambre_5.jpg" alt="Chambre standard cozy" loading="lazy">
                     <span class="gallery-caption">Chambre standard climatisée</span>
                 </div>
                 <div class="gallery-item gallery-extra">
-                    <img src="assets/images/gallerie/paysage_24.jpg" alt="Vue aérienne du complexe" loading="lazy">
+                    <img width="800" height="360" decoding="async" src="assets/images/gallerie/paysage_24.jpg" alt="Vue aérienne du complexe" loading="lazy">
                     <span class="gallery-caption">Tout est prévu pour la détente</span>
                 </div>
                 <div class="gallery-item gallery-extra">
-                    <img src="assets/images/gallerie/escargot.jpg" alt="Escargots sautés au beurre" loading="lazy">
+                    <img width="800" height="640" decoding="async" src="assets/images/gallerie/escargot.jpg" alt="Escargots sautés au beurre" loading="lazy">
                     <span class="gallery-caption">Escargots sautés aux tomates fraîches</span>
                 </div>
                 <div class="gallery-item gallery-extra">
-                    <img src="assets/images/gallerie/chambre_7.jpg" alt="Chambre avec balcon" loading="lazy">
+                    <img width="597" height="800" decoding="async" src="assets/images/gallerie/chambre_7.jpg" alt="Chambre avec balcon" loading="lazy">
                     <span class="gallery-caption">Parade de lumières et de glaces</span>
                 </div>
                 <div class="gallery-item gallery-extra">
-                    <img src="assets/images/gallerie/paysage_33.jpg" alt="Coucher de soleil magique" loading="lazy">
+                    <img width="1106" height="830" decoding="async" src="assets/images/gallerie/paysage_33.jpg" alt="Coucher de soleil magique" loading="lazy">
                     <span class="gallery-caption">Cascade d'eau & de fraîcheur</span>
                 </div>
                 <div class="gallery-item gallery-extra">
-                    <img src="assets/images/gallerie/repas_13.jpg" alt="Kédjénou de pintade" loading="lazy">
+                    <img width="800" height="450" decoding="async" src="assets/images/gallerie/repas_13.jpg" alt="Kédjénou de pintade" loading="lazy">
                     <span class="gallery-caption">Braisé de poulet & de gambas mijotés</span>
                 </div>
                 <div class="gallery-item gallery-extra">
-                    <img src="assets/images/gallerie/chambre_11.jpg" alt="Suite premium luxe" loading="lazy">
+                    <img width="800" height="486" decoding="async" src="assets/images/gallerie/chambre_11.jpg" alt="Suite premium luxe" loading="lazy">
                     <span class="gallery-caption">chambre premium</span>
                 </div>
                 <div class="gallery-item gallery-extra">
-                    <img src="assets/images/gallerie/vin.jpg" alt="Verre de vin à la terrasse" loading="lazy">
+                    <img width="1024" height="1024" decoding="async" src="assets/images/gallerie/vin.jpg" alt="Verre de vin à la terrasse" loading="lazy">
                     <span class="gallery-caption">Moment de détente avec un bon vin</span>
                 </div>
                 <div class="gallery-item gallery-extra">
-                    <img src="assets/images/gallerie/repas_3.jpg" alt="Assortiment de poissons" loading="lazy">
+                    <img width="1600" height="1066" decoding="async" src="assets/images/gallerie/repas_3.jpg" alt="Assortiment de poissons" loading="lazy">
                     <span class="gallery-caption">Brochettes d'agoutis marinés</span>
                 </div>
                 <div class="gallery-item gallery-extra">
-                    <img src="assets/images/gallerie/paysage_10.jpg" alt="Plage de sable fin" loading="lazy">
+                    <img width="600" height="800" decoding="async" src="assets/images/gallerie/paysage_10.jpg" alt="Plage de sable fin" loading="lazy">
                     <span class="gallery-caption">Plage privée de sable fin</span>
                 </div>
                 <div class="gallery-item gallery-extra">
-                    <img src="assets/images/gallerie/chambre_5.jpg" alt="Espace salon moderne" loading="lazy">
+                    <img width="800" height="470" decoding="async" src="assets/images/gallerie/chambre_5.jpg" alt="Espace salon moderne" loading="lazy">
                     <span class="gallery-caption">Espace salon moderne</span>
                 </div>
                 <div class="gallery-item gallery-extra">
-                    <img src="assets/images/gallerie/paysage_21.jpg" alt="Barrière de corail naturelle" loading="lazy">
+                    <img width="440" height="800" decoding="async" src="assets/images/gallerie/paysage_21.jpg" alt="Barrière de corail naturelle" loading="lazy">
                     <span class="gallery-caption">Ecosystème marin préservé</span>
                 </div>
                 <div class="gallery-item gallery-extra">
-                    <img src="assets/images/gallerie/cocktail.jpg" alt="Cocktail tropical frais" loading="lazy">
+                    <img width="1024" height="1024" decoding="async" src="assets/images/gallerie/cocktail.jpg" alt="Cocktail tropical frais" loading="lazy">
                     <span class="gallery-caption">Cocktail tropical maison</span>
                 </div>
             </div>
